@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scoop Patrol Aberdare — Dog Waste Garden Clean-Ups | CF43 CF44 CF45</title>
+<meta name="description" content="Weekly and fortnightly dog waste garden clean-ups in Aberdare, Aberaman, Cwmaman and Mountain Ash (CF43, CF44, CF45). From £10 per clean, waste always taken away, pet-safe & biodegradable. Message us for a free quote.">
+<meta property="og:title" content="Scoop Patrol Aberdare — We handle the poo, so you don't have to">
+<meta property="og:description" content="Weekly & fortnightly dog waste garden clean-ups across Aberdare and the valley. From £10 per clean.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo.jpg">
+<link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+<link rel="apple-touch-icon" href="assets/logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #14294D;
+    --navy-deep: #0C1B36;
+    --green: #3F8F29;
+    --green-deep: #2E6B1E;
+    --cream: #F5F6F0;
+    --sky: #BFE3F7;
+    --sky-deep: #9BCFEA;
+    --bark: #6B4A2F;
+    --ink: #1B1B18;
+    --paper: #FFFFFF;
+    --line: rgba(20,41,77,0.12);
+    --paw-tex: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='32' cy='40' r='6.4'/%3E%3Ccircle cx='22' cy='27' r='3.6'/%3E%3Ccircle cx='32' cy='21' r='4'/%3E%3Ccircle cx='42' cy='27' r='3.6'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-optical-sizing:auto;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  .mono{
+    font-family:'IBM Plex Mono',monospace;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 28px;}
+  section{position:relative;}
+
+  /* ---------- squiggle divider ---------- */
+  .squiggle{display:block;margin:14px 0 0;}
+  .section-head .squiggle{margin-bottom:2px;}
+
+  /* ---------- check icon / checklist ---------- */
+  .check-ic{flex:none;display:inline-flex;}
+  .check-list{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:13px;}
+  @media(min-width:560px){.check-list{grid-template-columns:1fr 1fr;column-gap:22px;}}
+  .check-list li{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--navy);font-size:0.95rem;}
+
+  /* ---------- paw trail signature element ---------- */
+  .paw-trail{
+    position:absolute;
+    left:50%;
+    top:0;
+    width:220px;
+    height:100%;
+    transform:translateX(-50%);
+    pointer-events:none;
+    z-index:1;
+    opacity:0.9;
+  }
+  @media(max-width:640px){
+    .paw-trail{width:120px;opacity:0.6;}
+  }
+  .paw-trail svg{width:100%;height:100%;}
+  .paw{
+    opacity:0;
+    transform:scale(0.6);
+    transform-origin:center;
+    transition:opacity .6s ease, transform .6s ease;
+  }
+  .paw.in-view{opacity:1;transform:scale(1);}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(245,246,240,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-row{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 0;
+  }
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+  .brand img{width:46px;height:46px;border-radius:50%;box-shadow:0 0 0 2px var(--paper),0 0 0 3px var(--navy);}
+  .brand-text{font-family:'Fraunces',serif;font-weight:700;font-size:1.15rem;color:var(--navy);line-height:1.1;}
+  .brand-text span{display:block;font-family:'Inter',sans-serif;font-weight:600;font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--green-deep);margin-top:3px;}
+  nav ul{list-style:none;display:flex;gap:28px;margin:0;padding:0;}
+  nav a{
+    font-weight:600;font-size:0.92rem;text-decoration:none;color:var(--navy);
+    position:relative;
+  }
+  nav a::after{
+    content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--green);
+    transition:width .25s ease;
+  }
+  nav a:hover::after{width:100%;}
+  .btn.nav-cta{display:none;}
+  @media(min-width:840px){.btn.nav-cta{display:inline-flex;}}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:12px 22px;border-radius:999px;
+    font-weight:700;font-size:0.92rem;text-decoration:none;
+    border:2px solid transparent;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    cursor:pointer;
+  }
+  .btn-green{background:var(--green);color:#fff;box-shadow:0 4px 0 var(--green-deep);}
+  .btn-green:hover{transform:translateY(-2px);box-shadow:0 6px 0 var(--green-deep);}
+  .btn-green:active{transform:translateY(2px);box-shadow:0 2px 0 var(--green-deep);}
+  .btn-outline{background:transparent;border-color:var(--navy);color:var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:#fff;}
+  .btn-cream{background:var(--paper);color:var(--navy);box-shadow:0 4px 0 rgba(20,41,77,0.18);}
+  .btn-cream:hover{transform:translateY(-2px);}
+
+  /* mobile nav */
+  .burger{display:flex;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px;}
+  .burger span{width:24px;height:2.5px;background:var(--navy);border-radius:2px;}
+  @media(min-width:840px){.burger{display:none;}}
+  nav{display:none;}
+  @media(min-width:840px){nav{display:block;}}
+  .mobile-menu{
+    display:none;flex-direction:column;gap:2px;
+    padding:8px 0 18px;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{padding:12px 4px;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line);}
+
+  /* ---------- hero ---------- */
+  .hero{
+    background-color:var(--navy);
+    background-image:var(--paw-tex),linear-gradient(180deg,var(--navy) 0%, var(--navy) 78%, var(--navy-deep) 100%);
+    background-size:64px 64px, auto;
+    color:#fff;
+    padding:64px 0 0;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1fr;gap:36px;
+    align-items:center;
+    padding-bottom:40px;
+  }
+  @media(min-width:900px){.hero-grid{grid-template-columns:1.05fr 0.95fr;gap:20px;}}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(191,227,247,0.14);
+    border:1px solid rgba(191,227,247,0.35);
+    color:var(--sky);
+    padding:6px 14px;border-radius:999px;
+    font-size:0.78rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;
+    margin-bottom:22px;
+  }
+  .hero h1{
+    font-size:clamp(2.4rem,5.6vw,3.75rem);
+    font-weight:700;
+    line-height:1.05;
+    color:#fff;
+  }
+  .hero h1 .green{color:#8FD46A;font-style:italic;}
+  .hero p.lead{
+    margin-top:20px;font-size:1.1rem;color:rgba(255,255,255,0.82);max-width:46ch;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px;}
+  .hero-stats{
+    display:flex;gap:30px;margin-top:40px;flex-wrap:wrap;
+    border-top:1px solid rgba(255,255,255,0.14);padding-top:26px;
+  }
+  .hero-stat b{
+    display:block;font-family:'Fraunces',serif;font-weight:700;font-size:1.6rem;color:#8FD46A;
+  }
+  .hero-stat span{font-size:0.8rem;color:rgba(255,255,255,0.65);}
+
+  /* hero illustration */
+  .hero-art{position:relative;}
+  .hero-photo-frame{
+    position:relative;
+    width:100%;max-width:440px;margin:0 auto;
+    border-radius:28px;
+    overflow:hidden;
+    border:2px solid rgba(255,255,255,0.18);
+    box-shadow:0 28px 64px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05);
+  }
+  .hero-photo-frame img{
+    width:100%;height:100%;object-fit:cover;display:block;
+    aspect-ratio:3/2;
+  }
+  .hero-badge-chip{
+    position:absolute;
+    left:18px;bottom:-18px;
+    background:var(--paper);color:var(--navy);
+    border-radius:14px;
+    padding:12px 16px;
+    display:flex;align-items:center;gap:10px;
+    box-shadow:0 10px 24px rgba(0,0,0,0.18);
+    font-weight:700;font-size:0.86rem;
+    max-width:78%;
+  }
+  .hero-badge-chip .paw-ic{flex:none;width:26px;height:26px;background:var(--sky);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.95rem;}
+  @media (prefers-reduced-motion: reduce){
+    .paw{transition:none;}
+  }
+  @media(max-width:640px){
+    .hero-photo-frame{max-width:340px;}
+    .hero-badge-chip{font-size:0.78rem;padding:10px 14px;left:12px;bottom:-16px;}
+  }
+
+  /* ---------- section titles ---------- */
+  .kicker{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.75rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--green-deep);margin-bottom:10px;display:block;
+  }
+  .section-head{max-width:640px;margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.8rem,3.6vw,2.5rem);color:var(--navy);}
+  .section-head p{margin-top:16px;color:#4a5266;font-size:1.02rem;}
+  section.pad{padding:88px 0;overflow:hidden;}
+
+  /* ---------- before/after comparison ---------- */
+  .compare-grid{display:grid;grid-template-columns:1fr;gap:22px;}
+  @media(min-width:760px){.compare-grid{grid-template-columns:1fr 1fr;}}
+  .compare-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:22px;
+    overflow:hidden;
+  }
+  .compare-card .art{width:100%;display:block;aspect-ratio:3/2;}
+  .compare-card .cap{padding:20px 24px 24px;}
+  .compare-tag{
+    display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:0.75rem;
+    letter-spacing:0.08em;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-bottom:10px;
+  }
+  .compare-tag.before{background:#E9E2D6;color:#6B4A2F;}
+  .compare-tag.after{background:rgba(63,143,41,0.12);color:var(--green-deep);}
+  .compare-card h3{font-size:1.1rem;color:var(--navy);margin-bottom:6px;}
+  .compare-card p{margin:0;color:#4a5266;font-size:0.92rem;}
+
+  /* ---------- how it works ---------- */
+  .steps{display:grid;grid-template-columns:1fr;gap:26px;}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr);}}
+  .step{
+    background:var(--paper);border-radius:20px;padding:32px 28px;
+    border:1px solid var(--line);
+    position:relative;
+  }
+  .step-num{
+    font-family:'Fraunces',serif;font-weight:700;font-size:2.6rem;color:var(--sky-deep);
+    -webkit-text-stroke:1.5px var(--navy);
+    line-height:1;margin-bottom:16px;
+  }
+  .step h3{font-size:1.2rem;color:var(--navy);margin-bottom:8px;}
+  .step p{color:#4a5266;font-size:0.95rem;margin:0;}
+  .step-tag{
+    display:inline-block;margin-top:16px;padding:5px 14px;
+    border:1.5px solid var(--green);color:var(--green-deep);border-radius:999px;
+    font-family:'IBM Plex Mono',monospace;font-size:0.66rem;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;
+  }
+
+  /* ---------- pricing ---------- */
+  .price-tabs{display:flex;gap:10px;margin-bottom:30px;flex-wrap:wrap;}
+  .tab-btn{
+    padding:10px 20px;border-radius:999px;border:2px solid var(--navy);
+    background:transparent;color:var(--navy);font-weight:700;font-family:'Inter',sans-serif;font-size:0.92rem;
+    cursor:pointer;transition:all .2s ease;
+  }
+  .tab-btn.active{background:var(--navy);color:#fff;}
+  .price-panel{display:none;}
+  .price-panel.active{display:block;}
+  .price-cards{display:grid;grid-template-columns:1fr;gap:16px;}
+  @media(min-width:700px){.price-cards{grid-template-columns:1fr 1fr;}}
+  .price-card{
+    background:var(--paper);border:1px solid var(--line);border-radius:16px;
+    padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:14px;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .price-card:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(20,41,77,0.08);}
+  .price-card .label{font-weight:600;color:var(--navy);font-size:0.98rem;}
+  .price-card .tag{
+    font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--green-deep);
+    background:rgba(63,143,41,0.09);padding:6px 12px;border-radius:8px;font-size:0.9rem;white-space:nowrap;
+  }
+  .price-note{
+    margin-top:22px;padding:18px 20px;background:rgba(191,227,247,0.28);
+    border:1px solid rgba(20,41,77,0.1);border-radius:14px;font-size:0.92rem;color:var(--navy);
+  }
+
+  .price-card .tier-ic{margin-right:8px;font-size:1.05rem;}
+
+  /* ---------- reviews ---------- */
+  .reviews-grid{display:grid;grid-template-columns:1fr;gap:22px;}
+  @media(min-width:760px){.reviews-grid{grid-template-columns:1fr 1fr;}}
+  .review-card{
+    background-color:var(--navy);
+    background-image:var(--paw-tex);
+    background-size:64px 64px;
+    color:#fff;border-radius:20px;padding:30px 28px;
+    display:flex;flex-direction:column;
+  }
+  .review-stars{color:#FFC94A;font-size:1rem;letter-spacing:2px;margin-bottom:16px;}
+  .review-card p{color:rgba(255,255,255,0.88);font-size:0.96rem;line-height:1.6;margin:0 0 22px;}
+  .review-who{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid rgba(255,255,255,0.14);margin-top:auto;}
+  .review-avatar{
+    flex:none;width:38px;height:38px;border-radius:50%;
+    background:rgba(191,227,247,0.16);display:flex;align-items:center;justify-content:center;
+    font-weight:700;font-family:'Fraunces',serif;color:#8FD46A;
+  }
+  .review-who b{display:block;font-size:0.95rem;}
+  .review-who span{font-size:0.8rem;color:rgba(255,255,255,0.6);}
+
+  /* ---------- trust bar ---------- */
+  .trust-band{
+    background-color:var(--navy);
+    background-image:var(--paw-tex);
+    background-size:64px 64px;
+  }
+  .trust-bar{display:grid;grid-template-columns:1fr;gap:22px;}
+  @media(min-width:760px){.trust-bar{grid-template-columns:repeat(3,1fr);gap:32px;}}
+  .trust-item{display:flex;align-items:flex-start;gap:14px;}
+  .trust-ic{
+    flex:none;width:44px;height:44px;border-radius:50%;
+    background:rgba(191,227,247,0.16);display:flex;align-items:center;justify-content:center;
+    font-size:1.3rem;
+    animation:bob-soft 3.6s ease-in-out infinite;
+  }
+  .trust-item:nth-child(2) .trust-ic{animation-delay:.4s;}
+  .trust-item:nth-child(3) .trust-ic{animation-delay:.8s;}
+  .trust-item b{display:block;color:#fff;font-size:0.98rem;margin-bottom:3px;}
+  .trust-item span{color:rgba(255,255,255,0.68);font-size:0.86rem;}
+
+  /* ---------- why us (split) ---------- */
+  .why-split{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;}
+  @media(min-width:900px){.why-split{grid-template-columns:1fr 1fr;gap:60px;}}
+  .why-copy h2{font-size:clamp(1.8rem,3.6vw,2.5rem);color:var(--navy);}
+  .why-copy p.lead-sm{color:#4a5266;margin:16px 0 0;font-size:1.02rem;max-width:48ch;}
+  .why-copy .btn{margin-top:30px;}
+  .why-art{position:relative;padding-bottom:14px;}
+  @media(min-width:640px){.why-art{padding-bottom:0;padding-left:14px;}}
+  .why-art-frame{border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 22px 48px rgba(20,41,77,0.14);}
+  .why-art-frame svg{width:100%;display:block;}
+  .stat-chip{
+    position:absolute;left:-6px;bottom:-20px;
+    background:var(--navy);color:#fff;border-radius:18px;
+    padding:18px 22px;box-shadow:0 16px 32px rgba(20,41,77,0.32);min-width:172px;
+  }
+  @media(min-width:640px){.stat-chip{left:8px;}}
+  .stat-chip b{font-family:'Fraunces',serif;font-weight:700;font-size:2.2rem;display:block;line-height:1;color:#8FD46A;}
+  .stat-chip span{font-size:0.72rem;letter-spacing:0.04em;text-transform:uppercase;color:rgba(255,255,255,0.75);font-weight:600;display:block;margin-top:8px;line-height:1.35;max-width:21ch;}
+  @media(max-width:640px){.stat-chip{padding:14px 16px;min-width:150px;}.stat-chip b{font-size:1.7rem;}}
+
+  /* ---------- scroll-reveal ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+  .reveal-group{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal-group.in-view{opacity:1;transform:translateY(0);}
+  .reveal-group > *{transition:transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;}
+
+  /* ---------- playful keyframes ---------- */
+  @keyframes bob-soft{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-5px);}
+  }
+  @keyframes wag{
+    0%,100%{transform:rotate(-8deg);}
+    50%{transform:rotate(8deg);}
+  }
+  @keyframes pop-in{
+    0%{transform:scale(0.6);opacity:0;}
+    70%{transform:scale(1.08);opacity:1;}
+    100%{transform:scale(1);}
+  }
+  .hero-badge-chip .paw-ic{animation:wag 1.8s ease-in-out infinite;transform-origin:60% 70%;}
+  .step-num{animation:pop-in .5s cubic-bezier(.34,1.56,.64,1) both;}
+  .step:nth-child(2) .step-num{animation-delay:.12s;}
+  .step:nth-child(3) .step-num{animation-delay:.24s;}
+
+  /* bouncy hover for cards */
+  .price-card:hover, .step:hover{
+    transform:translateY(-4px) scale(1.015);
+  }
+  .step{transition:transform .3s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease;}
+  .step:hover{box-shadow:0 12px 26px rgba(20,41,77,0.1);}
+
+  /* ---------- scroll progress bar ---------- */
+  .scroll-progress{
+    position:fixed;top:0;left:0;width:100%;height:4px;z-index:200;
+    background:rgba(20,41,77,0.08);
+  }
+  .scroll-progress-fill{
+    height:100%;width:0%;background:var(--green);position:relative;
+    transition:width .1s linear;
+  }
+  .scroll-progress-paw{
+    position:absolute;top:-11px;right:-11px;font-size:15px;
+    filter:drop-shadow(0 1px 2px rgba(0,0,0,0.35));
+  }
+  @media (prefers-reduced-motion: reduce){
+    .trust-ic,.hero-badge-chip .paw-ic,.step-num{animation:none;}
+    .reveal,.reveal-group{transition:none;opacity:1;transform:none;}
+    .scroll-progress-fill{transition:none;}
+  }
+
+  /* areas */
+  .areas-wrap{
+    display:grid;grid-template-columns:1fr;gap:40px;align-items:center;
+  }
+  @media(min-width:860px){.areas-wrap{grid-template-columns:1fr 1fr;}}
+  .postcode-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'IBM Plex Mono',monospace;font-weight:600;
+    background:var(--paper);border:2px solid var(--navy);color:var(--navy);
+    padding:10px 18px;border-radius:999px;margin:6px 8px 6px 0;font-size:0.95rem;
+  }
+  .valley-map{
+    background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:20px;
+  }
+
+  /* CTA footer band */
+  .cta-band{
+    background-color:var(--navy-deep);
+    background-image:var(--paw-tex), radial-gradient(120% 140% at 20% 20%, #1a3560 0%, var(--navy-deep) 65%);
+    background-size:64px 64px, cover;
+    color:#fff;border-radius:28px;padding:60px 40px;text-align:center;
+    margin:0 28px 0;
+  }
+  .cta-band h2{color:#fff;font-size:clamp(1.7rem,3.8vw,2.5rem);}
+  .cta-band p{color:rgba(255,255,255,0.78);max-width:50ch;margin:16px auto 30px;}
+  .cta-actions{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+  .cta-trustline{margin-top:30px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.14);
+    font-size:0.82rem;color:rgba(255,255,255,0.6);display:flex;justify-content:center;gap:10px;flex-wrap:wrap;}
+  .cta-trustline span:not(:last-child)::after{content:"·";margin-left:10px;color:rgba(255,255,255,0.35);}
+
+  footer{padding:56px 0 34px;}
+  .foot-grid{
+    display:grid;grid-template-columns:1fr;gap:32px;
+    border-top:1px solid var(--line);padding-top:40px;margin-top:8px;
+  }
+  @media(min-width:760px){.foot-grid{grid-template-columns:1.3fr 1fr 1fr;}}
+  .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .foot-brand img{width:38px;height:38px;border-radius:50%;}
+  .foot-brand span{font-family:'Fraunces',serif;font-weight:700;color:var(--navy);}
+  footer p{color:#6b7280;font-size:0.9rem;}
+  footer h4{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--navy);margin-bottom:16px;}
+  footer ul{list-style:none;padding:0;margin:0;}
+  footer li{margin-bottom:10px;font-size:0.92rem;color:#4a5266;}
+  .foot-contact li{display:flex;align-items:center;gap:10px;}
+  .foot-ic{flex:none;width:28px;height:28px;border-radius:50%;background:rgba(63,143,41,0.1);display:flex;align-items:center;justify-content:center;font-size:0.85rem;}
+  .bottom-line{
+    text-align:center;padding-top:28px;margin-top:32px;border-top:1px solid var(--line);
+    font-size:0.82rem;color:#8a8f9a;
+  }
+
+  ::selection{background:var(--sky);color:var(--navy);}
+</style>
+</head>
+<body>
+<div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-fill" id="scrollFill"><span class="scroll-progress-paw">🐾</span></div></div>
+
+<header>
+  <div class="wrap nav-row">
+    <a class="brand" href="#top">
+      <img src="assets/logo.jpg" alt="Scoop Patrol Aberdare logo" width="46" height="46">
+      <div class="brand-text">Scoop Patrol<span>Aberdare</span></div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#pricing">Prices</a></li>
+        <li><a href="#how">How it works</a></li>
+        <li><a href="#areas">Areas</a></li>
+        <li><a href="#why">Why us</a></li>
+      </ul>
+    </nav>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <a href="#contact" class="btn btn-green nav-cta">💬 Message us</a>
+      <button class="burger" onclick="document.getElementById('mmenu').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="wrap mobile-menu" id="mmenu">
+    <a href="#pricing">Prices</a>
+    <a href="#how">How it works</a>
+    <a href="#areas">Areas</a>
+    <a href="#why">Why us</a>
+    <a href="#contact">Message us</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">🐾 Serving CF43 · CF44 · CF45</span>
+      <h1>We handle the poo,<br>so <span class="green">you don't have to.</span></h1>
+      <p class="lead">Weekly and fortnightly garden clean‑ups for dog owners across Aberdare and the valley. Pet‑safe products, biodegradable bags, no mess left behind.</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn btn-green">💬 Get a free quote</a>
+        <a href="#pricing" class="btn btn-outline" style="border-color:rgba(255,255,255,0.5);color:#fff;">See our prices</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><b>From £10</b><span>per clean</span></div>
+        <div class="hero-stat"><b>100%</b><span>waste removed</span></div>
+        <div class="hero-stat"><b>CF43–45</b><span>local &amp; reliable</span></div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="hero-photo-frame">
+        <img src="assets/hero-garden.jpg" alt="A Dalmatian and a grey cat sitting nose to nose in a sunny, tidy back garden" fetchpriority="high">
+      </div>
+      <div class="hero-badge-chip">
+        <span class="paw-ic">🐾</span>
+        <span>Every garden, pet‑safe &amp; mess‑free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="pricing" style="background:var(--paper);position:relative;">
+  <div class="paw-trail" id="trail2"></div>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="section-head reveal">
+      <span class="kicker">Price guide</span>
+      <h2>Straightforward pricing, by garden and visit</h2>
+      <svg class="squiggle" viewBox="0 0 72 10" width="72" height="10" aria-hidden="true"><path d="M2 6 Q8 1 14 6 T26 6 T38 6 T50 6 T62 6" fill="none" stroke="#3F8F29" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <p>Every price includes full waste removal. Choose weekly for the tidiest gardens, or fortnightly if a clean up now and then suits you better.</p>
+    </div>
+
+    <div class="price-tabs">
+      <button class="tab-btn active" data-tab="weekly">Weekly clean‑ups</button>
+      <button class="tab-btn" data-tab="fortnightly">Fortnightly clean‑ups</button>
+    </div>
+
+    <div class="price-panel active" id="weekly">
+      <div class="price-cards reveal-group">
+        <div class="price-card"><span class="label"><span class="tier-ic">🏡</span>Small garden, 1 pet</span><span class="tag">From £10</span></div>
+        <div class="price-card"><span class="label"><span class="tier-ic">🏡</span>Small garden, 2 pets</span><span class="tag">From £12</span></div>
+        <div class="price-card"><span class="label"><span class="tier-ic">🏠</span>Medium garden, 1 pet</span><span class="tag">From £12</span></div>
+        <div class="price-card"><span class="label"><span class="tier-ic">🏠</span>Medium garden, 2 pets</span><span class="tag">From £15</span></div>
+        <div class="price-card"><span class="label"><span class="tier-ic">🌳</span>Larger gardens, multiple pets or trickier areas</span><span class="tag">From £18</span></div>
+      </div>
+    </div>
+    <div class="price-panel" id="fortnightly">
+      <div class="price-cards reveal-group">
+        <div class="price-card"><span class="label"><span class="tier-ic">🏡</span>Small garden, 1 pet</span><span class="tag">£12 – £15</span></div>
+        <div class="price-card"><span class="label"><span class="tier-ic">🏡</span>Small garden, 2 pets</span><span class="tag">£15 – £18</span></div>
+        <div class="price-card"><span class="label"><span class="tier-ic">🏠</span>Medium garden, 1 pet</span><span class="tag">£15 – £18</span></div>
+        <div class="price-card"><span class="label"><span class="tier-ic">🏠</span>Medium garden, 2 pets</span><span class="tag">From £20</span></div>
+        <div class="price-card"><span class="label"><span class="tier-ic">🌳</span>Larger gardens, multiple pets or trickier areas</span><span class="tag">From £25</span></div>
+      </div>
+    </div>
+
+    <div class="price-note">
+      🧾 <strong>First cleans</strong> usually start from £20, depending on build‑up, long grass, decking or awkward spots. <strong>Bag collection only</strong> (you scoop, we take it away) starts from £10, standard black bag from £12–£15.
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="padding-bottom:0;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">See the difference</span>
+      <h2>What a visit from Scoop Patrol actually changes</h2>
+      <svg class="squiggle" viewBox="0 0 72 10" width="72" height="10" aria-hidden="true"><path d="M2 6 Q8 1 14 6 T26 6 T38 6 T50 6 T62 6" fill="none" stroke="#3F8F29" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <p>Same garden, same fence — the only thing missing after we've been is the mess.</p>
+    </div>
+    <div class="compare-grid reveal-group">
+      <div class="compare-card">
+        <svg class="art" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of an overgrown garden with pet waste scattered across the lawn">
+          <rect x="0" y="120" width="300" height="80" fill="#B9B08C"/>
+          <rect x="0" y="112" width="300" height="10" fill="#A69C77"/>
+          <g fill="#D8D0B8">
+            <rect x="18" y="70" width="10" height="46"/>
+            <rect x="48" y="62" width="10" height="54"/>
+            <rect x="78" y="70" width="10" height="46"/>
+            <rect x="222" y="70" width="10" height="46"/>
+            <rect x="252" y="62" width="10" height="54"/>
+            <rect x="282" y="70" width="10" height="46"/>
+          </g>
+          <g fill="#8a7f5c" opacity="0.55">
+            <path d="M40 150 Q30 130 45 118" stroke="#8a7f5c" stroke-width="4" fill="none"/>
+            <path d="M70 158 Q64 138 76 124" stroke="#8a7f5c" stroke-width="4" fill="none"/>
+            <path d="M230 150 Q238 130 224 118" stroke="#8a7f5c" stroke-width="4" fill="none"/>
+          </g>
+          <g fill="#6B4A2F">
+            <ellipse cx="95" cy="160" rx="16" ry="9"/>
+            <ellipse cx="150" cy="178" rx="20" ry="10"/>
+            <ellipse cx="205" cy="155" rx="14" ry="8"/>
+            <ellipse cx="130" cy="140" rx="10" ry="6"/>
+          </g>
+        </svg>
+        <div class="cap">
+          <span class="compare-tag before">Before</span>
+          <h3>Overgrown &amp; overdue</h3>
+          <p>Build‑up across the lawn, patchy grass, and a job that's easy to keep putting off.</p>
+        </div>
+      </div>
+      <div class="compare-card">
+        <svg class="art" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of the same garden after a clean, tidy with a paw print trail and a checkmark">
+          <rect x="0" y="120" width="300" height="80" fill="#4CA22F"/>
+          <rect x="0" y="112" width="300" height="10" fill="#3F8F29"/>
+          <g fill="#F2F6EE">
+            <rect x="18" y="70" width="10" height="46"/>
+            <rect x="48" y="62" width="10" height="54"/>
+            <rect x="78" y="70" width="10" height="46"/>
+            <rect x="222" y="70" width="10" height="46"/>
+            <rect x="252" y="62" width="10" height="54"/>
+            <rect x="282" y="70" width="10" height="46"/>
+          </g>
+          <g stroke="#8FD46A" stroke-width="4" fill="none" stroke-linecap="round">
+            <path d="M40 150 Q30 130 45 118"/>
+            <path d="M70 158 Q64 138 76 124"/>
+            <path d="M230 150 Q238 130 224 118"/>
+            <path d="M150 165 Q144 142 158 126"/>
+          </g>
+          <g fill="#14294D" opacity="0.85">
+            <g transform="translate(110,168) rotate(-8) scale(0.6)"><circle cx="0" cy="14" r="9"/><circle cx="-11" cy="-2" r="5"/><circle cx="0" cy="-8" r="5.5"/><circle cx="11" cy="-2" r="5"/></g>
+            <g transform="translate(150,150) rotate(6) scale(0.6)"><circle cx="0" cy="14" r="9"/><circle cx="-11" cy="-2" r="5"/><circle cx="0" cy="-8" r="5.5"/><circle cx="11" cy="-2" r="5"/></g>
+            <g transform="translate(190,168) rotate(-4) scale(0.6)"><circle cx="0" cy="14" r="9"/><circle cx="-11" cy="-2" r="5"/><circle cx="0" cy="-8" r="5.5"/><circle cx="11" cy="-2" r="5"/></g>
+          </g>
+          <g transform="translate(150,95)">
+            <circle r="17" fill="#fff"/>
+            <path d="M-7 0.5 L-2 6 L8 -7" stroke="#3F8F29" stroke-width="3.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+        <div class="cap">
+          <span class="compare-tag after">After</span>
+          <h3>Clean, clear, patrolled</h3>
+          <p>Every visible bit of waste removed and taken away — just a fresh lawn, ready to use.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" style="background:var(--paper);padding-top:0;">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="kicker">What customers say</span>
+      <h2>Trusted by dog owners across the valley</h2>
+      <svg class="squiggle" viewBox="0 0 72 10" width="72" height="10" aria-hidden="true"><path d="M2 6 Q8 1 14 6 T26 6 T38 6 T50 6 T62 6" fill="none" stroke="#3F8F29" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <p>Real feedback from real customers — no invented reviews here.</p>
+    </div>
+    <div class="reviews-grid reveal-group">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Scoop Patrol went above and beyond for me. Out of their area, but still made every effort to help me with my poop problem (not actually mine, the dogs 😂). Extremely friendly, very quick responses and understanding of my work commitments in terms of allowing me to pay after I had finished work. I couldn't be happier with the service and very happy I found these guys! If ya need some poop scooped, give these guys a shout! 🐾"</p>
+        <div class="review-who">
+          <span class="review-avatar">A</span>
+          <div><b>Anne</b><span>Scoop Patrol customer</span></div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p>"Myles and Sabrina are extremely helpful and do a brilliant thorough job. I am super impressed and my garden now smells amazing and no longer like dog 💩. Thank you both, I'll see you in 2 weeks."</p>
+        <div class="review-who">
+          <span class="review-avatar">L</span>
+          <div><b>Laura</b><span>Scoop Patrol customer</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad trust-band" style="padding:56px 0;">
+  <div class="wrap">
+    <div class="trust-bar">
+      <div class="trust-item reveal">
+        <span class="trust-ic">📸</span>
+        <div><b>Photos help us quote fairly</b><span>Send a snap for an accurate price</span></div>
+      </div>
+      <div class="trust-item reveal">
+        <span class="trust-ic">🌿</span>
+        <div><b>Waste taken away, always</b><span>Included in every single clean</span></div>
+      </div>
+      <div class="trust-item reveal">
+        <span class="trust-ic">🐾</span>
+        <div><b>Pet‑safe &amp; biodegradable</b><span>Kind to gardens, pets and the planet</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="why" style="background:var(--paper);">
+  <div class="wrap">
+    <div class="why-split">
+      <div class="why-copy reveal">
+        <span class="kicker">Why Scoop Patrol</span>
+        <h2>Run by two people who actually turn up</h2>
+        <svg class="squiggle" viewBox="0 0 72 10" width="72" height="10" aria-hidden="true"><path d="M2 6 Q8 1 14 6 T26 6 T38 6 T50 6 T62 6" fill="none" stroke="#3F8F29" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <p class="lead-sm">Sabrina and Myles built Scoop Patrol because Aberdare didn't have a reliable, friendly local option for this. Small enough to care, consistent enough to trust.</p>
+        <ul class="check-list">
+          <li><span class="check-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#3F8F29" stroke-width="1.6"/><path d="M6 10.2l2.5 2.5L14 7" stroke="#3F8F29" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Local &amp; two‑person run</li>
+          <li><span class="check-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#3F8F29" stroke-width="1.6"/><path d="M6 10.2l2.5 2.5L14 7" stroke="#3F8F29" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>No contracts, cancel anytime</li>
+          <li><span class="check-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#3F8F29" stroke-width="1.6"/><path d="M6 10.2l2.5 2.5L14 7" stroke="#3F8F29" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Recurring or one‑off cleans</li>
+          <li><span class="check-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#3F8F29" stroke-width="1.6"/><path d="M6 10.2l2.5 2.5L14 7" stroke="#3F8F29" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fair, upfront pricing</li>
+          <li><span class="check-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#3F8F29" stroke-width="1.6"/><path d="M6 10.2l2.5 2.5L14 7" stroke="#3F8F29" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Pet‑safe &amp; biodegradable</li>
+          <li><span class="check-ic"><svg width="18" height="18" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#3F8F29" stroke-width="1.6"/><path d="M6 10.2l2.5 2.5L14 7" stroke="#3F8F29" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span>No app, no faff — just message</li>
+        </ul>
+        <a href="#contact" class="btn btn-green">💬 Get a free quote</a>
+      </div>
+      <div class="why-art reveal">
+        <div class="why-art-frame">
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a tidy garden with a white picket fence, green lawn and a trail of paw prints">
+            <rect width="480" height="360" fill="#BFE3F7"/>
+            <circle cx="400" cy="70" r="70" fill="#9BCFEA" opacity="0.5"/>
+            <rect x="0" y="230" width="480" height="130" fill="#3F8F29"/>
+            <rect x="0" y="222" width="480" height="12" fill="#2E6B1E"/>
+            <g fill="#F2F6EE">
+              <rect x="40" y="160" width="14" height="70"/>
+              <rect x="80" y="148" width="14" height="82"/>
+              <rect x="120" y="160" width="14" height="70"/>
+              <rect x="330" y="160" width="14" height="70"/>
+              <rect x="370" y="148" width="14" height="82"/>
+              <rect x="410" y="160" width="14" height="70"/>
+            </g>
+            <g fill="#6B4A2F" opacity="0.9">
+              <ellipse cx="200" cy="235" rx="26" ry="14"/>
+              <ellipse cx="430" cy="240" rx="20" ry="11"/>
+            </g>
+            <g fill="#DCEFD3" opacity="0.9">
+              <ellipse cx="196" cy="222" rx="30" ry="16"/>
+              <ellipse cx="426" cy="228" rx="22" ry="13"/>
+            </g>
+            <g fill="#14294D" opacity="0.9">
+              <g transform="translate(150,300) rotate(-10) scale(1.1)"><circle cx="0" cy="14" r="9"/><circle cx="-11" cy="-2" r="5"/><circle cx="0" cy="-8" r="5.5"/><circle cx="11" cy="-2" r="5"/></g>
+              <g transform="translate(210,278) rotate(6) scale(1.1)"><circle cx="0" cy="14" r="9"/><circle cx="-11" cy="-2" r="5"/><circle cx="0" cy="-8" r="5.5"/><circle cx="11" cy="-2" r="5"/></g>
+              <g transform="translate(270,300) rotate(-6) scale(1.1)"><circle cx="0" cy="14" r="9"/><circle cx="-11" cy="-2" r="5"/><circle cx="0" cy="-8" r="5.5"/><circle cx="11" cy="-2" r="5"/></g>
+              <g transform="translate(330,278) rotate(8) scale(1.1)"><circle cx="0" cy="14" r="9"/><circle cx="-11" cy="-2" r="5"/><circle cx="0" cy="-8" r="5.5"/><circle cx="11" cy="-2" r="5"/></g>
+            </g>
+          </svg>
+        </div>
+        <div class="stat-chip">
+          <b>2</b>
+          <span>Friendly faces, same team every visit</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="how" style="position:relative;">
+  <div class="paw-trail" id="trail1"><!-- filled by JS --></div>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="section-head reveal">
+      <span class="kicker">The route</span>
+      <h2>Three steps, every visit</h2>
+      <svg class="squiggle" viewBox="0 0 72 10" width="72" height="10" aria-hidden="true"><path d="M2 6 Q8 1 14 6 T26 6 T38 6 T50 6 T62 6" fill="none" stroke="#3F8F29" stroke-width="2.4" stroke-linecap="round"/></svg>
+      <p>No contracts to sign over the phone, no awkward small talk required — just message us, get a price, and we're on patrol.</p>
+    </div>
+    <div class="steps reveal-group">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Message us</h3>
+        <p>Tell us your area, garden size and number of pets. A photo helps us give the fairest quote, especially for first cleans or larger gardens.</p>
+        <span class="step-tag">Message‑only</span>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>We quote it fairly</h3>
+        <p>Weekly, fortnightly or one‑off — we'll confirm your price up front. First cleans with a build‑up are priced separately, no surprises later.</p>
+        <span class="step-tag">Same‑day quote</span>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>We patrol &amp; clear</h3>
+        <p>We clear every visible bit of waste from your garden and take it away with us. No mess left behind — just a clean, fresh lawn.</p>
+        <span class="step-tag">Mess‑free, guaranteed</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="areas" style="position:relative;background:var(--paper);">
+  <div class="paw-trail" id="trail3"></div>
+  <div class="wrap" style="position:relative;z-index:2;">
+    <div class="areas-wrap">
+      <div>
+        <span class="kicker">Where we patrol</span>
+        <h2 style="font-size:clamp(1.7rem,3.4vw,2.2rem);color:var(--navy);margin-bottom:16px;">Aberdare and the surrounding valley</h2>
+        <svg class="squiggle" viewBox="0 0 72 10" width="72" height="10" aria-hidden="true" style="margin-bottom:16px;"><path d="M2 6 Q8 1 14 6 T26 6 T38 6 T50 6 T62 6" fill="none" stroke="#3F8F29" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <p style="color:#4a5266;margin-bottom:18px;">If you're local to any of these postcode areas, we can likely fit your garden onto a regular route.</p>
+        <div>
+          <span class="postcode-pill">📍 CF43</span>
+          <span class="postcode-pill">📍 CF44</span>
+          <span class="postcode-pill">📍 CF45</span>
+        </div>
+        <p style="margin-top:20px;font-size:0.9rem;color:#8a8f9a;">Just outside the map? Message us anyway — we're expanding the round regularly.</p>
+      </div>
+      <div class="valley-map">
+        <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;" role="img" aria-label="Stylised map showing the CF44 Aberdare, CF43 Aberaman and Cwmaman, and CF45 Mountain Ash areas covered">
+          <rect x="0" y="0" width="400" height="320" rx="14" fill="#F5F6F0"/>
+          <path d="M20 260 Q90 180 160 220 Q230 260 300 190 Q350 150 380 190 L380 300 L20 300 Z" fill="#BFE3F7" opacity="0.5"/>
+          <path d="M0 230 Q80 150 150 195 Q220 240 300 165 Q345 128 400 165" stroke="#3F8F29" stroke-width="10" fill="none" stroke-linecap="round" opacity="0.55"/>
+          <g font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" fill="#14294D">
+            <circle cx="120" cy="150" r="7" fill="#14294D"/><text x="132" y="154">CF44 — Aberdare</text>
+            <circle cx="240" cy="110" r="7" fill="#3F8F29"/><text x="252" y="114">CF43 — Aberaman / Cwmaman</text>
+            <circle cx="90" cy="220" r="7" fill="#6B4A2F"/><text x="102" y="224">CF45 — Mountain Ash</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="contact">
+  <div class="cta-band">
+    <span class="eyebrow" style="background:rgba(191,227,247,0.14);border-color:rgba(191,227,247,0.35);">🐾 Free quote</span>
+    <h2>Ready for a fresh garden?</h2>
+    <p>Message us your postcode, garden size and number of pets — we'll come back with a fair price the same day.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/447760541636?text=Hi%20Scoop%20Patrol%2C%20I'd%20like%20a%20quote%20for..." class="btn btn-green">💬 Message us on WhatsApp</a>
+      <a href="tel:+447760541636" class="btn btn-cream">📞 Give us a call</a>
+    </div>
+    <div class="cta-trustline">
+      <span>Pet‑safe &amp; biodegradable</span>
+      <span>Waste always removed</span>
+      <span>CF43 · CF44 · CF45</span>
+      <span>Message‑only booking</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/logo.jpg" alt="Scoop Patrol Aberdare logo" width="38" height="38">
+          <span>Scoop Patrol Aberdare</span>
+        </div>
+        <p>We handle the poo, so you don't have to. Pet waste garden clean‑ups across Aberdare and the surrounding valley.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="#pricing">Prices</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#areas">Areas we cover</a></li>
+          <li><a href="#why">Why us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="foot-contact">
+          <li><span class="foot-ic">💬</span><a href="https://wa.me/447760541636?text=Hi%20Scoop%20Patrol%2C%20I'd%20like%20a%20quote%20for..." style="text-decoration:none;">WhatsApp: 07760 541636</a></li>
+          <li><span class="foot-ic">📞</span><a href="tel:+447760541636" style="text-decoration:none;">07760 541636</a></li>
+          <li><span class="foot-ic">📍</span>CF43 · CF44 · CF45</li>
+          <li><span class="foot-ic">🕓</span>Mon–Sat</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom-line">© 2026 Scoop Patrol Aberdare. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // mobile menu close on link click
+  document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{
+    document.getElementById('mmenu').classList.remove('open');
+  }));
+
+  // pricing tabs
+  document.querySelectorAll('.tab-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+      document.querySelectorAll('.price-panel').forEach(p=>p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // paw trail generator: draws a vertical dotted paw-print path down each section
+  function buildTrail(container, count){
+    if(!container) return;
+    const h = container.parentElement.offsetHeight || 600;
+    const w = container.offsetWidth || 220;
+    container.style.height = h + 'px';
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns,'svg');
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    const amp = w*0.21;
+    for(let i=0;i<count;i++){
+      const t = i/(count-1);
+      const y = 40 + t*(h-80);
+      const x = w/2 + Math.sin(t*Math.PI*2.2)*amp;
+      const rot = Math.sin(t*Math.PI*2.2)*24;
+      const g = document.createElementNS(ns,'g');
+      g.setAttribute('class','paw');
+      g.setAttribute('transform', `translate(${x},${y}) rotate(${rot}) scale(0.9)`);
+      g.innerHTML = `
+        <circle cx="0" cy="14" r="9" fill="#14294D"/>
+        <circle cx="-11" cy="-2" r="5" fill="#14294D"/>
+        <circle cx="0" cy="-9" r="5.5" fill="#14294D"/>
+        <circle cx="11" cy="-2" r="5" fill="#14294D"/>
+      `;
+      svg.appendChild(g);
+    }
+    container.innerHTML='';
+    container.appendChild(svg);
+  }
+  let trailObs = null;
+  function rebuildAllTrails(){
+    buildTrail(document.getElementById('trail1'), 5);
+    buildTrail(document.getElementById('trail2'), 6);
+    buildTrail(document.getElementById('trail3'), 4);
+    if(trailObs) trailObs.disconnect();
+    trailObs = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in-view'); });
+    }, {threshold:0.4});
+    document.querySelectorAll('.paw').forEach(p=>trailObs.observe(p));
+  }
+  window.addEventListener('load', rebuildAllTrails);
+  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(rebuildAllTrails); }
+  let resizeTimer;
+  window.addEventListener('resize', ()=>{
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(rebuildAllTrails, 200);
+  });
+
+  // scroll-reveal: fade+rise section heads and card grids into view once
+  const revealObs = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in-view');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.15});
+  document.querySelectorAll('.reveal, .reveal-group').forEach(el=>revealObs.observe(el));
+
+  // playful scroll progress bar with a walking paw marker
+  const fill = document.getElementById('scrollFill');
+  let ticking = false;
+  function updateProgress(){
+    const doc = document.documentElement;
+    const scrollable = doc.scrollHeight - doc.clientHeight;
+    const pct = scrollable > 0 ? (doc.scrollTop / scrollable) * 100 : 0;
+    if(fill) fill.style.width = Math.min(100, Math.max(0, pct)) + '%';
+    ticking = false;
+  }
+  window.addEventListener('scroll', ()=>{
+    if(!ticking){
+      requestAnimationFrame(updateProgress);
+      ticking = true;
+    }
+  });
+  updateProgress();
+</script>
+
+</body>
+</html>
