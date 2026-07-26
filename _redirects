@@ -1,0 +1,6 @@
+# Old structure -> new. See build.mjs.
+/pricing                  /services/pricing                      301
+/cat-litter-collection    /services/pet-waste-collection#cat-litter  301
+/bag-collection-only      /services/pet-waste-collection         301
+/areas                    /#areas                                301
+/areas/*                  /#areas                                301

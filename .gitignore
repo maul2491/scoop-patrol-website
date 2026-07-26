@@ -1,3 +1,6 @@
 .DS_Store
 Thumbs.db
 .claude/
+
+# Original full-resolution photos — kept locally, not needed in the repo
+_source-images/
