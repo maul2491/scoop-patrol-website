@@ -14,14 +14,14 @@ const SECTORS = [
   ['🔑', 'Landlords &amp; lettings', 'Gardens left in a state between tenancies, or shared outdoor space at a multi-let property that nobody takes responsibility for. We clear it, sanitise it and take the waste away, so the next viewing isn\'t the problem it was going to be.'],
   ['🐕', 'Dog daycare', 'High traffic, lots of dogs, and an odour problem that builds fast if it isn\'t stayed on top of. Regular scheduled visits keep runs and outdoor areas usable, and every collection comes with a Waste Transfer Note for your records.'],
   ['🌳', 'Dog walking fields', 'Open ground where waste is easy to miss and customers notice immediately when it\'s been missed. We work to a schedule that suits your booking pattern, including early or late slots around your busiest times.'],
-  ['✂️', 'Pet groomers', 'Smaller volumes, but commercial waste all the same — which means it can\'t legally go into household collections. We collect on a rhythm that suits you and document it properly.'],
+  ['✂️', 'Pet groomers', 'Smaller volumes, but commercial waste all the same, which means it can\'t legally go into household collections. We collect on a rhythm that suits you and document it properly.'],
   ['🐾', 'Dog breeders', 'Runs, whelping areas and exercise yards need clearing and sanitising consistently, not occasionally. We\'ll work to whatever frequency your setup needs.'],
 ];
 
 export const commercial = page({
   slug: 'commercial',
   nav: 'commercial',
-  title: 'Commercial Pet Waste Removal — Landlords, Daycares & Kennels | RCT',
+  title: 'Commercial Pet Waste Removal, Landlords, Daycares & Kennels | RCT',
   description: 'Commercial pet waste removal and collection across Rhondda Cynon Taf. NRW registered upper tier waste carrier, fully insured, DBS checked. Quotes tailored to your site.',
   trail: [HOME, { name: 'Commercial Services', href: '/commercial' }],
   schema: [serviceSchema({ serviceType: 'Commercial pet waste removal' })],
@@ -58,7 +58,7 @@ export const commercial = page({
       </div>
     </div>
     <div class="callout callout-green" style="margin-top:30px;">
-      <p><strong>Why this matters to you.</strong> As a business, you have a duty of care for waste produced on your premises. Using a registered carrier and keeping the Waste Transfer Note is how you meet it — and it's what an inspector will ask to see.</p>
+      <p><strong>Why this matters to you.</strong> As a business, you have a duty of care for waste produced on your premises. Using a registered carrier and keeping the Waste Transfer Note is how you meet it, and it's what an inspector will ask to see.</p>
       <p>${NRW_FULL}</p>
     </div>
   </div>
@@ -78,7 +78,7 @@ export const commercial = page({
   <div class="wrap wrap-narrow">
     ${sectionHead({ kicker: 'Artificial surfaces', h2: 'Artificial grass and hard standing' })}
     <div class="prose">
-      <p>Daycares and dog walking fields with artificial grass get the same pet-safe sanitising treatment as part of every visit, not as an extra. Odour on artificial surfaces is a real operational problem — it's what customers comment on first — and most operators clearing waste won't treat for it at all.</p>
+      <p>Daycares and dog walking fields with artificial grass get the same pet-safe sanitising treatment as part of every visit, not as an extra. Odour on artificial surfaces is a real operational problem. It's what customers comment on first, and most operators clearing waste won't treat for it at all.</p>
       <p>As with our residential work, we'll be straight with you about the limits: regular treatment keeps odour from building up, but where urine has already reached the infill or sub-base, that needs specialist restoration rather than routine cleaning. <a class="text-link" href="/services/garden-cleans#surfaces">More on how we handle surfaces →</a></p>
     </div>
   </div>
@@ -87,7 +87,7 @@ export const commercial = page({
   <div class="wrap wrap-narrow">
     ${sectionHead({ kicker: 'Pricing', h2: 'Quoted around your site' })}
     <div class="prose">
-      <p>Commercial sites are quoted individually — it depends on site size, waste volume and how often you need us. Tell us about your site and we'll come back with a fair price.</p>
+      <p>Commercial sites are quoted individually. It depends on site size, waste volume and how often you need us. Tell us about your site and we'll come back with a fair price.</p>
     </div>
   </div>
 </section>`,
@@ -106,7 +106,7 @@ export const commercial = page({
 export const about = page({
   slug: 'about',
   nav: 'about',
-  title: 'About Scoop Patrol Aberdare — Myles & Sabrina, Your Local Team',
+  title: 'About Scoop Patrol Aberdare, Myles & Sabrina, Your Local Team',
   description: 'Scoop Patrol Aberdare is a local, two-person pet waste removal service run by Myles and Sabrina across Rhondda Cynon Taf. NRW registered, DBS checked, fully insured.',
   trail: [HOME, { name: 'About', href: '/about' }],
   body: [
@@ -114,7 +114,7 @@ export const about = page({
       trail: [HOME, { name: 'About', href: '/about' }],
       kicker: 'About us',
       h1: 'For families, busy schedules and those who need support',
-      lead: 'Scoop Patrol is Myles and Sabrina — two people, one van, and a round that covers our own valley.',
+      lead: 'Scoop Patrol is Myles and Sabrina, two people, one van, and a round that covers our own valley.',
     }),
     `<section class="pad tight" style="background:var(--paper);">
   <div class="wrap">
@@ -125,7 +125,7 @@ export const about = page({
         ${squiggle()}
         <div class="prose">
           <p>We started Scoop Patrol because we saw the community needed a helping hand. Especially for those struggling on their own. That's why we do what we do, to keep every space clean and every neighbour supported.</p>
-          <p>Some of our customers are simply busy — two jobs, small children, and a garden that keeps losing the argument. Others have mobility problems, or are recovering from surgery, or have reached a point where bending and lifting isn't realistic any more. A few have been genuinely embarrassed to ask. Nobody should be.</p>
+          <p>Some of our customers are simply busy: two jobs, small children, and a garden that keeps losing the argument. Others have mobility problems, or are recovering from surgery, or have reached a point where bending and lifting isn't realistic any more. A few have been genuinely embarrassed to ask. Nobody should be.</p>
           <p>It's the same job either way, and we treat it the same way: turn up when we said we would, do it properly, take the waste with us, and never make anyone feel awkward about needing the help.</p>
         </div>
       </div>
@@ -151,7 +151,7 @@ export const about = page({
   <div class="wrap">
     ${sectionHead({ kicker: 'Local means local', h2: 'We live on the round we clean' })}
     <div class="prose wrap-narrow" style="padding:0;">
-      <p>Scoop Patrol isn't a franchise with a call centre somewhere else. We're based in Aberdare, we work across Rhondda Cynon Taf, and the gardens on our round belong to our neighbours. That's the whole business — which is also why we'd rather fix a problem than argue about one.</p>
+      <p>Scoop Patrol isn't a franchise with a call centre somewhere else. We're based in Aberdare, we work across Rhondda Cynon Taf, and the gardens on our round belong to our neighbours. That's the whole business, and it is why we'd rather fix a problem than argue about one.</p>
       <p>If you message us, you're messaging Myles or Sabrina. Same two people every visit, so you always know who's coming.</p>
     </div>
   </div>
@@ -192,7 +192,7 @@ export const about = page({
 // /faq
 // ---------------------------------------------------------------------------
 // `text` is the canonical wording and is what goes into FAQPage schema.
-// `html` is the same wording with links added — schema must match on-page text.
+// `html` is the same wording with links added, schema must match on-page text.
 
 const FAQ_GROUPS = [
   ['Pricing', [
@@ -221,11 +221,11 @@ const FAQ_GROUPS = [
     },
     {
       q: 'Do I need to be home?',
-      text: 'No — as long as we can access the garden. Just tell us how to get in (side gate code, etc.) when you book.',
+      text: 'No, as long as we can access the garden. Just tell us how to get in (side gate code, etc.) when you book.',
     },
     {
       q: 'Do you still clean in winter?',
-      text: 'Yes. We clean and collect all year round, rain or shine — waste doesn\'t stop in bad weather.',
+      text: 'Yes. We clean and collect all year round, rain or shine, waste doesn\'t stop in bad weather.',
     },
     {
       q: 'Do you sanitise as well as clear?',
@@ -235,8 +235,8 @@ const FAQ_GROUPS = [
   ['Collections', [
     {
       q: 'What if I already bag my own waste?',
-      text: 'That\'s our collection service — you bag it, we take it away. From £10.',
-      html: 'That\'s our <a class="text-link" href="/services/pet-waste-collection">collection service</a> — you bag it, we take it away. From £10.',
+      text: 'That\'s our collection service, you bag it, we take it away. From £10.',
+      html: 'That\'s our <a class="text-link" href="/services/pet-waste-collection">collection service</a>, you bag it, we take it away. From £10.',
     },
     {
       q: 'Do you collect cat litter?',
@@ -247,7 +247,7 @@ const FAQ_GROUPS = [
   ['Areas &amp; booking', [
     {
       q: 'What areas do you cover?',
-      text: `Across Rhondda Cynon Taf — ${AREAS.join(', ')}, covering the ${POSTCODE_DISTRICTS.slice(0, -1).join(', ')} and ${POSTCODE_DISTRICTS.slice(-1)} postcode districts. Just outside? Message us anyway, we're expanding the round regularly.`,
+      text: `Across Rhondda Cynon Taf, ${AREAS.join(', ')}, covering the ${POSTCODE_DISTRICTS.slice(0, -1).join(', ')} and ${POSTCODE_DISTRICTS.slice(-1)} postcode districts. Just outside? Message us anyway, we're expanding the round regularly.`,
     },
     {
       q: 'How do I get a quote?',
@@ -262,11 +262,11 @@ const FAQ_GROUPS = [
   ['Surfaces', [
     {
       q: 'Do you clean patios, decking and artificial grass too?',
-      text: 'Yes — they\'re cleared and treated as part of your clean, not charged separately. Every visit includes treating the area with our pet-safe deodorising and sanitising spray.',
+      text: 'Yes, they\'re cleared and treated as part of your clean, not charged separately. Every visit includes treating the area with our pet-safe deodorising and sanitising spray.',
     },
     {
       q: 'Why does my artificial grass still smell after I hose it?',
-      text: 'Because urine soaks past the surface into the backing, and rinsing only dilutes what\'s on top. Regular clearing and sanitising keeps it from building up. If it\'s been left a long time and the smell has reached the infill or sub-base, regular treatment will help but may not fully fix it — at that point you may need a specialist restoration or infill replacement, which isn\'t something we offer.',
+      text: 'Because urine soaks past the surface into the backing, and rinsing only dilutes what\'s on top. Regular clearing and sanitising keeps it from building up. If it\'s been left a long time and the smell has reached the infill or sub-base, regular treatment will help but may not fully fix it, at that point you may need a specialist restoration or infill replacement, which isn\'t something we offer.',
     },
     {
       q: 'What do you use on artificial grass?',
@@ -276,7 +276,7 @@ const FAQ_GROUPS = [
   ['Compliance', [
     {
       q: 'What happens to the waste you collect?',
-      text: `We're a registered upper tier waste carrier with Natural Resources Wales (${SITE.nrwNumber}), so everything we collect is transported and disposed of legally — never fly-tipped, never quietly put into household waste. You're welcome to check our registration on the NRW public register.`,
+      text: `We're a registered upper tier waste carrier with Natural Resources Wales (${SITE.nrwNumber}), so everything we collect is transported and disposed of legally, never fly-tipped, never quietly put into household waste. You're welcome to check our registration on the NRW public register.`,
     },
     {
       q: 'Are you insured?',
@@ -284,7 +284,7 @@ const FAQ_GROUPS = [
     },
     {
       q: 'Are your products safe for pets and children?',
-      text: 'Yes — pet-safe products and biodegradable bags throughout.',
+      text: 'Yes, pet-safe products and biodegradable bags throughout.',
     },
   ]],
 ];
@@ -302,7 +302,7 @@ const faqSchema = {
 export const faq = page({
   slug: 'faq',
   nav: 'faq',
-  title: 'FAQs — Pet Waste Removal & Collection in Aberdare & RCT',
+  title: 'FAQs, Pet Waste Removal & Collection in Aberdare & RCT',
   description: 'Answers on pricing, frequency, what happens to the waste, areas covered, and how booking works for pet waste garden clean-ups across Rhondda Cynon Taf.',
   trail: [HOME, { name: 'FAQ', href: '/faq' }],
   schema: [faqSchema],
@@ -345,7 +345,7 @@ function slugify(s) {
 export const contact = page({
   slug: 'contact',
   nav: 'contact',
-  title: 'Contact Scoop Patrol Aberdare — Get a Free Quote',
+  title: 'Contact Scoop Patrol Aberdare, Get a Free Quote',
   description: 'Get a free same-day quote for pet waste garden clean-ups and collections across Rhondda Cynon Taf. Message us on WhatsApp or use the quote form.',
   trail: [HOME, { name: 'Contact', href: '/contact' }],
   body: [
@@ -353,7 +353,7 @@ export const contact = page({
       trail: [HOME, { name: 'Contact', href: '/contact' }],
       kicker: 'Get in touch',
       h1: 'Get a free quote',
-      lead: 'Tell us your postcode, garden size and number of pets and we\'ll come back with a fair price — usually the same day.',
+      lead: 'Tell us your postcode, garden size and number of pets and we\'ll come back with a fair price, usually the same day.',
     }),
     `<section class="pad tight" style="background:var(--paper);">
   <div class="wrap contact-split">
@@ -363,7 +363,7 @@ export const contact = page({
       <ul class="contact-methods">
         <li>
           <span class="contact-ic contact-ic-wa">${icons.whatsapp}</span>
-          <div><b>WhatsApp</b><a href="${WA_LINK}" data-analytics="whatsapp-contact-page">${SITE.phoneDisplay}</a><span>Fastest — most quotes go out the same day.</span></div>
+          <div><b>WhatsApp</b><a href="${WA_LINK}" data-analytics="whatsapp-contact-page">${SITE.phoneDisplay}</a><span>Fastest, most quotes go out the same day.</span></div>
         </li>
         <li>
           <span class="contact-ic">${icons.phone}</span>
@@ -375,7 +375,7 @@ export const contact = page({
         </li>
         <li>
           <span class="contact-ic">${icons.pin}</span>
-          <div><b>Areas we cover</b><span>${AREAS.join(', ')} — and the surrounding Rhondda Cynon Taf area. Just outside? Message us anyway.</span></div>
+          <div><b>Areas we cover</b><span>${AREAS.join(', ')}, and the surrounding Rhondda Cynon Taf area. Just outside? Message us anyway.</span></div>
         </li>
       </ul>
     </div>
@@ -390,7 +390,7 @@ export const contact = page({
     ctaBand({
       eyebrow: 'Prefer to just message?',
       heading: 'One message is all it takes',
-      body: 'Send us your postcode, garden size and number of pets — a photo helps us give the fairest price.',
+      body: 'Send us your postcode, garden size and number of pets, a photo helps us give the fairest price.',
     }),
   ].join('\n\n'),
 });

@@ -10,7 +10,7 @@ const HOME = { name: 'Home', href: '/' };
 const SERVICES = { name: 'Services', href: '/services' };
 
 // ---------------------------------------------------------------------------
-// /services — hub
+// /services, hub
 // ---------------------------------------------------------------------------
 
 const HUB_CARDS = [
@@ -49,7 +49,7 @@ const HUB_CARDS = [
 export const servicesIndex = page({
   slug: 'services',
   nav: 'services',
-  title: 'Our Services — Pet Waste Clean-ups & Collections | Scoop Patrol',
+  title: 'Our Services, Pet Waste Clean-ups & Collections | Scoop Patrol',
   description: 'Pet waste garden clean-ups, collections, cat litter add-on and commercial services across Aberdare and Rhondda Cynon Taf. NRW registered waste carrier.',
   trail: [HOME, SERVICES],
   body: [
@@ -57,7 +57,7 @@ export const servicesIndex = page({
       trail: [HOME, SERVICES],
       kicker: 'Our services',
       h1: 'Everything we do, in one place',
-      lead: 'Regular and one-off pet waste clean-ups and collections across Rhondda Cynon Taf — for family gardens and commercial sites alike.',
+      lead: 'Regular and one-off pet waste clean-ups and collections across Rhondda Cynon Taf, for family gardens and commercial sites alike.',
     }),
     `<section class="pad" style="background:var(--paper);">
   <div class="wrap">
@@ -96,7 +96,7 @@ const PRICING_FAQ = [
 export const pricing = page({
   slug: 'services/pricing',
   nav: 'services',
-  title: 'Pet Waste Removal Prices Rhondda Cynon Taf | From £10 — Scoop Patrol Aberdare',
+  title: 'Pet Waste Removal Prices Rhondda Cynon Taf | From £10, Scoop Patrol Aberdare',
   description: 'Weekly, fortnightly and one-off pet waste garden clean-up prices across Aberdare and RCT. From £10 per clean, waste always taken away. Same-day quotes.',
   trail: [HOME, SERVICES, { name: 'Pricing', href: '/services/pricing' }],
   schema: [serviceSchema({
@@ -114,7 +114,7 @@ export const pricing = page({
       trail: [HOME, SERVICES, { name: 'Pricing', href: '/services/pricing' }],
       kicker: 'Pricing',
       h1: 'Tailored pricing for your garden\'s unique needs',
-      lead: 'Every price includes full waste removal — nothing extra to collect, nothing left behind.',
+      lead: 'Every price includes full waste removal, nothing extra to collect, nothing left behind.',
     }),
     `<section class="pad" style="background:var(--paper);">
   <div class="wrap">
@@ -138,18 +138,18 @@ export const pricing = page({
     ${sectionHead({ kicker: 'More ways we can help', h2: 'Other services and pricing' })}
     <div class="related-grid reveal-group">
       <a class="related-card" href="/services/pet-waste-collection">
-        <b>Pet waste collection — from £10</b>
+        <b>Pet waste collection, from £10</b>
         <p>Already bag your own waste? We'll collect it and dispose of it legally. Small bags from £10, standard black bags £12–£15, larger bags and bins quoted individually.</p>
         <span>See collections →</span>
       </a>
       <a class="related-card" href="/services/pet-waste-collection#cat-litter">
-        <b>Cat litter add-on — £3 per bag</b>
+        <b>Cat litter add-on, £3 per bag</b>
         <p>Bagged cat litter collected alongside your scheduled garden clean. One visit, one less job.</p>
         <span>See the cat litter add-on →</span>
       </a>
     </div>
     <div class="price-note" style="margin-top:26px;">
-      🏢 <strong>Commercial sites are quoted individually</strong> — it depends on site size, waste volume and how often you need us. <a class="text-link" href="/commercial">See Commercial Services →</a>
+      🏢 <strong>Commercial sites are quoted individually</strong>. It depends on site size, waste volume and how often you need us. <a class="text-link" href="/commercial">See Commercial Services →</a>
     </div>
   </div>
 </section>`,
@@ -171,15 +171,15 @@ export const pricing = page({
 // ---------------------------------------------------------------------------
 
 const FREQUENCY_CARDS = [
-  ['Weekly', 'The most popular choice. Keeps a garden consistently tidy and low-odour, and each visit is quicker because there\'s less to clear — which is why it costs less per visit.'],
+  ['Weekly', 'The most popular choice. Keeps a garden consistently tidy and low-odour, and each visit is quicker because there\'s less to clear, which is why it costs less per visit.'],
   ['Fortnightly', 'Suits smaller, single-pet gardens where build-up is slower. Each visit takes a little longer, so the per-visit price is higher than weekly.'],
-  ['One-off', 'A single clean whenever you need one — before visitors, before a house move, or just to reset a garden that\'s got away from you. No commitment to anything after it.'],
+  ['One-off', 'A single clean whenever you need one, before visitors, before a house move, or just to reset a garden that\'s got away from you. No commitment to anything after it.'],
 ];
 
 export const gardenCleans = page({
   slug: 'services/garden-cleans',
   nav: 'services',
-  title: 'Pet Waste Garden Clean-Ups in Aberdare & RCT — Scoop Patrol Aberdare',
+  title: 'Pet Waste Garden Clean-Ups in Aberdare & RCT, Scoop Patrol Aberdare',
   description: 'Weekly, fortnightly and one-off pet waste garden clean-ups across Rhondda Cynon Taf. Pet-safe sanitising, waste always taken away. NRW registered.',
   trail: [HOME, SERVICES, { name: 'Pet Waste Garden Cleans', href: '/services/garden-cleans' }],
   schema: [serviceSchema({
@@ -203,11 +203,11 @@ export const gardenCleans = page({
   <div class="wrap wrap-narrow">
     ${sectionHead({ kicker: 'What you get', h2: 'What a clean actually includes' })}
     <div class="prose">
-      <p>Every visit covers the whole garden, not just the lawn — patios, paths, decking and artificial grass are all cleared and treated as part of the same clean, at no extra charge.</p>
+      <p>Every visit covers the whole garden, not just the lawn. Patios, paths, decking and artificial grass are all cleared and treated as part of the same clean, at no extra charge.</p>
       <ul class="tick-list">
         <li>Full clearance of visible pet waste across every surface</li>
         <li>Treatment with our pet-safe deodorising and sanitising spray</li>
-        <li>All waste bagged and taken away — nothing left in your bin</li>
+        <li>All waste bagged and taken away, nothing left in your bin</li>
         <li>Legal disposal under our NRW waste carrier registration</li>
       </ul>
     </div>
@@ -221,7 +221,7 @@ export const gardenCleans = page({
       ${FREQUENCY_CARDS.map(([h, p]) => `<div class="factor-card"><h3>${h}</h3><p>${p}</p></div>`).join('\n      ')}
     </div>
     <div class="price-note" style="margin-top:26px;">
-      🧾 <strong>First cleans.</strong> If there's already a build-up — long grass, decking, stones, slate or artificial grass — the first visit takes considerably longer, so it's priced separately, usually from £20 depending on what's there. After that you're onto your normal rate.
+      🧾 <strong>First cleans.</strong> If there's already a build-up, long grass, decking, stones, slate or artificial grass, the first visit takes considerably longer, so it's priced separately, usually from £20 depending on what's there. After that you're onto your normal rate.
     </div>
     <p class="section-foot"><a class="text-link" href="/services/pricing">See full pricing →</a></p>
   </div>
@@ -231,7 +231,7 @@ export const gardenCleans = page({
     ${sectionHead({ kicker: 'Surfaces', h2: 'Patios, decking and artificial grass' })}
     <div class="prose">
       <p>We don't just do lawns. Patios, paths, decking and artificial grass all get cleared and treated as part of your clean.</p>
-      <p>Artificial grass is the one people ask about most. Urine soaks past the surface into the backing, which is why hosing it down doesn't shift the smell. Every visit, we clear the waste and treat the area with our pet-safe deodorising and sanitising spray — so odour is kept on top of rather than allowed to build up.</p>
+      <p>Artificial grass is the one people ask about most. Urine soaks past the surface into the backing, which is why hosing it down doesn't shift the smell. Every visit, we clear the waste and treat the area with our pet-safe deodorising and sanitising spray, so odour is kept on top of rather than allowed to build up.</p>
       <div class="callout">
         <h3>Being straight about what this is</h3>
         <p>This is part of a regular clean, not a separate deep-clean or restoration service. Regular visits prevent build-up; they won't undo years of saturation.</p>
@@ -259,7 +259,7 @@ export const gardenCleans = page({
 export const petWasteCollection = page({
   slug: 'services/pet-waste-collection',
   nav: 'services',
-  title: 'Pet Waste & Cat Litter Collection — Aberdare & RCT | Scoop Patrol',
+  title: 'Pet Waste & Cat Litter Collection, Aberdare & RCT | Scoop Patrol',
   description: 'Already bag your own pet waste or cat litter? We collect and dispose of it legally. Collections from £10 across Rhondda Cynon Taf. NRW registered waste carrier.',
   trail: [HOME, SERVICES, { name: 'Pet Waste Collection', href: '/services/pet-waste-collection' }],
   schema: [
@@ -286,7 +286,7 @@ export const petWasteCollection = page({
     pageHero({
       trail: [HOME, SERVICES, { name: 'Pet Waste Collection', href: '/services/pet-waste-collection' }],
       kicker: 'Collections',
-      h1: 'Pet waste collection — you bag it, we take it away',
+      h1: 'Pet waste collection, you bag it, we take it away',
       lead: 'Some customers already collect and bag their own pet waste but don\'t want the job of storing it or getting it to the bin. That\'s exactly what this is for.',
     }),
     `<section class="pad tight" style="background:var(--paper);">
@@ -304,7 +304,7 @@ export const petWasteCollection = page({
     </div>
     <div class="prose" style="margin-top:26px;">
       <h3>Regular or one-off</h3>
-      <p>Collections work either way. Most customers settle into a weekly or fortnightly rhythm that lines up with their own routine, but a single one-off collection is absolutely fine — say after a clear-out, or when storage has got on top of you.</p>
+      <p>Collections work either way. Most customers settle into a weekly or fortnightly rhythm that lines up with their own routine, but a single one-off collection is absolutely fine: say after a clear-out, or when storage has got on top of you.</p>
       <h3>Who it's for</h3>
       <p>Customers who already have their own routine and don't need a garden clean, or who simply have nowhere to store bagged waste between council collections. If you'd rather we did the clearing too, that's our <a class="text-link" href="/services/garden-cleans">garden clean service</a>.</p>
     </div>
@@ -318,7 +318,7 @@ export const petWasteCollection = page({
         <p>${NRW_FULL}</p>
         <p><strong>${NRW_MEANS}</strong></p>
       </div>
-      <p>When you hand waste over to someone else, where it ends up stops being something you can see. That's exactly why carrier registration exists — and why it's worth checking, whoever you use. Most local operators aren't registered. We are, and the number above is yours to verify.</p>
+      <p>When you hand waste over to someone else, where it ends up stops being something you can see. That's exactly why carrier registration exists, and why it is worth checking, whoever you use. Most local operators aren't registered. We are, and the number above is yours to verify.</p>
     </div>
   </div>
 </section>`,
@@ -326,20 +326,20 @@ export const petWasteCollection = page({
   <div class="wrap wrap-narrow">
     ${sectionHead({ kicker: 'Add-on', h2: 'Cat litter collection add-on' })}
     <div class="prose">
-      <p>Got a cat as well as a dog? We'll take your bagged litter away at the same time as your garden clean — one visit, one less job.</p>
+      <p>Got a cat as well as a dog? We'll take your bagged litter away at the same time as your garden clean, one visit, one less job.</p>
       <h3>How it works</h3>
-      <p>Bag your used litter as you normally would and leave it out ready for your scheduled visit. We'll collect it alongside your garden clean and take it away with us. There's no separate call-out to arrange and nothing extra for you to do on the day — if you're already on the round, it simply gets added to the visit you've already got booked.</p>
+      <p>Bag your used litter as you normally would and leave it out ready for your scheduled visit. We'll collect it alongside your garden clean and take it away with us. There's no separate call-out to arrange and nothing extra for you to do on the day, if you're already on the round, it simply gets added to the visit you've already got booked.</p>
       <h3>What it costs</h3>
       <p><strong>£3 per bag</strong>, collected during an existing visit. As a worked example, a standard weekly clean at £15 plus four bags of litter at £3 each comes to £27 for the week.</p>
       <div class="callout">
-        <p><strong>One thing to be clear about:</strong> this is an add-on to a scheduled visit, not a standalone service. We don't currently offer cat-litter-only collection without a garden clean or waste collection booked alongside it. If that's what you're after, message us anyway — if there's enough demand it's something we'd look at.</p>
+        <p><strong>One thing to be clear about:</strong> this is an add-on to a scheduled visit, not a standalone service. We don't currently offer cat-litter-only collection without a garden clean or waste collection booked alongside it. If that's what you're after, message us anyway, if there's enough demand it's something we'd look at.</p>
       </div>
     </div>
   </div>
 </section>`,
     ctaBand({
       heading: 'Ready to hand it over?',
-      body: 'Message us with your area and roughly how much you need collected — we\'ll quote it fairly, usually the same day.',
+      body: 'Message us with your area and roughly how much you need collected, we\'ll quote it fairly, usually the same day.',
     }),
   ].join('\n\n'),
 });

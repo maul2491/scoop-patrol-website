@@ -113,7 +113,7 @@ export function pricingTabs() {
 
 export function priceNote() {
   return `<div class="price-note">
-      🧾 <strong>First cleans</strong> usually start from £20, depending on build-up, long grass, decking, stones, slate or artificial grass. <strong>Bag collection only</strong> starts from £10 — standard black bag £12–£15, larger bags and bins quoted individually.
+      🧾 <strong>First cleans</strong> usually start from £20, depending on build-up, long grass, decking, stones, slate or artificial grass. <strong>Bag collection only</strong> starts from £10, standard black bag £12–£15, larger bags and bins quoted individually.
     </div>`;
 }
 
@@ -144,7 +144,7 @@ export function compareSlider() {
 }
 
 // --- Reviews (plan §6.5) ----------------------------------------------------
-// Genuine 5-star ratings left on external platforms. Displayed only — no Review
+// Genuine 5-star ratings left on external platforms. Displayed only, no Review
 // or AggregateRating schema, deliberately (see plan §6.5).
 
 const REVIEWS = [
@@ -232,7 +232,7 @@ export function whoWeWorkWith() {
 
 const STEPS = [
   ['01', 'Arrival and Greeting', 'We always knock and say hi before we begin so you know we\'re here.'],
-  ['02', 'Waste Cleared', 'We carefully remove all pet waste to leave your garden clean and ready — lawn, patio, decking and artificial grass alike.'],
+  ['02', 'Waste Cleared', 'We carefully remove all pet waste to leave your garden clean and ready across lawn, patio, decking and artificial grass alike.'],
   ['03', 'Pet-Safe Sanitising', 'We treat the area with our pet-safe deodorising and sanitising spray to help remove germs, reduce the risk of infection and keep your garden fresh.'],
   ['04', 'Fresh Finish', 'All waste is removed, the area is fresh and clean and you can enjoy your garden worry-free.'],
 ];
@@ -241,9 +241,8 @@ export function whatToExpect({ heading = true } = {}) {
   const steps = STEPS.map(([n, h, p]) =>
     `<div class="step"><div class="step-num">${n}</div><h3>${h}</h3><p>${p}</p></div>`
   ).join('\n      ');
-  return `<section class="pad" id="what-to-expect" style="position:relative;">
-  <div class="paw-trail" id="trail1"></div>
-  <div class="wrap" style="position:relative;z-index:2;">
+  return `<section class="pad" id="what-to-expect">
+  <div class="wrap">
     ${heading ? sectionHead({
       kicker: 'What to expect',
       h2: 'Simple and easy for you, whether cleaning or collecting',
@@ -312,7 +311,7 @@ export function quoteForm({ id = 'quoteForm' } = {}) {
         ${select('source', 'How did you hear about us?', SELECTS.source, false, 'Optional')}
       </div>
 
-      <p class="form-photo-note">📷 Send us a photo of your garden on WhatsApp once you've submitted — it helps us quote fairly, especially for first cleans.</p>
+      <p class="form-photo-note">📷 Send us a photo of your garden on WhatsApp once you've submitted, it helps us quote fairly, especially for first cleans.</p>
 
       <div class="field field-consent">
         <label class="consent">

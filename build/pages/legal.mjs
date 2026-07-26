@@ -1,12 +1,12 @@
 // Legal pages, transcribed from scoop-patrol-legal-policies.md.
 // Unresolved values are rendered via todo() so they are visually obvious and
-// greppable — nothing here is invented.
+// greppable, nothing here is invented.
 import { page, pageHero, ctaBand, SITE, TEL_LINK } from '../site.mjs';
 
 const HOME = { name: 'Home', href: '/' };
 
 // Renders an unfilled placeholder from the source document.
-const todo = label => `<mark class="todo-token" title="Placeholder — replace before publishing">[${label}]</mark>`;
+const todo = label => `<mark class="todo-token" title="Placeholder, replace before publishing">[${label}]</mark>`;
 
 const EMAIL = todo('EMAIL ADDRESS');
 const ADDRESS = todo('BUSINESS ADDRESS');
@@ -49,7 +49,7 @@ ${body}
 export const privacyPolicy = legalPage({
   slug: 'privacy-policy',
   navTitle: 'Privacy Policy',
-  title: 'Privacy Policy — Scoop Patrol Aberdare',
+  title: 'Privacy Policy, Scoop Patrol Aberdare',
   description: 'How Scoop Patrol Aberdare collects, uses and protects your personal information.',
   kicker: 'Legal',
   h1: 'Privacy Policy',
@@ -67,11 +67,11 @@ export const privacyPolicy = legalPage({
       <h3>When you use our quote form</h3>
       <p>Your name, phone number, email address (if you give one), your location and postcode, the service you're asking about, garden size, number of dogs and cats, how often you'd like us to visit, any access details you share, anything you write in the additional information box, and how you heard about us.</p>
       <h3>When you message us on WhatsApp or call us</h3>
-      <p>Your phone number, your name, and whatever you tell us in the conversation. WhatsApp messages are handled through WhatsApp itself — see “Messaging us on WhatsApp” below.</p>
+      <p>Your phone number, your name, and whatever you tell us in the conversation. WhatsApp messages are handled through WhatsApp itself. See “Messaging us on WhatsApp” below.</p>
       <h3>When you become a customer</h3>
       <p>The above, plus your address, your visit schedule, what we did on each visit, and a record of payments.</p>
       <h3>When you visit our website</h3>
-      <p>Anonymous, aggregated statistics only — pages viewed, roughly where in the world visitors are, what device they used, and which site referred them. We don't use tracking cookies and we can't identify you from this. Full detail is in our <a class="text-link" href="/cookie-policy">Cookie Policy</a>.</p>
+      <p>Anonymous, aggregated statistics only: pages viewed, roughly where in the world visitors are, what device they used, and which site referred them. We don't use tracking cookies and we can't identify you from this. Full detail is in our <a class="text-link" href="/cookie-policy">Cookie Policy</a>.</p>
       <h3>Photos</h3>
       <p>If you send us a photo of your garden to help us quote, we keep it only as long as we need it to give you a price and complete the work.</p>
       <p><strong>We don't collect</strong> any special category data (health, ethnicity, beliefs and so on), and we don't buy personal data from third parties.</p>
@@ -85,7 +85,7 @@ export const privacyPolicy = legalPage({
             <tr><td>Schedule and carry out your visits</td><td>To do the job you've booked</td><td>Performance of a contract</td></tr>
             <tr><td>Take payment and keep accounting records</td><td>To run the business and meet HMRC obligations</td><td>Contract, and legal obligation</td></tr>
             <tr><td>Keep waste transfer records</td><td>We're legally required to as a registered waste carrier</td><td>Legal obligation</td></tr>
-            <tr><td>Understand how our website is used</td><td>To improve the site</td><td>Legitimate interests — and the data is anonymous and aggregated</td></tr>
+            <tr><td>Understand how our website is used</td><td>To improve the site</td><td>Legitimate interests, and the data is anonymous and aggregated</td></tr>
             <tr><td>Contact you about your existing service</td><td>To keep you informed about visits you've booked</td><td>Contract</td></tr>
           </tbody>
         </table>
@@ -98,7 +98,7 @@ export const privacyPolicy = legalPage({
       <ul>
         <li><strong>Our accountant and HMRC</strong>, for tax and accounting records</li>
         <li><strong>Our website and analytics provider (Cloudflare)</strong>, which hosts the site and provides anonymous visitor statistics</li>
-        <li><strong>Waste disposal facilities</strong>, where a Waste Transfer Note legally requires the producer's details — this applies to commercial customers</li>
+        <li><strong>Waste disposal facilities</strong>, where a Waste Transfer Note legally requires the producer's details. This applies to commercial customers</li>
         <li><strong>Anyone we're legally required to share it with</strong>, such as a regulator or a court order</li>
       </ul>
 
@@ -114,7 +114,7 @@ export const privacyPolicy = legalPage({
             <tr><td>Customer records, invoices and payments</td><td>6 years after your last transaction, as required for tax records</td></tr>
             <tr><td>Waste transfer records</td><td>As required by waste regulations</td></tr>
             <tr><td>Photos you send us</td><td>Deleted once the quote or job is complete, unless you've given us permission to use them</td></tr>
-            <tr><td>Website statistics</td><td>Aggregated and anonymous — not linked to you at any point</td></tr>
+            <tr><td>Website statistics</td><td>Aggregated and anonymous, not linked to you at any point</td></tr>
           </tbody>
         </table>
       </div>
@@ -136,7 +136,7 @@ export const privacyPolicy = legalPage({
       <p>To exercise any of these, email us at ${EMAIL}. We'll respond within one month, and it's free.</p>
 
       <h2>Complaints</h2>
-      <p>If you're unhappy with how we've handled your information, please tell us first — we'd rather put it right. If you're still not satisfied, you can complain to the Information Commissioner's Office at <a class="text-link" href="https://ico.org.uk" rel="noopener" target="_blank">ico.org.uk</a>, or by calling 0303 123 1113.</p>
+      <p>If you're unhappy with how we've handled your information, please tell us first, we'd rather put it right. If you're still not satisfied, you can complain to the Information Commissioner's Office at <a class="text-link" href="https://ico.org.uk" rel="noopener" target="_blank">ico.org.uk</a>, or by calling 0303 123 1113.</p>
 
       <h2>Keeping your information safe</h2>
       <p>We keep customer records in access-controlled accounts protected by strong passwords and two-factor authentication. Only Myles and Sabrina have access. We don't keep paper records of customer details beyond what's needed for a day's round, and those are destroyed afterwards.</p>
@@ -155,13 +155,13 @@ export const privacyPolicy = legalPage({
 export const cookiePolicy = legalPage({
   slug: 'cookie-policy',
   navTitle: 'Cookie Policy',
-  title: 'Cookie Policy — Scoop Patrol Aberdare',
+  title: 'Cookie Policy, Scoop Patrol Aberdare',
   description: 'Scoop Patrol Aberdare uses no tracking or advertising cookies. Here\'s what we do use, and why there\'s no cookie banner.',
   kicker: 'Legal',
   h1: 'Cookie Policy',
   body: `
       <h2>The short version</h2>
-      <p><strong>We don't use tracking or advertising cookies.</strong> We don't build a profile of you, we don't follow you across other websites, and we don't share anything with advertisers. That's why you won't see a cookie consent banner on this site — there's nothing to consent to.</p>
+      <p><strong>We don't use tracking or advertising cookies.</strong> We don't build a profile of you, we don't follow you across other websites, and we don't share anything with advertisers. That's why you won't see a cookie consent banner on this site, there's nothing to consent to.</p>
 
       <h2>How we measure website visits</h2>
       <p>We use <strong>Cloudflare Web Analytics</strong> to understand how the site is being used. It's cookieless: it doesn't store anything on your device and doesn't use any persistent identifier to recognise you.</p>
@@ -183,7 +183,7 @@ export const cookiePolicy = legalPage({
       <p>The statistics are aggregated. We can see that thirty people looked at our pricing page last week; we cannot see that you were one of them.</p>
 
       <h2>Cookies our hosting provider sets</h2>
-      <p>Our site runs on Cloudflare, which may set a small number of <strong>strictly necessary</strong> cookies to keep the site secure and working — for example, telling genuine visitors apart from automated bots and blocking malicious traffic.</p>
+      <p>Our site runs on Cloudflare, which may set a small number of <strong>strictly necessary</strong> cookies to keep the site secure and working, for example, telling genuine visitors apart from automated bots and blocking malicious traffic.</p>
       <p>These are security and functionality cookies, not tracking cookies. They don't collect information for advertising and aren't used to build a profile of you. Cookies of this kind are exempt from the consent requirement, which is the other reason there's no banner on this site.</p>
 
       <h2>Why there's no cookie banner</h2>
@@ -194,7 +194,7 @@ export const cookiePolicy = legalPage({
       <p>You can block or delete cookies through your browser settings at any time. Doing so won't affect your use of this site, though blocking strictly necessary cookies may affect how some websites function generally.</p>
 
       <h2>If this changes</h2>
-      <p>If we ever add something that requires consent — advertising pixels, an embedded video player, a live chat widget — we'll add a proper consent banner and update this page before it goes live. We'll never quietly start tracking you.</p>
+      <p>If we ever add something that requires consent, advertising pixels, an embedded video player, a live chat widget, we'll add a proper consent banner and update this page before it goes live. We'll never quietly start tracking you.</p>
 
       <h2>Questions</h2>
       <p>Email ${EMAIL}.</p>`,
@@ -208,18 +208,18 @@ const TERMS = [
   ['Who we are', `<p>Scoop Patrol Aberdare is ${STRUCTURE}, trading from ${ADDRESS}. We're a registered upper tier waste carrier with Natural Resources Wales, registration number ${SITE.nrwNumber}, and we're fully insured.</p>
       <p>Contact: ${EMAIL} · <a href="${TEL_LINK}">${SITE.phoneDisplay}</a></p>`],
 
-  ['What these terms cover', `<p>These terms apply when you book any of our services — garden clean-ups, pet waste collection, or the cat litter add-on. By booking, you're agreeing to them. Please read them before you book.</p>
+  ['What these terms cover', `<p>These terms apply when you book any of our services, garden clean-ups, pet waste collection, or the cat litter add-on. By booking, you're agreeing to them. Please read them before you book.</p>
       <p>Nothing in these terms affects your legal rights as a consumer.</p>`],
 
   ['Quotes and prices', `<ul>
-        <li>Quotes are based on the information you give us — garden size, number of pets, how often you'd like us to visit, and any photos you send.</li>
+        <li>Quotes are based on the information you give us, garden size, number of pets, how often you'd like us to visit, and any photos you send.</li>
         <li><strong>If what we find on arrival is significantly different from what was described</strong>, we'll tell you before starting and either agree a revised price with you or reschedule. We won't do extra work and bill you for it afterwards without asking.</li>
         <li>Prices are shown “from” a figure because every garden is different. Your actual price is the one we confirm to you directly, and that's the price that applies.</li>
         <li>First cleans on a garden with a build-up are quoted separately.</li>
         <li>Commercial sites are quoted individually.</li>
       </ul>`],
 
-  ['Booking and your right to cancel', `<p><strong>Your 14-day cancellation right.</strong> Because you book with us remotely — by message, phone or through our website — you have the right to cancel within 14 days of booking, without giving a reason.</p>
+  ['Booking and your right to cancel', `<p><strong>Your 14-day cancellation right.</strong> Because you book with us remotely, by message, phone or through our website, you have the right to cancel within 14 days of booking, without giving a reason.</p>
       <p><strong>If you want us to start sooner than that</strong>, which most people do, just tell us. By asking us to begin within the 14-day period, you're agreeing that:</p>
       <ul>
         <li>If we've fully completed the service before the 14 days are up, you lose the right to cancel that service</li>
@@ -230,7 +230,7 @@ const TERMS = [
   ['Ongoing visits, changing and cancelling', `<ul>
         <li><strong>No contracts.</strong> Weekly and fortnightly arrangements continue until you tell us otherwise.</li>
         <li><strong>Cancel or change any time</strong> by giving us at least 24 hours' notice before a scheduled visit.</li>
-        <li><strong>Less than 24 hours' notice</strong>, or we arrive and can't get access, and we may charge for the visit. We'll always try to be reasonable — one-off mishaps happen and we'd rather keep a customer than charge for a wasted trip.</li>
+        <li><strong>Less than 24 hours' notice</strong>, or we arrive and can't get access, and we may charge for the visit. We'll always try to be reasonable, one-off mishaps happen and we'd rather keep a customer than charge for a wasted trip.</li>
         <li>You can switch between weekly, fortnightly and one-off whenever you like.</li>
       </ul>`],
 
@@ -238,28 +238,28 @@ const TERMS = [
       <ul>
         <li>Gates are unlocked, or we have the code or key arrangement agreed in advance</li>
         <li>The route to the garden is clear and safe</li>
-        <li>We know about anything we should be aware of — a broken step, a fragile gate, works in progress</li>
+        <li>We know about anything we should be aware of, a broken step, a fragile gate, works in progress</li>
       </ul>
       <p><strong>You don't need to be home.</strong> If we arrive and can't get access, we'll message you before leaving and section 5 applies.</p>`],
 
   ['Your pets', `<ul>
-        <li><strong>Please secure dogs indoors during our visit.</strong> Not because we don't like them — we very much do — but because loose dogs make it harder to do the job properly and safely, and we'd rather not risk a gate being left open.</li>
+        <li><strong>Please secure dogs indoors during our visit.</strong> Not because we don't like them, we very much do, but because loose dogs make it harder to do the job properly and safely, and we'd rather not risk a gate being left open.</li>
         <li>Tell us in advance if a pet is nervous, reactive, or has any history of biting.</li>
         <li>We're not responsible for a pet escaping through a gate or door that was left open by someone else, or for a pet's behaviour towards us.</li>
       </ul>`],
 
-  ['Pet health and cross-contamination', `<p>Please tell us in advance if your dog has, or recently had, a contagious illness — parvovirus, kennel cough, giardia, a worm infestation or similar.</p>
-      <p>This isn't us being fussy. We visit several gardens a day, and some of those homes have puppies, elderly dogs or dogs with weak immune systems. Knowing in advance lets us disinfect our equipment thoroughly between properties, or reschedule you to the end of the round. We'd never turn you away for it — we just need to know.</p>
+  ['Pet health and cross-contamination', `<p>Please tell us in advance if your dog has, or recently had, a contagious illness, parvovirus, kennel cough, giardia, a worm infestation or similar.</p>
+      <p>This isn't us being fussy. We visit several gardens a day, and some of those homes have puppies, elderly dogs or dogs with weak immune systems. Knowing in advance lets us disinfect our equipment thoroughly between properties, or reschedule you to the end of the round. We'd never turn you away for it, we just need to know.</p>
       <p>We disinfect our tools and footwear between properties as standard.</p>`],
 
   ['Sanitiser and surfaces', `<p>Every clean includes treating the area with our pet-safe deodorising and sanitising spray.</p>
       <ul>
-        <li><strong>Please keep pets and children off the treated area until it's dry</strong> — usually around 20–30 minutes, longer in cold or damp weather. Pet-safe means safe once dry, not safe to lick straight off the grass.</li>
+        <li><strong>Please keep pets and children off the treated area until it's dry</strong>, usually around 20–30 minutes, longer in cold or damp weather. Pet-safe means safe once dry, not safe to lick straight off the grass.</li>
         <li>Tell us in advance about delicate planting, treated timber, or anything else you'd rather we didn't treat, and we'll work around it.</li>
         <li>We're not responsible for discolouration or damage to surfaces or planting we weren't told about.</li>
       </ul>
       <p><strong>Patios, decking and artificial grass.</strong> These are cleared and treated as part of your clean at no extra charge. Please tell us what type of artificial grass you have before your first visit so we can confirm the treatment is suitable.</p>
-      <p>To be clear about what this is: it's regular cleaning and sanitising, not a deep-clean or restoration service. Regular visits stop odour building up. Where artificial grass has been left a long time and urine has reached the infill or sub-base beneath, regular treatment will help but may not fully resolve it — that usually needs specialist restoration or infill replacement, which we don't offer. We'll tell you honestly if that's what we find rather than take payment for visits that won't fix the underlying problem.</p>`],
+      <p>To be clear about what this is: it's regular cleaning and sanitising, not a deep-clean or restoration service. Regular visits stop odour building up. Where artificial grass has been left a long time and urine has reached the infill or sub-base beneath, regular treatment will help but may not fully resolve it, that usually needs specialist restoration or infill replacement, which we don't offer. We'll tell you honestly if that's what we find rather than take payment for visits that won't fix the underlying problem.</p>`],
 
   ['Before we arrive', `<p>To let us work quickly and safely, please clear the garden of children's toys, garden furniture, tools and anything else in the way. We'll work around what's there, but we won't move or lift your belongings, and we're not responsible for anything left out that gets in the way of the job.</p>`],
 
@@ -289,7 +289,7 @@ const TERMS = [
       </ul>
       <p>We'll always explain why, and you'll only ever be charged for work already done.</p>`],
 
-  ['What we do, and what we can\'t promise', `<p>We clear the <strong>visible</strong> pet waste from your garden — lawn, patio, decking and artificial grass — and take it away with us. Every clean includes treating the area with our pet-safe deodorising and sanitising spray.</p>
+  ['What we do, and what we can\'t promise', `<p>We clear the <strong>visible</strong> pet waste from your garden, lawn, patio, decking and artificial grass, and take it away with us. Every clean includes treating the area with our pet-safe deodorising and sanitising spray.</p>
       <p>We'll be thorough, but in fairness we should say plainly:</p>
       <ul>
         <li>In long grass, dense planting, deep gravel, snow, leaf cover or poor light, some waste may not be visible. We can't guarantee finding every last piece.</li>
@@ -298,10 +298,10 @@ const TERMS = [
         <li>We can't remove staining or damage that waste has already caused to grass, decking or artificial surfaces.</li>
       </ul>`],
 
-  ['Weather and rescheduling', `<p>We work all year round, rain or shine. Occasionally severe weather — ice, storms, flooding — makes a visit unsafe or pointless. If that happens we'll message you, and either move the visit to the next available slot or skip it with no charge. We won't charge you for a visit we didn't make.</p>`],
+  ['Weather and rescheduling', `<p>We work all year round, rain or shine. Occasionally severe weather, ice, storms, flooding, makes a visit unsafe or pointless. If that happens we'll message you, and either move the visit to the next available slot or skip it with no charge. We won't charge you for a visit we didn't make.</p>`],
 
   ['Payment', `<ul>
-        <li><strong>Payment is due at the end of each visit.</strong> If you're not able to pay on the day, that's fine — a bank transfer shortly afterwards works just as well. We'll give you our details.</li>
+        <li><strong>Payment is due at the end of each visit.</strong> If you're not able to pay on the day, that's fine, a bank transfer shortly afterwards works just as well. We'll give you our details.</li>
         <li>We accept cash and bank transfer.</li>
         <li>If a payment is outstanding we'll send you a friendly reminder first. If an account stays overdue we may pause further visits until it's settled, and we'll tell you before we do.</li>
       </ul>`],
@@ -340,7 +340,7 @@ const termsToc = `<nav class="legal-toc" aria-label="On this page">
 export const terms = legalPage({
   slug: 'terms',
   navTitle: 'Terms & Conditions',
-  title: 'Terms & Conditions — Scoop Patrol Aberdare',
+  title: 'Terms & Conditions, Scoop Patrol Aberdare',
   description: 'The terms that apply when you book pet waste garden clean-ups or collections with Scoop Patrol Aberdare.',
   kicker: 'Legal',
   h1: 'Terms & Conditions',

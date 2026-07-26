@@ -40,6 +40,9 @@ section{position:relative;}
 /* ---------- icons ---------- */
 .ic{width:1.1em;height:1.1em;flex:none;}
 .ic-catdog{width:1.7em;height:1.05em;}
+/* The WhatsApp glyph is drawn edge-to-edge in its viewBox while the other
+   icons sit at ~78%, so it needs scaling down to match them optically. */
+.ic-wa{width:.92em;height:.92em;}
 .platform-ic{width:14px;height:14px;flex:none;}
 .star{width:15px;height:15px;}
 
@@ -78,8 +81,13 @@ nav a.is-current,.nav-dropdown-btn.is-current{color:var(--green-deep);}
 .nav-dropdown-btn{background:none;border:none;font-family:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:5px;padding:0;}
 .nav-dropdown-caret{font-size:.7em;transition:transform .2s ease;}
 .nav-dropdown.open .nav-dropdown-caret{transform:rotate(180deg);}
-.nav-dropdown-menu{position:absolute;top:calc(100% + 18px);left:50%;transform:translateX(-50%);background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 34px rgba(20,41,77,.18);padding:8px;display:none;flex-direction:column;min-width:262px;z-index:60;}
-.nav-dropdown.open .nav-dropdown-menu{display:flex;}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);background:var(--paper);border:1px solid var(--line);border-radius:14px;box-shadow:0 16px 34px rgba(20,41,77,.18);padding:8px;display:none;flex-direction:column;min-width:262px;z-index:60;}
+/* Bridges the visual gap between the button and the menu. Without it the
+   pointer leaves the <li> on the way down, mouseleave fires, and the menu
+   shuts before you can reach anything in it. */
+.nav-dropdown-menu::before{content:"";position:absolute;left:0;right:0;top:-18px;height:18px;}
+.nav-dropdown.open .nav-dropdown-menu,
+.nav-dropdown:focus-within .nav-dropdown-menu{display:flex;}
 .nav-dropdown-menu a{padding:10px 14px;border-radius:9px;font-weight:600;font-size:.86rem;white-space:nowrap;}
 .nav-dropdown-menu a::after{display:none;}
 .nav-dropdown-menu a:hover{background:rgba(63,143,41,.09);}
@@ -387,6 +395,7 @@ section.pad.tight{padding:60px 0;}
 .contact-methods li{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line);}
 .contact-ic{flex:none;width:40px;height:40px;border-radius:50%;background:rgba(63,143,41,.1);color:var(--green-deep);display:flex;align-items:center;justify-content:center;}
 .contact-ic .ic{width:20px;height:20px;}
+.contact-ic .ic-wa{width:16px;height:16px;}
 .contact-ic-wa{background:rgba(37,211,102,.14);color:#25D366;}
 .contact-methods b{display:block;color:var(--navy);font-size:.94rem;}
 .contact-methods a{display:block;color:var(--green-deep);font-weight:600;font-size:1rem;margin:2px 0;text-decoration:none;}
@@ -434,15 +443,13 @@ footer li a:hover{color:var(--green-deep);}
 .foot-contact li{display:flex;align-items:flex-start;gap:11px;}
 .foot-ic{flex:none;width:28px;height:28px;border-radius:50%;background:rgba(63,143,41,.1);color:var(--green-deep);display:flex;align-items:center;justify-content:center;}
 .foot-ic .ic{width:15px;height:15px;}
+.foot-ic .ic-wa{width:12px;height:12px;}
 .foot-ic-wa{background:rgba(37,211,102,.16);color:#25D366;}
+.foot-sub{padding-left:14px;position:relative;}
+.foot-sub::before{content:"";position:absolute;left:2px;top:.7em;width:6px;height:1.5px;background:var(--line);}
 .bottom-line{text-align:center;padding-top:28px;margin-top:32px;border-top:1px solid var(--line);font-size:.8rem;color:#8a8f9a;}
 
-/* ---------- paw trail + scroll progress ---------- */
-.paw-trail{position:absolute;left:50%;top:0;width:220px;height:100%;transform:translateX(-50%);pointer-events:none;z-index:1;opacity:.9;}
-@media(max-width:640px){.paw-trail{width:120px;opacity:.6;}}
-.paw-trail svg{width:100%;height:100%;}
-.paw{opacity:0;transform:scale(.6);transform-origin:center;transition:opacity .6s ease,transform .6s ease;}
-.paw.in-view{opacity:1;transform:scale(1);}
+/* ---------- scroll progress ---------- */
 .scroll-progress{position:fixed;top:0;left:0;width:100%;height:4px;z-index:200;background:rgba(20,41,77,.08);}
 .scroll-progress-fill{height:100%;width:0;background:var(--green);position:relative;transition:width .1s linear;}
 /* paw 1.5x previous size (plan §5.3) */
@@ -462,7 +469,6 @@ footer li a:hover{color:var(--green-deep);}
   html{scroll-behavior:auto;}
   .trust-ic,.hero-badge-chip .paw-ic,.step-num{animation:none;}
   .reveal,.reveal-group{transition:none;opacity:1;transform:none;}
-  .paw{transition:none;opacity:1;transform:scale(1);}
   .scroll-progress-fill{transition:none;}
   .family-crossfade .fx-b{animation:none;opacity:0;}
   .price-card:hover,.step:hover,.who-card:hover,.hub-card:hover,.related-card:hover{transform:none;}

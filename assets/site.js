@@ -314,56 +314,6 @@
   });
 
   // ---------------------------------------------------------------------
-  // Paw-print trail between sections
-  // ---------------------------------------------------------------------
-  var trailObs = null;
-  function buildTrail(container, count) {
-    if (!container) return;
-    var h = container.parentElement.offsetHeight || 600;
-    var w = container.offsetWidth || 220;
-    container.style.height = h + 'px';
-    var ns = 'http://www.w3.org/2000/svg';
-    var svg = document.createElementNS(ns, 'svg');
-    svg.setAttribute('viewBox', '0 0 ' + w + ' ' + h);
-    var amp = w * 0.21;
-    for (var i = 0; i < count; i++) {
-      var t = i / (count - 1);
-      var y = 40 + t * (h - 80);
-      var x = w / 2 + Math.sin(t * Math.PI * 2.2) * amp;
-      var rot = Math.sin(t * Math.PI * 2.2) * 24;
-      var g = document.createElementNS(ns, 'g');
-      g.setAttribute('class', 'paw');
-      g.setAttribute('transform', 'translate(' + x + ',' + y + ') rotate(' + rot + ') scale(0.9)');
-      g.innerHTML = '<circle cx="0" cy="14" r="9" fill="#14294D"/>'
-        + '<circle cx="-11" cy="-2" r="5" fill="#14294D"/>'
-        + '<circle cx="0" cy="-9" r="5.5" fill="#14294D"/>'
-        + '<circle cx="11" cy="-2" r="5" fill="#14294D"/>';
-      svg.appendChild(g);
-    }
-    container.innerHTML = '';
-    container.appendChild(svg);
-  }
-  function rebuildAllTrails() {
-    buildTrail(document.getElementById('trail1'), 5);
-    buildTrail(document.getElementById('trail2'), 6);
-    buildTrail(document.getElementById('trail3'), 4);
-    if (trailObs) trailObs.disconnect();
-    trailObs = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) e.target.classList.add('in-view');
-      });
-    }, { threshold: 0.4 });
-    document.querySelectorAll('.paw').forEach(function (p) { trailObs.observe(p); });
-  }
-  window.addEventListener('load', rebuildAllTrails);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(rebuildAllTrails);
-  var resizeTimer;
-  window.addEventListener('resize', function () {
-    window.clearTimeout(resizeTimer);
-    resizeTimer = window.setTimeout(rebuildAllTrails, 200);
-  });
-
-  // ---------------------------------------------------------------------
   // Scroll reveal
   // ---------------------------------------------------------------------
   var revealObs = new IntersectionObserver(function (entries) {

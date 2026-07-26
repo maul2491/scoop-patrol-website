@@ -43,9 +43,8 @@ function hero() {
 }
 
 function pricing() {
-  return `<section class="pad" id="pricing" style="background:var(--paper);position:relative;">
-  <div class="paw-trail" id="trail2"></div>
-  <div class="wrap" style="position:relative;z-index:2;">
+  return `<section class="pad" id="pricing" style="background:var(--paper);">
+  <div class="wrap">
     ${sectionHead({
       kicker: 'Our pricing',
       h2: 'Tailored pricing for your garden\'s unique needs',
@@ -107,9 +106,8 @@ function whereWePatrol() {
   const half = Math.ceil(AREAS.length / 2);
   const col = list => list.map(a =>
     `<li><span class="area-pin" aria-hidden="true">${icons.pin}</span>${a}</li>`).join('\n          ');
-  return `<section class="pad" id="areas" style="position:relative;background:var(--paper);">
-  <div class="paw-trail" id="trail3"></div>
-  <div class="wrap" style="position:relative;z-index:2;">
+  return `<section class="pad" id="areas" style="background:var(--paper);">
+  <div class="wrap">
     ${sectionHead({
       kicker: 'Where we patrol',
       h2: 'Aberdare and the surrounding areas',
@@ -141,7 +139,7 @@ function howToBook() {
         <h3>Booking a garden clean</h3>
         <ol>
           <li>Message us or fill in the quote form with your postcode, garden size and number of pets</li>
-          <li>Send a photo if you can — it helps us quote fairly, especially for first cleans</li>
+          <li>Send a photo if you can, it helps us quote fairly, especially for first cleans</li>
           <li>We confirm your price and a first visit date, usually the same day</li>
           <li>Choose weekly, fortnightly or a one-off</li>
         </ol>
@@ -151,7 +149,7 @@ function howToBook() {
         <ol>
           <li>Tell us roughly how much you need collected and how often</li>
           <li>We confirm a price and a collection day</li>
-          <li>Leave your bagged waste out on the day — you don't need to be home</li>
+          <li>Leave your bagged waste out on the day, you don't need to be home</li>
           <li>We collect, dispose of it legally, and you're done</li>
         </ol>
       </div>
