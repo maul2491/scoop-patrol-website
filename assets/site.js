@@ -343,6 +343,7 @@
         lines.push('Frequency: ' + val('frequency'));
       } else if (need === 'Collection') {
         lines.push('Number of bags: ' + val('bags'));
+        lines.push('Frequency: ' + val('collectionFrequency'));
         lines.push('Collection specifics: ' + (val('collectionSpecifics') || 'Not provided'));
       } else if (need === 'Not sure yet') {
         lines.push('Details: ' + val('unsureDetails'));

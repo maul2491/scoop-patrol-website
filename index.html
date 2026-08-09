@@ -621,6 +621,14 @@
         <p class="field-error" data-error-for="bags" hidden></p>
       </div>
         <div class="field">
+        <label for="collectionFrequency">How often? <span class="req" aria-hidden="true">*</span></label>
+        <select id="collectionFrequency" name="collectionFrequency" required>
+          <option value="" disabled selected>Please choose…</option>
+          <option value="Weekly">Weekly</option><option value="Fortnightly">Fortnightly</option><option value="One-off">One-off</option>
+        </select>
+        <p class="field-error" data-error-for="collectionFrequency" hidden></p>
+      </div>
+        <div class="field">
         <label for="collectionSpecifics">Collection specifics</label>
         <input type="text" id="collectionSpecifics" name="collectionSpecifics" maxlength="160">
         <p class="field-hint">e.g. where to find them, loose or bagged. Optional</p>

@@ -323,6 +323,7 @@ export function quoteForm({ id = 'quoteForm' } = {}) {
 
       <div class="form-grid form-branch" data-need-branch="Collection" hidden>
         ${select('bags', 'Number of bags', SELECTS.bags, true)}
+        ${select('collectionFrequency', 'How often?', SELECTS.frequency, true)}
         ${input('collectionSpecifics', 'Collection specifics', 'text', false, 'maxlength="160"', 'e.g. where to find them, loose or bagged. Optional')}
       </div>
 
