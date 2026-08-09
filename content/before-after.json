@@ -1,0 +1,12 @@
+{
+  "pairs": [
+    {
+      "before": "/assets/pet-waste-garden-clean-before-aberdare.jpg",
+      "beforeWebp": "/assets/pet-waste-garden-clean-before-aberdare.webp",
+      "beforeAlt": "An Aberdare garden before a Scoop Patrol pet waste clean-up, showing dog waste across the lawn",
+      "after": "/assets/pet-waste-garden-clean-after-aberdare.jpg",
+      "afterWebp": "/assets/pet-waste-garden-clean-after-aberdare.webp",
+      "afterAlt": "The same Aberdare garden after a Scoop Patrol pet waste clean-up, with all dog waste cleared from the lawn"
+    }
+  ]
+}

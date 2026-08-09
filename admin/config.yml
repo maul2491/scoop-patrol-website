@@ -1,0 +1,142 @@
+# Decap CMS configuration for Scoop Patrol Aberdare.
+#
+# Edits made here commit directly to the `main` branch of the GitHub repo,
+# which triggers a Cloudflare Pages rebuild (Cloudflare must be configured to
+# run `node build.mjs` as its build command — see HANDOFF.md for the one-time
+# setup this admin panel depends on).
+#
+# Login requires a GitHub OAuth App + a small token-exchange proxy (this repo
+# ships one in cms-oauth-worker/, deployed as a Cloudflare Worker). Until that
+# is deployed and base_url below is updated, this admin page will not be able
+# to log anyone in.
+
+backend:
+  name: github
+  repo: maul2491/scoop-patrol-website
+  branch: main
+  base_url: https://REPLACE_OAUTH_WORKER_URL
+  auth_endpoint: auth
+
+# Where uploaded images land, and the public URL prefix used in content.
+media_folder: "assets"
+public_folder: "/assets"
+
+site_url: https://REPLACE_DOMAIN
+logo_url: /assets/logo.jpg
+
+collections:
+  - name: "reviews"
+    label: "Reviews"
+    files:
+      - name: "reviews"
+        label: "Customer Reviews"
+        file: "content/reviews.json"
+        fields:
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            summary: "{{name}} ({{platform}})"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Platform", name: "platform", widget: "select", options: ["Google", "Facebook"] }
+              - { label: "Review text", name: "text", widget: "text" }
+
+  - name: "before_after"
+    label: "Before & After Photos"
+    files:
+      - name: "pairs"
+        label: "Before / After Pairs"
+        file: "content/before-after.json"
+        fields:
+          - label: "Photo pairs"
+            name: "pairs"
+            widget: "list"
+            summary: "{{fields.beforeAlt}}"
+            fields:
+              - { label: "Before photo", name: "before", widget: "image" }
+              - { label: "Before photo — WebP (optional, leave blank to skip)", name: "beforeWebp", widget: "image", required: false }
+              - { label: "Before photo alt text", name: "beforeAlt", widget: "string", hint: "Describe the garden before the clean, for screen readers and SEO" }
+              - { label: "After photo", name: "after", widget: "image" }
+              - { label: "After photo — WebP (optional, leave blank to skip)", name: "afterWebp", widget: "image", required: false }
+              - { label: "After photo alt text", name: "afterAlt", widget: "string" }
+
+  - name: "navigation"
+    label: "Navigation"
+    files:
+      - name: "nav"
+        label: "Menus"
+        file: "content/nav.json"
+        fields:
+          - label: "Main menu (Home and Services are fixed, everything else lists here)"
+            name: "main"
+            widget: "list"
+            summary: "{{label}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string", hint: "e.g. /about or /contact" }
+          - label: "Services dropdown"
+            name: "services"
+            widget: "list"
+            summary: "{{label}}"
+            fields:
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Link", name: "href", widget: "string" }
+
+  - name: "footer"
+    label: "Footer"
+    files:
+      - name: "footer"
+        label: "Footer"
+        file: "content/footer.json"
+        fields:
+          - { label: "Tagline (under the logo)", name: "tagline", widget: "text" }
+          - label: "Link columns"
+            name: "columns"
+            widget: "list"
+            summary: "{{heading}}"
+            fields:
+              - { label: "Column heading", name: "heading", widget: "string" }
+              - label: "Links"
+                name: "links"
+                widget: "list"
+                summary: "{{label}}"
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Link", name: "href", widget: "string" }
+                  - { label: "Indent as a sub-item", name: "sub", widget: "boolean", required: false, default: false }
+
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - name: "homepage"
+        label: "Homepage content"
+        file: "content/homepage.json"
+        fields:
+          - label: "Hero (top of page)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "headingPrefix", widget: "string" }
+              - { label: "Heading highlight (shown in green)", name: "headingHighlight", widget: "string" }
+              - { label: "Lead paragraph", name: "lead", widget: "text" }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo — WebP (optional)", name: "imageWebp", widget: "image", required: false }
+              - { label: "Photo alt text", name: "imageAlt", widget: "string" }
+              - { label: "Badge text (small chip over the photo)", name: "badgeText", widget: "string" }
+          - label: "\"Why Scoop Patrol\" section"
+            name: "why"
+            widget: "object"
+            fields:
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Lead paragraph", name: "lead", widget: "text" }
+              - { label: "Bullet points", name: "points", widget: "list" }
+              - { label: "Photo (summer)", name: "imageSummer", widget: "image" }
+              - { label: "Photo (summer) — WebP (optional)", name: "imageSummerWebp", widget: "image", required: false }
+              - { label: "Photo (autumn, cross-fades with summer)", name: "imageAutumn", widget: "image" }
+              - { label: "Photo (autumn) — WebP (optional)", name: "imageAutumnWebp", widget: "image", required: false }
+              - { label: "Photo alt text", name: "imageAlt", widget: "string" }
+          - label: "\"Where we patrol\" section"
+            name: "areas"
+            widget: "object"
+            fields:
+              - { label: "Lead paragraph", name: "lead", widget: "text" }

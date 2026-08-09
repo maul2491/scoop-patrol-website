@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "headingPrefix": "Pet Waste Garden Clean-ups and Collections in",
+    "headingHighlight": "Rhondda Cynon Taf",
+    "lead": "Regular and flexible one-off garden clean-ups and collections for pet owners across Aberdare and Rhondda Cynon Taf.",
+    "image": "/assets/dog-and-cat-in-clean-garden-aberdare.jpg",
+    "imageWebp": "/assets/dog-and-cat-in-clean-garden-aberdare.webp",
+    "imageAlt": "A dog and a cat sitting together on a clean, freshly cleared garden lawn in Aberdare",
+    "badgeText": "Your garden, fresh, safe, paws and feet ready."
+  },
+  "why": {
+    "heading": "For Families, Busy Schedules and those who need Support",
+    "lead": "We started Scoop Patrol because we saw the community needed a helping hand. Especially for those struggling on their own. That's why we do what we do, to keep every space clean and every neighbour supported.",
+    "points": [
+      "Local &amp; two-person run",
+      "No contracts, cancel anytime",
+      "Recurring or one-off cleans",
+      "Fair, upfront pricing",
+      "Pet-safe &amp; biodegradable",
+      "Only a message away to start today!"
+    ],
+    "imageSummer": "/assets/scoop-patrol-family-summer.jpg",
+    "imageSummerWebp": "/assets/scoop-patrol-family-summer.webp",
+    "imageAutumn": "/assets/scoop-patrol-family-autumn.jpg",
+    "imageAutumnWebp": "/assets/scoop-patrol-family-autumn.webp",
+    "imageAlt": "A family and their dog enjoying a clean, tidy back garden on a summer afternoon"
+  },
+  "areas": {
+    "lead": "If you're local to any of these areas, we can likely fit your garden onto a regular route."
+  }
+}

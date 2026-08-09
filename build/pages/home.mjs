@@ -3,22 +3,16 @@ import {
   sectionHead, trustStrip, trustBar, pricingTabs, priceNote, compareSlider,
   reviewsSection, whoWeWorkWith, whatToExpect, quoteForm, squiggle,
 } from '../components.mjs';
+import { homepage as HOME_CONTENT } from '../content.mjs';
 
-const WHY_POINTS = [
-  'Local &amp; two-person run',
-  'No contracts, cancel anytime',
-  'Recurring or one-off cleans',
-  'Fair, upfront pricing',
-  'Pet-safe &amp; biodegradable',
-  'Only a message away to start today!',
-];
+const { hero: HERO, why: WHY, areas: AREAS_CONTENT } = HOME_CONTENT;
 
 function hero() {
   return `<section class="hero" id="top">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <h1>Pet Waste Garden Clean-ups and Collections in <span class="green">Rhondda Cynon Taf</span></h1>
-      <p class="lead">Regular and flexible one-off garden clean-ups and collections for pet owners across Aberdare and Rhondda Cynon Taf.</p>
+      <h1>${HERO.headingPrefix} <span class="green">${HERO.headingHighlight}</span></h1>
+      <p class="lead">${HERO.lead}</p>
       <div class="hero-ctas">
         <a href="/contact" class="btn btn-green">Get a free quote</a>
         <a href="/services/pricing" class="btn btn-outline btn-outline-light">See our prices</a>
@@ -27,15 +21,15 @@ function hero() {
     <div class="hero-art">
       <div class="hero-photo-frame">
         <picture>
-          <source srcset="/assets/dog-and-cat-in-clean-garden-aberdare.webp" type="image/webp">
-          <img src="/assets/dog-and-cat-in-clean-garden-aberdare.jpg"
-               alt="A dog and a cat sitting together on a clean, freshly cleared garden lawn in Aberdare"
+          <source srcset="${HERO.imageWebp}" type="image/webp">
+          <img src="${HERO.image}"
+               alt="${HERO.imageAlt}"
                width="900" height="603" fetchpriority="high" decoding="async">
         </picture>
       </div>
       <div class="hero-badge-chip">
         <span class="paw-ic" aria-hidden="true">🐾</span>
-        <span>Your garden, fresh, safe, paws and feet ready.</span>
+        <span>${HERO.badgeText}</span>
       </div>
     </div>
   </div>
@@ -67,32 +61,32 @@ function spotTheDifference() {
 }
 
 function whyScoopPatrol() {
-  const points = WHY_POINTS.map(p =>
+  const points = WHY.points.map(p =>
     `<li><span class="check-ic-wrap">${icons.check}</span>${p}</li>`).join('\n          ');
   return `<section class="pad" id="why" style="background:var(--paper);">
   <div class="wrap">
     <div class="why-split">
       <div class="why-copy reveal">
         <span class="kicker">Why Scoop Patrol</span>
-        <h2>For Families, Busy Schedules and those who need Support</h2>
+        <h2>${WHY.heading}</h2>
         ${squiggle()}
-        <p class="lead-sm">We started Scoop Patrol because we saw the community needed a helping hand. Especially for those struggling on their own. That's why we do what we do, to keep every space clean and every neighbour supported.</p>
+        <p class="lead-sm">${WHY.lead}</p>
         <ul class="check-list">
           ${points}
         </ul>
-        <a href="/about" class="btn btn-green">More about us</a>
+        <a href="/contact" class="btn btn-green">Get in touch</a>
       </div>
       <div class="why-art reveal">
         <div class="why-art-frame family-crossfade" data-crossfade>
           <picture class="fx-img fx-a">
-            <source srcset="/assets/scoop-patrol-family-summer.webp" type="image/webp">
-            <img src="/assets/scoop-patrol-family-summer.jpg"
-                 alt="A family and their dog enjoying a clean, tidy back garden on a summer afternoon"
+            <source srcset="${WHY.imageSummerWebp}" type="image/webp">
+            <img src="${WHY.imageSummer}"
+                 alt="${WHY.imageAlt}"
                  width="1200" height="960" loading="lazy" decoding="async">
           </picture>
           <picture class="fx-img fx-b" aria-hidden="true">
-            <source srcset="/assets/scoop-patrol-family-autumn.webp" type="image/webp">
-            <img src="/assets/scoop-patrol-family-autumn.jpg"
+            <source srcset="${WHY.imageAutumnWebp}" type="image/webp">
+            <img src="${WHY.imageAutumn}"
                  alt="" width="1200" height="960" loading="lazy" decoding="async">
           </picture>
         </div>
@@ -108,20 +102,24 @@ function whereWePatrol() {
     `<li><span class="area-pin" aria-hidden="true">${icons.pin}</span>${a}</li>`).join('\n          ');
   return `<section class="pad" id="areas" style="background:var(--paper);">
   <div class="wrap">
-    ${sectionHead({
-      kicker: 'Where we patrol',
-      h2: 'Aberdare and the surrounding areas',
-      lead: 'If you\'re local to any of these areas, we can likely fit your garden onto a regular route.',
-    })}
-    <div class="areas-columns reveal-group">
-      <ul>
-          ${col(AREAS.slice(0, half))}
-      </ul>
-      <ul>
-          ${col(AREAS.slice(half))}
-      </ul>
+    <div class="areas-split">
+      <div class="areas-copy">
+        ${sectionHead({
+          kicker: 'Where we patrol',
+          h2: 'Aberdare and the surrounding areas',
+          lead: AREAS_CONTENT.lead,
+        })}
+        <p class="section-foot muted">Just outside the area? <a class="text-link" href="${WA_LINK}">Message us anyway</a>, we're expanding the round regularly.</p>
+      </div>
+      <div class="areas-columns reveal-group">
+        <ul>
+            ${col(AREAS.slice(0, half))}
+        </ul>
+        <ul>
+            ${col(AREAS.slice(half))}
+        </ul>
+      </div>
     </div>
-    <p class="section-foot muted">Just outside the area? <a class="text-link" href="${WA_LINK}">Message us anyway</a>, we're expanding the round regularly.</p>
   </div>
 </section>`;
 }

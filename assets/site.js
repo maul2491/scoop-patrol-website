@@ -84,14 +84,14 @@
   });
 
   // ---------------------------------------------------------------------
-  // Before / after comparison slider
+  // Before / after comparison slider(s) — one drag slider per before/after
+  // pair, so a carousel of several pairs each work independently.
   // ---------------------------------------------------------------------
-  (function () {
-    var slider = document.getElementById('compareSlider');
-    var beforeLayer = document.getElementById('beforeLayer');
-    var handle = document.getElementById('compareHandle');
-    var handleBtn = document.getElementById('compareHandleBtn');
-    if (!slider || !beforeLayer || !handle || !handleBtn) return;
+  document.querySelectorAll('[data-compare-slider]').forEach(function (slider) {
+    var beforeLayer = slider.querySelector('[data-before-layer]');
+    var handle = slider.querySelector('[data-compare-handle]');
+    var handleBtn = slider.querySelector('[data-compare-handle-btn]');
+    if (!beforeLayer || !handle || !handleBtn) return;
 
     function setPct(pct) {
       pct = Math.min(100, Math.max(0, pct));
@@ -126,7 +126,7 @@
       if (e.key === 'End') { setPct(100); e.preventDefault(); }
     });
     setPct(50);
-  })();
+  });
 
   // ---------------------------------------------------------------------
   // Review carousel — scroll-snap, built to take more cards without changes
@@ -208,6 +208,47 @@
       });
     }
 
+    // -----------------------------------------------------------------
+    // Progressive disclosure: "What do you need?" reveals its own branch
+    // of fields, and marks that branch's fields required/not-required so
+    // hidden fields never block submission.
+    // -----------------------------------------------------------------
+    var needSelect = form.querySelector('#need');
+    var branches = form.querySelectorAll('[data-need-branch]');
+    function syncNeedBranches() {
+      var chosen = needSelect ? needSelect.value : '';
+      branches.forEach(function (branch) {
+        var show = branch.getAttribute('data-need-branch') === chosen;
+        branch.hidden = !show;
+        branch.querySelectorAll('input, select, textarea').forEach(function (el) {
+          if (el.dataset.wasRequired === undefined) {
+            el.dataset.wasRequired = el.hasAttribute('required') ? '1' : '0';
+          }
+          if (show) {
+            if (el.dataset.wasRequired === '1') el.setAttribute('required', '');
+          } else {
+            el.removeAttribute('required');
+          }
+        });
+      });
+    }
+    if (needSelect) {
+      needSelect.addEventListener('change', syncNeedBranches);
+      syncNeedBranches();
+    }
+
+    // "How did you hear about us?" -> Other reveals a free-text field
+    var sourceSelect = form.querySelector('#source');
+    var sourceOtherWrap = form.querySelector('[data-source-other]');
+    function syncSourceOther() {
+      if (!sourceOtherWrap) return;
+      sourceOtherWrap.hidden = !sourceSelect || sourceSelect.value !== 'Other';
+    }
+    if (sourceSelect) {
+      sourceSelect.addEventListener('change', syncSourceOther);
+      syncSourceOther();
+    }
+
     function fieldWrap(el) { return el.closest('.field'); }
 
     function showError(el, message) {
@@ -286,18 +327,30 @@
       }
       if (status) { status.classList.remove('is-error'); }
 
-      var msg = 'New quote request from the website:\n\n'
-        + 'Name: ' + val('name') + '\n'
-        + 'Phone: ' + val('phone') + '\n'
-        + 'Email: ' + (val('email') || 'Not provided') + '\n'
-        + 'Location: ' + val('location') + ' (' + val('postcode') + ')\n'
-        + 'Service: ' + val('service') + '\n'
-        + 'Garden size: ' + val('gardenSize') + '\n'
-        + 'Dogs: ' + val('dogs') + ' | Cats: ' + val('cats') + '\n'
-        + 'Frequency: ' + val('frequency') + '\n'
-        + 'Access: ' + (val('access') || 'Not provided') + '\n'
-        + 'Notes: ' + (val('notes') || 'None') + '\n'
-        + 'Heard via: ' + (val('source') || 'Not stated');
+      var need = val('need');
+      var lines = [
+        'New quote request from the website:',
+        '',
+        'Name: ' + val('name'),
+        'Phone: ' + val('phone'),
+        'Email: ' + (val('email') || 'Not provided'),
+        'Location: ' + val('location') + ' (' + val('postcode') + ')',
+        'What they need: ' + need,
+      ];
+      if (need === 'Garden clean') {
+        lines.push('Garden size: ' + val('gardenSize'));
+        lines.push('Dogs: ' + val('dogs'));
+        lines.push('Frequency: ' + val('frequency'));
+      } else if (need === 'Collection') {
+        lines.push('Number of bags: ' + val('bags'));
+        lines.push('Collection specifics: ' + (val('collectionSpecifics') || 'Not provided'));
+      } else if (need === 'Not sure yet') {
+        lines.push('Details: ' + val('unsureDetails'));
+      }
+      lines.push('Notes: ' + (val('notes') || 'None'));
+      var source = val('source');
+      lines.push('Heard via: ' + (source === 'Other' ? (val('sourceOther') || 'Other') : (source || 'Not stated')));
+      var msg = lines.join('\n');
 
       var win = window.open(
         'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg),

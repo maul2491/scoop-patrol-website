@@ -1,0 +1,25 @@
+{
+  "tagline": "Pet waste garden clean-ups and collections across Rhondda Cynon Taf. We handle the poo, so you don't have to.",
+  "columns": [
+    {
+      "heading": "Services",
+      "links": [
+        { "label": "Pricing", "href": "/services/pricing" },
+        { "label": "Pet Waste Garden Cleans", "href": "/services/garden-cleans" },
+        { "label": "Pet Waste Collection", "href": "/services/pet-waste-collection" },
+        { "label": "Cat Litter Add-on", "href": "/services/pet-waste-collection#cat-litter", "sub": true },
+        { "label": "Commercial Services", "href": "/commercial" }
+      ]
+    },
+    {
+      "heading": "Company",
+      "links": [
+        { "label": "FAQ", "href": "/faq" },
+        { "label": "Contact", "href": "/contact" },
+        { "label": "Privacy Policy", "href": "/privacy-policy" },
+        { "label": "Terms & Conditions", "href": "/terms" },
+        { "label": "Cookie Policy", "href": "/cookie-policy" }
+      ]
+    }
+  ]
+}

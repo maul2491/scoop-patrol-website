@@ -2,6 +2,8 @@
 // Everything that appears on more than one page lives here so there is one
 // place to change it. `node build.mjs` regenerates the static HTML.
 
+import { nav as NAV_CONTENT, footerContent as FOOTER_CONTENT } from './content.mjs';
+
 // ---------------------------------------------------------------------------
 // Config
 // ---------------------------------------------------------------------------
@@ -91,15 +93,11 @@ export const icons = {
 // Navigation model
 // ---------------------------------------------------------------------------
 
-// "Patios, Decking & Artificial Grass" is deliberately not a nav item. It reads
-// like a separate service when it is included in every clean, so it lives as a
-// section of the garden cleans page instead.
-export const SERVICES_NAV = [
-  { label: 'Pricing', href: '/services/pricing' },
-  { label: 'Pet Waste Garden Cleans', href: '/services/garden-cleans' },
-  { label: 'Pet Waste Collection', href: '/services/pet-waste-collection' },
-  { label: 'Cat Litter Add-on', href: '/services/pet-waste-collection#cat-litter' },
-];
+// Editable via /admin (content/nav.json). "Patios, Decking & Artificial Grass"
+// is deliberately not a nav item, it reads like a separate service when it is
+// included in every clean, so it lives as a section of the garden cleans page.
+export const SERVICES_NAV = NAV_CONTENT.services;
+export const MAIN_NAV = NAV_CONTENT.main;
 
 // ---------------------------------------------------------------------------
 // Chrome
@@ -111,6 +109,12 @@ function header(nav) {
   const subMobile = SERVICES_NAV
     .map(s => `<a class="mm-sub" href="${s.href}">${s.label}</a>`).join('\n    ');
   const on = k => (nav === k ? ' class="is-current" aria-current="page"' : '');
+  // key derived from href so current-page highlighting keeps working however
+  // MAIN_NAV is reordered/edited via /admin (content/nav.json)
+  const keyFor = href => href.replace(/^\//, '').replace(/\/$/, '').replace(/#.*/, '') || 'home';
+  const mainItems = MAIN_NAV.map(item =>
+    `<li><a href="${item.href}"${on(keyFor(item.href))}>${item.label}</a></li>`).join('\n        ');
+  const mainItemsMobile = MAIN_NAV.map(item => `<a href="${item.href}">${item.label}</a>`).join('\n    ');
 
   return `<header>
   <div class="wrap nav-row">
@@ -127,10 +131,7 @@ function header(nav) {
             ${sub}
           </div>
         </li>
-        <li><a href="/commercial"${on('commercial')}>Commercial Services</a></li>
-        <li><a href="/about"${on('about')}>About</a></li>
-        <li><a href="/faq"${on('faq')}>FAQ</a></li>
-        <li><a href="/contact"${on('contact')}>Contact</a></li>
+        ${mainItems}
       </ul>
     </nav>
     <div class="nav-actions">
@@ -144,10 +145,7 @@ function header(nav) {
     <a href="/">Home</a>
     <div class="mm-subhead">Services</div>
     ${subMobile}
-    <a href="/commercial">Commercial Services</a>
-    <a href="/about">About</a>
-    <a href="/faq">FAQ</a>
-    <a href="/contact">Contact</a>
+    ${mainItemsMobile}
     <a href="${WA_LINK}" data-analytics="whatsapp-mobile-menu">Message us on WhatsApp</a>
   </div>
 </header>`;
@@ -155,6 +153,12 @@ function header(nav) {
 
 function footer() {
   const areaList = AREAS.join(', ');
+  const columns = FOOTER_CONTENT.columns.map(col => `<div>
+        <h4>${col.heading}</h4>
+        <ul>
+          ${col.links.map(l => `<li${l.sub ? ' class="foot-sub"' : ''}><a href="${l.href}">${l.label}</a></li>`).join('\n          ')}
+        </ul>
+      </div>`).join('\n      ');
   return `<footer>
   <div class="wrap">
     <div class="foot-grid">
@@ -163,30 +167,10 @@ function footer() {
           <img src="/assets/logo.jpg" alt="Scoop Patrol Aberdare logo" width="40" height="40">
           <span>Scoop Patrol Aberdare</span>
         </div>
-        <p>Pet waste garden clean-ups and collections across Rhondda Cynon Taf. We handle the poo, so you don't have to.</p>
+        <p>${FOOTER_CONTENT.tagline}</p>
         <p class="foot-nrw">${NRW_FULL}</p>
       </div>
-      <div>
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/services/pricing">Pricing</a></li>
-          <li><a href="/services/garden-cleans">Pet Waste Garden Cleans</a></li>
-          <li><a href="/services/pet-waste-collection">Pet Waste Collection</a></li>
-          <li class="foot-sub"><a href="/services/pet-waste-collection#cat-litter">Cat Litter Add-on</a></li>
-          <li><a href="/commercial">Commercial Services</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="/about">About</a></li>
-          <li><a href="/faq">FAQ</a></li>
-          <li><a href="/contact">Contact</a></li>
-          <li><a href="/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/terms">Terms &amp; Conditions</a></li>
-          <li><a href="/cookie-policy">Cookie Policy</a></li>
-        </ul>
-      </div>
+      ${columns}
       <div>
         <h4>Get in touch</h4>
         <ul class="foot-contact">

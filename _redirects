@@ -4,3 +4,6 @@
 /bag-collection-only      /services/pet-waste-collection         301
 /areas                    /#areas                                301
 /areas/*                  /#areas                                301
+
+# /about is temporarily hidden pending a redesign, not a permanent removal.
+/about                     /                                      302

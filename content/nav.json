@@ -1,0 +1,13 @@
+{
+  "main": [
+    { "label": "Commercial Services", "href": "/commercial" },
+    { "label": "FAQ", "href": "/faq" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "services": [
+    { "label": "Pricing", "href": "/services/pricing" },
+    { "label": "Pet Waste Garden Cleans", "href": "/services/garden-cleans" },
+    { "label": "Pet Waste Collection", "href": "/services/pet-waste-collection" },
+    { "label": "Cat Litter Add-on", "href": "/services/pet-waste-collection#cat-litter" }
+  ]
+}

@@ -1,0 +1,8 @@
+# Optional: deploy with `npx wrangler deploy` from inside cms-oauth-worker/
+# instead of pasting worker.js into the Cloudflare dashboard. Either works.
+# GITHUB_CLIENT_ID and GITHUB_CLIENT_SECRET are set as Worker secrets, not
+# here (`npx wrangler secret put GITHUB_CLIENT_ID`, etc) — never commit them.
+
+name = "scoop-patrol-cms-auth"
+main = "worker.js"
+compatibility_date = "2024-01-01"

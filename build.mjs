@@ -13,7 +13,10 @@ import { fileURLToPath } from 'node:url';
 import { SITE } from './build/site.mjs';
 import home from './build/pages/home.mjs';
 import { servicesIndex, pricing, gardenCleans, petWasteCollection } from './build/pages/services.mjs';
-import { commercial, about, faq, contact } from './build/pages/pages.mjs';
+import { commercial, faq, contact } from './build/pages/pages.mjs';
+// `about` is deliberately not imported/built — the page exists in
+// build/pages/pages.mjs but is hidden pending a redesign (not in PAGES below,
+// not linked from nav/footer/home, /about redirects to / via _redirects).
 import { privacyPolicy, cookiePolicy, terms } from './build/pages/legal.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
@@ -26,7 +29,6 @@ const PAGES = [
   ['services/garden-cleans', gardenCleans, 0.9],
   ['services/pet-waste-collection', petWasteCollection, 0.9],
   ['commercial', commercial, 0.8],
-  ['about', about, 0.6],
   ['faq', faq, 0.7],
   ['contact', contact, 0.8],
   ['privacy-policy', privacyPolicy, 0.2],
@@ -80,6 +82,9 @@ write('_redirects', `# Old structure -> new. See build.mjs.
 /bag-collection-only      /services/pet-waste-collection         301
 /areas                    /#areas                                301
 /areas/*                  /#areas                                301
+
+# /about is temporarily hidden pending a redesign, not a permanent removal.
+/about                     /                                      302
 `);
 console.log('  _redirects');
 

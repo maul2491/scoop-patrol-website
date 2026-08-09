@@ -1,5 +1,6 @@
 // Reusable page sections shared across more than one page.
 import { icons, AREAS, WA_LINK, TEL_LINK, SITE, NRW_SHORT } from './site.mjs';
+import { reviews as REVIEWS, beforeAfter as BEFORE_AFTER } from './content.mjs';
 
 export function squiggle() {
   return `<svg class="squiggle" viewBox="0 0 72 10" width="72" height="10" aria-hidden="true"><path d="M2 6 Q8 1 14 6 T26 6 T38 6 T50 6 T62 6" fill="none" stroke="#3F8F29" stroke-width="2.4" stroke-linecap="round"/></svg>`;
@@ -118,52 +119,55 @@ export function priceNote() {
 }
 
 // --- Before / after comparison slider (plan §6.4) ---------------------------
+// Pairs are edited via /admin (content/before-after.json). One pair renders as
+// a single drag slider; more than one becomes a carousel of drag sliders.
 
-export function compareSlider() {
-  const img = (name, alt, cls) => `<picture>
-          <source srcset="/assets/${name}.webp" type="image/webp">
-          <img src="/assets/${name}.jpg" alt="${alt}" width="1000" height="667" loading="lazy" decoding="async" class="${cls}">
+function img(src, srcWebp, alt) {
+  if (!srcWebp) return `<img src="${src}" alt="${alt}" width="1000" height="667" loading="lazy" decoding="async">`;
+  return `<picture>
+          <source srcset="${srcWebp}" type="image/webp">
+          <img src="${src}" alt="${alt}" width="1000" height="667" loading="lazy" decoding="async">
         </picture>`;
-  return `<div class="compare-slider reveal" id="compareSlider">
-      <div class="compare-layer after-layer">
-        ${img('pet-waste-garden-clean-after-aberdare',
-          'The same Aberdare garden after a Scoop Patrol pet waste clean-up, with all dog waste cleared from the lawn', '')}
+}
+
+function compareSlide(pair) {
+  return `<li class="compare-slide">
+        <div class="compare-slider" data-compare-slider>
+          <div class="compare-layer after-layer">
+            ${img(pair.after, pair.afterWebp, pair.afterAlt || '')}
+          </div>
+          <div class="compare-layer before-layer" data-before-layer>
+            ${img(pair.before, pair.beforeWebp, pair.beforeAlt || '')}
+          </div>
+          <span class="compare-tag-float before-tag">Before</span>
+          <span class="compare-tag-float after-tag">After</span>
+          <div class="compare-handle" data-compare-handle>
+            <div class="compare-handle-btn" data-compare-handle-btn tabindex="0" role="slider"
+                 aria-label="Drag to compare the garden before and after a clean" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">⟷</div>
+          </div>
+        </div>
+        <p class="compare-cap">Drag the handle to compare</p>
+      </li>`;
+}
+
+export function compareSlider(pairs = BEFORE_AFTER) {
+  if (!pairs.length) return '';
+  return `<div class="carousel reveal" data-carousel>
+      <ul class="carousel-track carousel-track-single" data-carousel-track>
+        ${pairs.map(compareSlide).join('\n        ')}
+      </ul>
+      <div class="carousel-controls">
+        <button class="carousel-btn" data-carousel-prev aria-label="Previous photo">‹</button>
+        <div class="carousel-dots" data-carousel-dots></div>
+        <button class="carousel-btn" data-carousel-next aria-label="Next photo">›</button>
       </div>
-      <div class="compare-layer before-layer" id="beforeLayer">
-        ${img('pet-waste-garden-clean-before-aberdare',
-          'An Aberdare garden before a Scoop Patrol pet waste clean-up, showing dog waste across the lawn', '')}
-      </div>
-      <span class="compare-tag-float before-tag">Before</span>
-      <span class="compare-tag-float after-tag">After</span>
-      <div class="compare-handle" id="compareHandle">
-        <div class="compare-handle-btn" id="compareHandleBtn" tabindex="0" role="slider"
-             aria-label="Drag to compare the garden before and after a clean" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">⟷</div>
-      </div>
-    </div>
-    <p class="compare-cap reveal">Drag the handle to compare</p>`;
+    </div>`;
 }
 
 // --- Reviews (plan §6.5) ----------------------------------------------------
-// Genuine 5-star ratings left on external platforms. Displayed only, no Review
-// or AggregateRating schema, deliberately (see plan §6.5).
-
-const REVIEWS = [
-  {
-    name: 'Chris',
-    platform: 'Google',
-    text: 'Fantastic service! Fast at responding to messages, even when I made a mistake with the dates… They were happy to still come and collect the waste. Definitely made my life a lot easier and the dog is very grateful too!',
-  },
-  {
-    name: 'Mia',
-    platform: 'Facebook',
-    text: 'Scoop Patrol provide an excellent, friendly, thorough service. They are both lovely &amp; can\'t do enough to help. Always do a 5 star 🌟 job. I highly recommend them 👌🏻🥳',
-  },
-  {
-    name: 'Valentina',
-    platform: 'Google',
-    text: '…They made me feel comfortable straight away, never made me feel embarrassed, and treated me with kindness and respect. They went above and beyond, worked so hard, and did a fantastic job. They also charged so reasonably for the amount of effort they put in, and honestly deserved much more!',
-  },
-];
+// Genuine 5-star ratings left on external platforms, edited via /admin
+// (content/reviews.json). Displayed only, no Review or AggregateRating
+// schema, deliberately (see plan §6.5).
 
 function reviewCard(r) {
   const platformIcon = r.platform === 'Google' ? icons.google : icons.facebook;
@@ -259,10 +263,11 @@ export function whatToExpect({ heading = true } = {}) {
 
 const SELECTS = {
   location: [...AREAS, 'Somewhere else nearby'],
-  service: ['Garden clean', 'Collection only', 'Cat litter add-on', 'Commercial site', 'Not sure yet'],
+  need: ['Garden clean', 'Collection', 'Not sure yet'],
   gardenSize: ['Small', 'Medium', 'Larger', 'Not sure'],
   count: ['0', '1', '2', '3', '4+'],
-  frequency: ['Weekly', 'Fortnightly', 'One-off', 'Not sure yet'],
+  frequency: ['Weekly', 'Fortnightly', 'One-off'],
+  bags: ['1–2 bags', '3–5 bags', '6+ bags / a bin', 'Not sure'],
   source: ['Google', 'Facebook', 'Recommendation', 'Saw the van/flyer', 'Other'],
 };
 
@@ -287,6 +292,18 @@ function input(id, label, type, required, attrs = '', hint = '') {
       </div>`;
 }
 
+function textarea(id, label, required, hint = '', rows = 4) {
+  return `<div class="field">
+        <label for="${id}">${label}${required ? ' <span class="req" aria-hidden="true">*</span>' : ''}</label>
+        <textarea id="${id}" name="${id}" rows="${rows}"${required ? ' required' : ''}></textarea>
+        ${hint ? `<p class="field-hint">${hint}</p>` : ''}
+        <p class="field-error" data-error-for="${id}" hidden></p>
+      </div>`;
+}
+
+// Progressive-disclosure branches: only the fields for the chosen "What do you
+// need?" answer are shown (and required), toggled client-side in site.js by
+// data-need-branch / data-need value. Each branch starts hidden.
 export function quoteForm({ id = 'quoteForm' } = {}) {
   return `<form class="quote-form" id="${id}" novalidate>
       <div class="form-grid">
@@ -295,20 +312,35 @@ export function quoteForm({ id = 'quoteForm' } = {}) {
         ${input('email', 'Email', 'email', false, 'autocomplete="email"', 'Optional')}
         ${select('location', 'Your area', SELECTS.location, true)}
         ${input('postcode', 'Postcode', 'text', true, 'maxlength="8" autocomplete="postal-code"', 'The first part is enough, e.g. CF44')}
-        ${select('service', 'What do you need?', SELECTS.service, true)}
-        ${select('gardenSize', 'Garden size', SELECTS.gardenSize, true)}
-        ${select('frequency', 'How often?', SELECTS.frequency, true)}
-        ${select('dogs', 'Number of dogs', SELECTS.count, true)}
-        ${select('cats', 'Number of cats', SELECTS.count, true)}
+        ${select('need', 'What do you need?', SELECTS.need, true)}
       </div>
+
+      <div class="form-grid form-branch" data-need-branch="Garden clean" hidden>
+        ${select('gardenSize', 'Garden size', SELECTS.gardenSize, true)}
+        ${select('dogs', 'Number of dogs', SELECTS.count, true)}
+        ${select('frequency', 'How often?', SELECTS.frequency, true)}
+      </div>
+
+      <div class="form-grid form-branch" data-need-branch="Collection" hidden>
+        ${select('bags', 'Number of bags', SELECTS.bags, true)}
+        ${input('collectionSpecifics', 'Collection specifics', 'text', false, 'maxlength="160"', 'e.g. where to find them, loose or bagged. Optional')}
+      </div>
+
+      <div class="form-grid form-grid-wide form-branch" data-need-branch="Not sure yet" hidden>
+        ${textarea('unsureDetails', 'Tell us a bit about what you need', true, 'No need to know exactly, just a rough idea is fine.')}
+      </div>
+
       <div class="form-grid form-grid-wide">
-        ${input('access', 'Access details', 'text', false, 'maxlength="160"', 'Side gate code, where to find the garden, etc. Optional')}
         <div class="field">
           <label for="notes">Anything else we should know?</label>
           <textarea id="notes" name="notes" rows="4" maxlength="500"></textarea>
           <p class="field-hint"><span data-char-count>0</span>/500 characters</p>
         </div>
         ${select('source', 'How did you hear about us?', SELECTS.source, false, 'Optional')}
+        <div class="field" data-source-other hidden>
+          <label for="sourceOther">Where did you hear about us?</label>
+          <input type="text" id="sourceOther" name="sourceOther" maxlength="80">
+        </div>
       </div>
 
       <p class="form-photo-note">📷 Send us a photo of your garden on WhatsApp once you've submitted, it helps us quote fairly, especially for first cleans.</p>

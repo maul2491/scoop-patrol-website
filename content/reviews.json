@@ -1,0 +1,19 @@
+{
+  "reviews": [
+    {
+      "name": "Chris",
+      "platform": "Google",
+      "text": "Fantastic service! Fast at responding to messages, even when I made a mistake with the dates… They were happy to still come and collect the waste. Definitely made my life a lot easier and the dog is very grateful too!"
+    },
+    {
+      "name": "Mia",
+      "platform": "Facebook",
+      "text": "Scoop Patrol provide an excellent, friendly, thorough service. They are both lovely & can't do enough to help. Always do a 5 star 🌟 job. I highly recommend them 👌🏻🥳"
+    },
+    {
+      "name": "Valentina",
+      "platform": "Google",
+      "text": "…They made me feel comfortable straight away, never made me feel embarrassed, and treated me with kindness and respect. They went above and beyond, worked so hard, and did a fantastic job. They also charged so reasonably for the amount of effort they put in, and honestly deserved much more!"
+    }
+  ]
+}
