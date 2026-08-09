@@ -372,6 +372,7 @@ section.pad.tight{padding:60px 0;}
 @media(min-width:620px){.form-grid{grid-template-columns:1fr 1fr;}}
 .form-grid-wide{grid-template-columns:1fr;margin-top:18px;}
 .form-branch{margin-top:18px;}
+.form-branch[hidden]{display:none;}
 @media(min-width:620px){.form-grid-wide{grid-template-columns:1fr;}}
 .field{display:flex;flex-direction:column;}
 .field label{font-weight:600;font-size:.87rem;color:var(--navy);margin-bottom:7px;}
