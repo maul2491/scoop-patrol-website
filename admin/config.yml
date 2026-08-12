@@ -138,3 +138,308 @@ collections:
             widget: "object"
             fields:
               - { label: "Lead paragraph", name: "lead", widget: "text" }
+
+  - name: "services_pages"
+    label: "Services Pages"
+    files:
+      - name: "services"
+        label: "Services Pages"
+        file: "content/services.json"
+        fields:
+          - label: "Services hub (/services)"
+            name: "index"
+            widget: "object"
+            fields:
+              - { label: "Hero", name: "hero", widget: "object", fields: [
+                    { label: "Kicker", name: "kicker", widget: "string" },
+                    { label: "Heading", name: "h1", widget: "string" },
+                    { label: "Lead paragraph", name: "lead", widget: "text" },
+                  ] }
+              - label: "Hub cards"
+                name: "hubCards"
+                widget: "list"
+                summary: "{{title}}"
+                fields:
+                  - { label: "Links to", name: "href", widget: "string" }
+                  - { label: "Title", name: "title", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text" }
+          - label: "Pricing page (/services/pricing)"
+            name: "pricing"
+            widget: "object"
+            fields:
+              - { label: "Hero", name: "hero", widget: "object", fields: [
+                    { label: "Kicker", name: "kicker", widget: "string" },
+                    { label: "Heading", name: "h1", widget: "string" },
+                    { label: "Lead paragraph", name: "lead", widget: "text" },
+                  ] }
+              - label: "What affects your price — cards"
+                name: "priceFactors"
+                widget: "list"
+                summary: "{{heading}}"
+                fields:
+                  - { label: "Icon (single emoji)", name: "icon", widget: "string" }
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text" }
+              - label: "Pricing FAQs"
+                name: "faq"
+                widget: "list"
+                summary: "{{q}}"
+                fields:
+                  - { label: "Question", name: "q", widget: "string" }
+                  - { label: "Answer", name: "a", widget: "text" }
+          - label: "Garden cleans page (/services/garden-cleans)"
+            name: "gardenCleans"
+            widget: "object"
+            fields:
+              - { label: "Hero", name: "hero", widget: "object", fields: [
+                    { label: "Kicker", name: "kicker", widget: "string" },
+                    { label: "Heading", name: "h1", widget: "string" },
+                    { label: "Lead paragraph", name: "lead", widget: "text" },
+                  ] }
+              - label: "What's included"
+                name: "whatIncluded"
+                widget: "object"
+                fields:
+                  - { label: "Intro paragraph", name: "lead", widget: "text" }
+                  - { label: "Tick-list items", name: "items", widget: "list" }
+              - label: "Frequency cards"
+                name: "frequencyCards"
+                widget: "list"
+                summary: "{{heading}}"
+                fields:
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text" }
+              - { label: "First cleans note (basic HTML allowed, e.g. <strong>)", name: "firstCleansNote", widget: "text" }
+              - label: "Surfaces section"
+                name: "surfaces"
+                widget: "object"
+                fields:
+                  - { label: "Paragraph 1", name: "lead1", widget: "text" }
+                  - { label: "Paragraph 2", name: "lead2", widget: "text" }
+                  - { label: "Callout heading", name: "calloutHeading", widget: "string" }
+                  - { label: "Callout paragraph 1", name: "calloutP1", widget: "text" }
+                  - { label: "Callout paragraph 2", name: "calloutP2", widget: "text" }
+              - { label: "Winter section paragraph", name: "winter", widget: "object", fields: [{ label: "Paragraph", name: "lead", widget: "text" }] }
+          - label: "Pet waste collection page (/services/pet-waste-collection)"
+            name: "petWasteCollection"
+            widget: "object"
+            fields:
+              - { label: "Hero", name: "hero", widget: "object", fields: [
+                    { label: "Kicker", name: "kicker", widget: "string" },
+                    { label: "Heading", name: "h1", widget: "string" },
+                    { label: "Lead paragraph", name: "lead", widget: "text" },
+                  ] }
+              - label: "Pricing table rows"
+                name: "pricingRows"
+                widget: "list"
+                summary: "{{service}}"
+                fields:
+                  - { label: "Service", name: "service", widget: "string" }
+                  - { label: "Price", name: "price", widget: "string" }
+              - { label: "\"Regular or one-off\" heading", name: "regularOrOneOff", widget: "object", fields: [
+                    { label: "Heading", name: "heading", widget: "string" },
+                    { label: "Body", name: "body", widget: "text" },
+                  ] }
+              - { label: "\"Who it's for\"", name: "whoItsFor", widget: "object", fields: [
+                    { label: "Heading", name: "heading", widget: "string" },
+                    { label: "Body (basic HTML allowed)", name: "body", widget: "text" },
+                  ] }
+              - { label: "Legal disposal section", name: "legal", widget: "object", fields: [
+                    { label: "Heading", name: "heading", widget: "string" },
+                    { label: "Body", name: "body", widget: "text" },
+                  ] }
+              - label: "Cat litter add-on section"
+                name: "catLitter"
+                widget: "object"
+                fields:
+                  - { label: "Intro", name: "intro", widget: "text" }
+                  - { label: "How it works", name: "howItWorks", widget: "text" }
+                  - { label: "Cost (basic HTML allowed)", name: "cost", widget: "text" }
+                  - { label: "Callout body (basic HTML allowed)", name: "calloutBody", widget: "text" }
+              - { label: "Closing call-to-action", name: "cta", widget: "object", fields: [
+                    { label: "Heading", name: "heading", widget: "string" },
+                    { label: "Body", name: "body", widget: "text" },
+                  ] }
+
+  - name: "commercial_page"
+    label: "Commercial Page"
+    files:
+      - name: "commercial"
+        label: "Commercial Page"
+        file: "content/commercial.json"
+        fields:
+          - { label: "Hero", name: "hero", widget: "object", fields: [
+                { label: "Kicker", name: "kicker", widget: "string" },
+                { label: "Heading", name: "h1", widget: "string" },
+                { label: "Lead paragraph", name: "lead", widget: "text" },
+              ] }
+          - { label: "Compliance callout (basic HTML allowed)", name: "compliance", widget: "object", fields: [{ label: "Why it matters", name: "why", widget: "text" }] }
+          - label: "Sectors we work with"
+            name: "sectors"
+            widget: "list"
+            summary: "{{heading}}"
+            fields:
+              - { label: "Icon (single emoji)", name: "icon", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
+          - { label: "Surfaces section", name: "surfaces", widget: "object", fields: [
+                { label: "Paragraph 1", name: "body1", widget: "text" },
+                { label: "Paragraph 2 (basic HTML allowed)", name: "body2", widget: "text" },
+              ] }
+          - { label: "Pricing section", name: "pricing", widget: "object", fields: [{ label: "Body", name: "body", widget: "text" }] }
+          - { label: "Closing call-to-action", name: "cta", widget: "object", fields: [
+                { label: "Eyebrow", name: "eyebrow", widget: "string" },
+                { label: "Heading", name: "heading", widget: "string" },
+                { label: "Body", name: "body", widget: "text" },
+              ] }
+
+  - name: "faq_page"
+    label: "FAQ Page"
+    files:
+      - name: "faq"
+        label: "FAQ Page"
+        file: "content/faq.json"
+        fields:
+          - { label: "Hero", name: "hero", widget: "object", fields: [
+                { label: "Kicker", name: "kicker", widget: "string" },
+                { label: "Heading", name: "h1", widget: "string" },
+                { label: "Lead paragraph", name: "lead", widget: "text" },
+              ] }
+          - label: "Question groups"
+            name: "groups"
+            widget: "list"
+            summary: "{{group}}"
+            hint: "Two answers (areas covered, waste disposal) are generated automatically from business details elsewhere and don't appear here."
+            fields:
+              - { label: "Group name", name: "group", widget: "string" }
+              - label: "Questions"
+                name: "items"
+                widget: "list"
+                summary: "{{q}}"
+                fields:
+                  - { label: "Question", name: "q", widget: "string" }
+                  - { label: "Answer (plain text, used for search-engine markup)", name: "text", widget: "text" }
+                  - { label: "Answer with links (optional, shown on page instead of the plain one above — must say the same thing)", name: "html", widget: "text", required: false }
+
+  - name: "contact_page"
+    label: "Contact Page"
+    files:
+      - name: "contact"
+        label: "Contact Page"
+        file: "content/contact.json"
+        fields:
+          - { label: "Hero", name: "hero", widget: "object", fields: [
+                { label: "Kicker", name: "kicker", widget: "string" },
+                { label: "Heading", name: "h1", widget: "string" },
+                { label: "Lead paragraph", name: "lead", widget: "text" },
+              ] }
+          - { label: "\"Quickest ways to reach us\" heading", name: "asideHeading", widget: "string" }
+          - { label: "\"Or fill this in\" heading", name: "formHeading", widget: "string" }
+          - { label: "Form intro line", name: "formIntro", widget: "text" }
+          - { label: "Closing call-to-action", name: "cta", widget: "object", fields: [
+                { label: "Eyebrow", name: "eyebrow", widget: "string" },
+                { label: "Heading", name: "heading", widget: "string" },
+                { label: "Body", name: "body", widget: "text" },
+              ] }
+
+  - name: "legal_pages"
+    label: "Legal Pages"
+    files:
+      - name: "legal"
+        label: "Legal Pages"
+        file: "content/legal.json"
+        fields:
+          - label: "Privacy Policy"
+            name: "privacyPolicy"
+            widget: "object"
+            fields:
+              - label: "Sections"
+                name: "sections"
+                widget: "list"
+                summary: "{{heading}}"
+                fields:
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph. Start a line with \"- \" for a bullet list. HTML like <strong>, <a href=\"...\">, <h3> and <table> works and passes through as typed." }
+          - label: "Cookie Policy"
+            name: "cookiePolicy"
+            widget: "object"
+            fields:
+              - label: "Sections"
+                name: "sections"
+                widget: "list"
+                summary: "{{heading}}"
+                fields:
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph. Start a line with \"- \" for a bullet list. HTML like <strong>, <a href=\"...\"> works and passes through as typed." }
+          - label: "Terms & Conditions"
+            name: "terms"
+            widget: "object"
+            fields:
+              - label: "Sections (numbered and listed in the on-page contents automatically)"
+                name: "sections"
+                widget: "list"
+                summary: "{{heading}}"
+                fields:
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph. Start a line with \"- \" for a bullet list. HTML like <strong>, <a href=\"...\"> works and passes through as typed." }
+
+  - name: "pages"
+    label: "Extra Pages"
+    description: "Create a new page, or open an existing one and use \"Duplicate\" to start a similar one. New pages aren't linked from the menu automatically — add a link in Navigation once you're happy with it."
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Page title", name: "title", widget: "string" }
+      - { label: "URL slug (letters, numbers, hyphens only, e.g. \"summer-offer\")", name: "slug", widget: "string" }
+      - { label: "Meta description (for search engines, one sentence)", name: "description", widget: "text", required: false }
+      - label: "Hero (top banner)"
+        name: "hero"
+        widget: "object"
+        fields:
+          - { label: "Kicker (small label above the heading)", name: "kicker", widget: "string", required: false }
+          - { label: "Heading", name: "h1", widget: "string" }
+          - { label: "Lead paragraph", name: "lead", widget: "text", required: false }
+      - label: "Content blocks (shown in order)"
+        name: "blocks"
+        widget: "list"
+        summary: "{{fields.type}} — {{fields.heading}}"
+        types:
+          - label: "Rich text"
+            name: "richText"
+            widget: "object"
+            fields:
+              - { label: "Block type", name: "type", widget: "hidden", default: "richText" }
+              - { label: "Heading (optional)", name: "heading", widget: "string", required: false }
+              - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph. Start a line with \"- \" for a bullet list. HTML like <strong>, <a href=\"...\"> works." }
+          - label: "Image + text"
+            name: "imageText"
+            widget: "object"
+            fields:
+              - { label: "Block type", name: "type", widget: "hidden", default: "imageText" }
+              - { label: "Heading (optional)", name: "heading", widget: "string", required: false }
+              - { label: "Body", name: "body", widget: "text" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Image alt text", name: "imageAlt", widget: "string", required: false }
+              - { label: "Image side", name: "imagePosition", widget: "select", options: ["right", "left"], default: "right" }
+          - label: "FAQ list"
+            name: "faqList"
+            widget: "object"
+            fields:
+              - { label: "Block type", name: "type", widget: "hidden", default: "faqList" }
+              - { label: "Heading (optional)", name: "heading", widget: "string", required: false }
+              - label: "Questions"
+                name: "items"
+                widget: "list"
+                summary: "{{q}}"
+                fields:
+                  - { label: "Question", name: "q", widget: "string" }
+                  - { label: "Answer", name: "a", widget: "text" }
+          - label: "Call to action band"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Block type", name: "type", widget: "hidden", default: "cta" }
+              - { label: "Eyebrow (small label)", name: "eyebrow", widget: "string", required: false }
+              - { label: "Heading", name: "heading", widget: "string", required: false }
+              - { label: "Body", name: "body", widget: "text", required: false }

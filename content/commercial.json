@@ -1,0 +1,29 @@
+{
+  "hero": {
+    "kicker": "Commercial services",
+    "h1": "Commercial pet waste removal and collection",
+    "lead": "For landlords, dog daycares, dog walking fields, pet groomers and breeders across Rhondda Cynon Taf. Scheduled, documented and legally disposed of."
+  },
+  "compliance": {
+    "why": "<strong>Why this matters to you.</strong> As a business, you have a duty of care for waste produced on your premises. Using a registered carrier and keeping the Waste Transfer Note is how you meet it, and it's what an inspector will ask to see."
+  },
+  "sectors": [
+    { "icon": "🔑", "heading": "Landlords &amp; lettings", "body": "Gardens left in a state between tenancies, or shared outdoor space at a multi-let property that nobody takes responsibility for. We clear it, sanitise it and take the waste away, so the next viewing isn't the problem it was going to be." },
+    { "icon": "🐕", "heading": "Dog daycare", "body": "High traffic, lots of dogs, and an odour problem that builds fast if it isn't stayed on top of. Regular scheduled visits keep runs and outdoor areas usable, and every collection comes with a Waste Transfer Note for your records." },
+    { "icon": "🌳", "heading": "Dog walking fields", "body": "Open ground where waste is easy to miss and customers notice immediately when it's been missed. We work to a schedule that suits your booking pattern, including early or late slots around your busiest times." },
+    { "icon": "✂️", "heading": "Pet groomers", "body": "Smaller volumes, but commercial waste all the same, which means it can't legally go into household collections. We collect on a rhythm that suits you and document it properly." },
+    { "icon": "🐾", "heading": "Dog breeders", "body": "Runs, whelping areas and exercise yards need clearing and sanitising consistently, not occasionally. We'll work to whatever frequency your setup needs." }
+  ],
+  "surfaces": {
+    "body1": "Daycares and dog walking fields with artificial grass get the same pet-safe sanitising treatment as part of every visit, not as an extra. Odour on artificial surfaces is a real operational problem. It's what customers comment on first, and most operators clearing waste won't treat for it at all.",
+    "body2": "As with our residential work, we'll be straight with you about the limits: regular treatment keeps odour from building up, but where urine has already reached the infill or sub-base, that needs specialist restoration rather than routine cleaning. <a class=\"text-link\" href=\"/services/garden-cleans#surfaces\">More on how we handle surfaces →</a>"
+  },
+  "pricing": {
+    "body": "Commercial sites are quoted individually. It depends on site size, waste volume and how often you need us. Tell us about your site and we'll come back with a fair price."
+  },
+  "cta": {
+    "eyebrow": "Commercial enquiry",
+    "heading": "Tell us about your site",
+    "body": "Send us the site type, rough size and how often you'd need us, and we'll come back with a tailored price."
+  }
+}

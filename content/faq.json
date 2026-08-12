@@ -1,0 +1,56 @@
+{
+  "hero": {
+    "kicker": "Got questions?",
+    "h1": "Frequently asked questions",
+    "lead": "Everything customers usually ask before their first visit. Can't find your answer? Message us and we'll reply the same day."
+  },
+  "groups": [
+    {
+      "group": "Pricing",
+      "items": [
+        { "q": "How much does pet waste removal cost?", "text": "From £10 per clean for a small garden with one pet on a weekly round, rising with garden size, number of pets and frequency. See our pricing page for the full breakdown.", "html": "From £10 per clean for a small garden with one pet on a weekly round, rising with garden size, number of pets and frequency. See our <a class=\"text-link\" href=\"/services/pricing\">pricing page</a> for the full breakdown." },
+        { "q": "Why are first cleans priced separately?", "text": "If there's a build-up, long grass, decking, stones, slate or artificial grass, the first visit takes considerably longer. First cleans usually start from £20 depending on what's there." },
+        { "q": "Do prices change without notice?", "text": "No. We confirm your price upfront before the first visit and tell you in advance of any change." }
+      ]
+    },
+    {
+      "group": "The visit",
+      "items": [
+        { "q": "How often should I have my garden cleared?", "text": "Weekly is most popular and keeps gardens consistently tidy and low-odour. Fortnightly suits smaller single-pet gardens, though each visit takes longer." },
+        { "q": "Is dog poo bad for my lawn?", "text": "Left to sit, it can scorch grass and leave patchy yellowed areas, and it's a common source of bacteria and parasites in gardens where children or other pets play. Regular removal is the simplest fix." },
+        { "q": "Do I need to be home?", "text": "No, as long as we can access the garden. Just tell us how to get in (side gate code, etc.) when you book." },
+        { "q": "Do you still clean in winter?", "text": "Yes. We clean and collect all year round, rain or shine, waste doesn't stop in bad weather." },
+        { "q": "Do you sanitise as well as clear?", "text": "Yes. Every clean includes treating the area with pet-friendly sanitiser to help remove germs and reduce infection risk." }
+      ]
+    },
+    {
+      "group": "Collections",
+      "items": [
+        { "q": "What if I already bag my own waste?", "text": "That's our collection service, you bag it, we take it away. From £10.", "html": "That's our <a class=\"text-link\" href=\"/services/pet-waste-collection\">collection service</a>, you bag it, we take it away. From £10." },
+        { "q": "Do you collect cat litter?", "text": "Yes, as an add-on to a scheduled visit, at £3 per bag collected alongside your garden clean.", "html": "Yes, as an <a class=\"text-link\" href=\"/services/pet-waste-collection#cat-litter\">add-on to a scheduled visit</a>, at £3 per bag collected alongside your garden clean." }
+      ]
+    },
+    {
+      "group": "Areas &amp; booking",
+      "items": [
+        { "q": "How do I get a quote?", "text": "Message us or use the quote form with your postcode, garden size and number of pets. A photo helps us price fairly. We come back the same day.", "html": "Message us or use the <a class=\"text-link\" href=\"/contact\">quote form</a> with your postcode, garden size and number of pets. A photo helps us price fairly. We come back the same day." },
+        { "q": "Do I have to sign a contract?", "text": "No. No contracts, cancel any time." }
+      ]
+    },
+    {
+      "group": "Surfaces",
+      "items": [
+        { "q": "Do you clean patios, decking and artificial grass too?", "text": "Yes, they're cleared and treated as part of your clean, not charged separately. Every visit includes treating the area with our pet-safe deodorising and sanitising spray." },
+        { "q": "Why does my artificial grass still smell after I hose it?", "text": "Because urine soaks past the surface into the backing, and rinsing only dilutes what's on top. Regular clearing and sanitising keeps it from building up. If it's been left a long time and the smell has reached the infill or sub-base, regular treatment will help but may not fully fix it, at that point you may need a specialist restoration or infill replacement, which isn't something we offer." },
+        { "q": "What do you use on artificial grass?", "text": "Our pet-safe deodorising and sanitising spray, which is safe for pets, children and artificial surfaces once dry." }
+      ]
+    },
+    {
+      "group": "Compliance",
+      "items": [
+        { "q": "Are you insured?", "text": "Yes, fully insured. We're also DBS checked." },
+        { "q": "Are your products safe for pets and children?", "text": "Yes, pet-safe products and biodegradable bags throughout." }
+      ]
+    }
+  ]
+}

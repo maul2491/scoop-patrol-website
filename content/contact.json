@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "kicker": "Get in touch",
+    "h1": "Get a free quote",
+    "lead": "Tell us your postcode, garden size and number of pets and we'll come back with a fair price, usually the same day."
+  },
+  "asideHeading": "Quickest ways to reach us",
+  "formHeading": "Or fill this in",
+  "formIntro": "This opens WhatsApp with your details ready to send, so you don't have to type it all out.",
+  "cta": {
+    "eyebrow": "Prefer to just message?",
+    "heading": "One message is all it takes",
+    "body": "Send us your postcode, garden size and number of pets, a photo helps us give the fairest price."
+  }
+}

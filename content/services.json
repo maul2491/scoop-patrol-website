@@ -1,0 +1,105 @@
+{
+  "index": {
+    "hero": {
+      "kicker": "Our services",
+      "h1": "Everything we do, in one place",
+      "lead": "Regular and one-off pet waste clean-ups and collections across Rhondda Cynon Taf, for family gardens and commercial sites alike."
+    },
+    "hubCards": [
+      { "href": "/services/pricing", "title": "Pricing", "body": "Weekly, fortnightly and one-off prices, what affects your quote, and how first cleans are priced." },
+      { "href": "/services/garden-cleans", "title": "Pet Waste Garden Cleans", "body": "Full clearance of visible pet waste, pet-safe sanitising, everything taken away. Lawns, patios, decking and artificial grass." },
+      { "href": "/services/pet-waste-collection", "title": "Pet Waste Collection", "body": "You bag it, we take it away and dispose of it legally. From £10." },
+      { "href": "/services/pet-waste-collection#cat-litter", "title": "Cat Litter Add-on", "body": "£3 per bag, collected alongside your scheduled garden clean." },
+      { "href": "/services/garden-cleans#surfaces", "title": "Patios, Decking &amp; Artificial Grass", "body": "Cleared and treated as part of your clean, at no extra charge." },
+      { "href": "/commercial", "title": "Commercial Services", "body": "Landlords, dog daycares, walking fields, groomers and breeders. Quoted individually." }
+    ]
+  },
+
+  "pricing": {
+    "hero": {
+      "kicker": "Pricing",
+      "h1": "Tailored pricing for your garden's unique needs",
+      "lead": "Every price includes full waste removal, nothing extra to collect, nothing left behind."
+    },
+    "priceFactors": [
+      { "icon": "🏡", "heading": "Garden size", "body": "Small, medium or larger gardens are priced differently because clearance time scales with area, not just mess." },
+      { "icon": "🐾", "heading": "Number of pets", "body": "More pets means more waste per visit, reflected in the per-pet step-up." },
+      { "icon": "🪨", "heading": "Access and terrain", "body": "Decking, stones, slate, artificial grass and overgrown areas take longer to clear properly, so these are quoted with that in mind." },
+      { "icon": "📅", "heading": "Frequency", "body": "Weekly stays tidier and costs less per visit than fortnightly, where build-up is greater each time." },
+      { "icon": "🌱", "heading": "Build-up", "body": "First cleans on a neglected garden are priced separately, usually from £20 depending on what's there." }
+    ],
+    "faq": [
+      { "q": "How much does pet waste removal cost?", "a": "From £10 per clean for a small garden with one pet on a weekly round, rising with garden size, number of pets and frequency. See our pricing page for the full breakdown." },
+      { "q": "Why are first cleans priced separately?", "a": "If there's a build-up, long grass, decking, stones, slate or artificial grass, the first visit takes considerably longer. First cleans usually start from £20 depending on what's there." },
+      { "q": "Do prices change without notice?", "a": "No. We confirm your price upfront before the first visit and tell you in advance of any change." }
+    ]
+  },
+
+  "gardenCleans": {
+    "hero": {
+      "kicker": "Garden cleans",
+      "h1": "Pet waste garden clean-ups",
+      "lead": "We clear every visible piece of pet waste from your garden, treat the area with pet-safe sanitiser, and take everything away with us."
+    },
+    "whatIncluded": {
+      "lead": "Every visit covers the whole garden, not just the lawn. Patios, paths, decking and artificial grass are all cleared and treated as part of the same clean, at no extra charge.",
+      "items": [
+        "Full clearance of visible pet waste across every surface",
+        "Treatment with our pet-safe deodorising and sanitising spray",
+        "All waste bagged and taken away, nothing left in your bin",
+        "Legal disposal under our NRW waste carrier registration"
+      ]
+    },
+    "frequencyCards": [
+      { "heading": "Weekly", "body": "The most popular choice. Keeps a garden consistently tidy and low-odour, and each visit is quicker because there's less to clear, which is why it costs less per visit." },
+      { "heading": "Fortnightly", "body": "Suits smaller, single-pet gardens where build-up is slower. Each visit takes a little longer, so the per-visit price is higher than weekly." },
+      { "heading": "One-off", "body": "A single clean whenever you need one, before visitors, before a house move, or just to reset a garden that's got away from you. No commitment to anything after it." }
+    ],
+    "firstCleansNote": "🧾 <strong>First cleans.</strong> If there's already a build-up, long grass, decking, stones, slate or artificial grass, the first visit takes considerably longer, so it's priced separately, usually from £20 depending on what's there. After that you're onto your normal rate.",
+    "surfaces": {
+      "lead1": "We don't just do lawns. Patios, paths, decking and artificial grass all get cleared and treated as part of your clean.",
+      "lead2": "Artificial grass is the one people ask about most. Urine soaks past the surface into the backing, which is why hosing it down doesn't shift the smell. Every visit, we clear the waste and treat the area with our pet-safe deodorising and sanitising spray, so odour is kept on top of rather than allowed to build up.",
+      "calloutHeading": "Being straight about what this is",
+      "calloutP1": "This is part of a regular clean, not a separate deep-clean or restoration service. Regular visits prevent build-up; they won't undo years of saturation.",
+      "calloutP2": "If artificial grass has been left a long time and the smell has reached the infill or sub-base underneath, regular sanitising will help but may not fully fix it. That usually needs specialist restoration or infill replacement, which isn't something we offer. We'll tell you straight if that's what we find."
+    },
+    "winter": {
+      "lead": "Waste doesn't stop in bad weather, and neither do we. We work all year round, rain or shine. If severe weather ever makes a visit genuinely unsafe or pointless, we'll message you and either move it to the next available slot or skip it at no charge."
+    }
+  },
+
+  "petWasteCollection": {
+    "hero": {
+      "kicker": "Collections",
+      "h1": "Pet waste collection, you bag it, we take it away",
+      "lead": "Some customers already collect and bag their own pet waste but don't want the job of storing it or getting it to the bin. That's exactly what this is for."
+    },
+    "pricingRows": [
+      { "service": "Small bag collection", "price": "From £10" },
+      { "service": "Standard black bag collection", "price": "From £12–£15" },
+      { "service": "Larger bags, bins or multiple bags", "price": "Quoted individually" }
+    ],
+    "regularOrOneOff": {
+      "heading": "Regular or one-off",
+      "body": "Collections work either way. Most customers settle into a weekly or fortnightly rhythm that lines up with their own routine, but a single one-off collection is absolutely fine: say after a clear-out, or when storage has got on top of you."
+    },
+    "whoItsFor": {
+      "heading": "Who it's for",
+      "body": "Customers who already have their own routine and don't need a garden clean, or who simply have nowhere to store bagged waste between council collections. If you'd rather we did the clearing too, that's our <a class=\"text-link\" href=\"/services/garden-cleans\">garden clean service</a>."
+    },
+    "legal": {
+      "heading": "Why it matters that we're registered",
+      "body": "When you hand waste over to someone else, where it ends up stops being something you can see. That's exactly why carrier registration exists, and why it is worth checking, whoever you use. Most local operators aren't registered. We are, and the number above is yours to verify."
+    },
+    "catLitter": {
+      "intro": "Got a cat as well as a dog? We'll take your bagged litter away at the same time as your garden clean, one visit, one less job.",
+      "howItWorks": "Bag your used litter as you normally would and leave it out ready for your scheduled visit. We'll collect it alongside your garden clean and take it away with us. There's no separate call-out to arrange and nothing extra for you to do on the day, if you're already on the round, it simply gets added to the visit you've already got booked.",
+      "cost": "<strong>£3 per bag</strong>, collected during an existing visit. As a worked example, a standard weekly clean at £15 plus four bags of litter at £3 each comes to £27 for the week.",
+      "calloutBody": "<strong>One thing to be clear about:</strong> this is an add-on to a scheduled visit, not a standalone service. We don't currently offer cat-litter-only collection without a garden clean or waste collection booked alongside it. If that's what you're after, message us anyway, if there's enough demand it's something we'd look at."
+    },
+    "cta": {
+      "heading": "Ready to hand it over?",
+      "body": "Message us with your area and roughly how much you need collected, we'll quote it fairly, usually the same day."
+    }
+  }
+}

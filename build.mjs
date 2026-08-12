@@ -14,10 +14,14 @@ import { SITE } from './build/site.mjs';
 import home from './build/pages/home.mjs';
 import { servicesIndex, pricing, gardenCleans, petWasteCollection } from './build/pages/services.mjs';
 import { commercial, faq, contact } from './build/pages/pages.mjs';
-// `about` is deliberately not imported/built — the page exists in
-// build/pages/pages.mjs but is hidden pending a redesign (not in PAGES below,
-// not linked from nav/footer/home, /about redirects to / via _redirects).
+// `about` is deliberately not built. It was dropped from pages.mjs during the
+// CMS content migration (2026-08-12) rather than converted, since it's
+// pending a full redesign anyway — see git history to resurrect the old
+// version. Not linked from nav/footer/home; /about redirects to / via
+// _redirects in the meantime.
 import { privacyPolicy, cookiePolicy, terms } from './build/pages/legal.mjs';
+import { genericPage } from './build/pages/generic.mjs';
+import { loadPagesDir } from './build/content.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 
@@ -35,6 +39,24 @@ const PAGES = [
   ['terms', terms, 0.2],
   ['cookie-policy', cookiePolicy, 0.2],
 ];
+
+// Generic pages created/duplicated from /admin (content/pages/*.json), each
+// rendered through build/pages/generic.mjs's block palette. Slugs are
+// checked against the hardcoded pages above so a new page can't silently
+// clobber a real one.
+const RESERVED_SLUGS = new Set(PAGES.map(([slug]) => slug));
+for (const data of loadPagesDir()) {
+  if (!data.slug) {
+    console.warn(`  ⚠  content/pages/*.json entry with no slug, skipping: ${data.title || '(untitled)'}`);
+    continue;
+  }
+  if (RESERVED_SLUGS.has(data.slug)) {
+    console.warn(`  ⚠  content/pages entry "${data.slug}" collides with a built-in page, skipping.`);
+    continue;
+  }
+  PAGES.push([data.slug, genericPage(data), data.priority || 0.5]);
+  RESERVED_SLUGS.add(data.slug);
+}
 
 function write(relPath, contents) {
   const full = join(ROOT, relPath);
