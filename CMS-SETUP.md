@@ -12,21 +12,34 @@ GitHub and Cloudflare accounts.
 
 ## 1. Point Cloudflare at the build script
 
-Right now Cloudflare serves the committed `.html` files as-is; nothing on
+The live site (`scoop-patrol-website.scooppatrolwales.workers.dev`) is a
+**Cloudflare Worker with static assets**, not a Pages project — it currently
+just serves whatever `.html` files are committed, as-is. Nothing on
 Cloudflare's side runs `node build.mjs`. For the dashboard to work, editing a
-JSON file needs to regenerate the HTML automatically, so Cloudflare has to
-start doing the build:
+JSON file via `/admin` needs to regenerate the HTML automatically on every
+push, so Cloudflare has to start doing the build:
 
-1. Cloudflare dashboard → Workers & Pages → your site → **Settings → Builds**.
+1. Cloudflare dashboard → Workers & Pages → **scoop-patrol-website** →
+   **Settings → Build**.
 2. Build command: `node build.mjs`
-3. Build output directory: `/` (repo root — that's where `build.mjs` writes
-   the generated HTML).
+3. Deploy command / output: leave as the repo root (`build.mjs` writes the
+   generated HTML directly there, next to `wrangler.jsonc`).
 4. Save, then trigger a redeploy to confirm it still builds the site
    correctly.
 
-After this, you can stop committing the regenerated `index.html` files
-yourself if you want (Cloudflare will always produce them fresh on push), but
-leaving them committed doesn't hurt anything either.
+There's also an open, unmerged PR on the repo from Cloudflare's own GitHub
+app, `cloudflare/workers-autoconfig` (branch of the same name), which adds a
+`wrangler.jsonc` (`{"assets": {"directory": "."}, ...}`) — this is likely
+already superseded by whatever Cloudflare generated for you when you
+connected the repo, but it's small and harmless (just that one file, no
+generated HTML touched) if you want to merge it or close it instead of
+leaving it dangling. Worth checking Cloudflare's build settings in the
+dashboard first though, since that's the more direct path and doesn't need a
+merge.
+
+After the build command is wired up, you can stop committing the regenerated
+`index.html` files yourself if you want (Cloudflare will always produce them
+fresh on push), but leaving them committed doesn't hurt anything either.
 
 ## 2. Create a GitHub OAuth App
 

@@ -1,27 +1,27 @@
 # Decap CMS configuration for Scoop Patrol Aberdare.
 #
 # Edits made here commit directly to the `main` branch of the GitHub repo,
-# which triggers a Cloudflare Pages rebuild (Cloudflare must be configured to
-# run `node build.mjs` as its build command — see HANDOFF.md for the one-time
-# setup this admin panel depends on).
+# which triggers a Cloudflare Worker rebuild (Cloudflare must be configured to
+# run `node build.mjs` as its build command — see CMS-SETUP.md for the
+# one-time setup this admin panel depends on).
 #
-# Login requires a GitHub OAuth App + a small token-exchange proxy (this repo
-# ships one in cms-oauth-worker/, deployed as a Cloudflare Worker). Until that
-# is deployed and base_url below is updated, this admin page will not be able
-# to log anyone in.
+# Login requires a GitHub OAuth App + a small token-exchange proxy — both set
+# up, see cms-oauth-worker/worker.js.
 
 backend:
   name: github
   repo: maul2491/scoop-patrol-website
   branch: main
-  base_url: https://REPLACE_OAUTH_WORKER_URL
+  base_url: https://scoop-patrol-cms-auth.scooppatrolwales.workers.dev
   auth_endpoint: auth
 
 # Where uploaded images land, and the public URL prefix used in content.
 media_folder: "assets"
 public_folder: "/assets"
 
-site_url: https://REPLACE_DOMAIN
+# TODO: swap for the real custom domain once it's live (see SITE.origin in
+# build/site.mjs for the matching TODO on the main site itself).
+site_url: https://scoop-patrol-website.scooppatrolwales.workers.dev
 logo_url: /assets/logo.jpg
 
 collections:
