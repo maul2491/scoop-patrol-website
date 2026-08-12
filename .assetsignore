@@ -1,0 +1,7 @@
+# Cloudflare Workers Static Assets: excludes these from what gets uploaded
+# and served publicly (assets.directory is "." in wrangler.jsonc — the whole
+# repo root — so without this, .git itself gets deployed and served, see the
+# 2026-08-12 build log: /.git/HEAD and /.git/config were both live at 200).
+.git
+.wrangler
+node_modules

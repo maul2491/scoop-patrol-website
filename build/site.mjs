@@ -15,8 +15,7 @@ export const SITE = {
   shortName: 'Scoop Patrol',
   tagline: 'We handle the poo, so you don\'t have to.',
 
-  // TODO: swap for the live custom domain, then re-run `node build.mjs`.
-  origin: 'https://REPLACE_DOMAIN',
+  origin: 'https://scooppatrolaberdare.co.uk',
 
   phoneDisplay: '07760 541636',
   phoneIntl: '+447760541636',

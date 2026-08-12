@@ -19,9 +19,7 @@ backend:
 media_folder: "assets"
 public_folder: "/assets"
 
-# TODO: swap for the real custom domain once it's live (see SITE.origin in
-# build/site.mjs for the matching TODO on the main site itself).
-site_url: https://scoop-patrol-website.scooppatrolwales.workers.dev
+site_url: https://scooppatrolaberdare.co.uk
 logo_url: /assets/logo.jpg
 
 collections:
