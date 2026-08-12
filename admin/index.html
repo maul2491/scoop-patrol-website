@@ -7,10 +7,13 @@
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="/assets/logo.jpg" type="image/jpeg" />
   <style>
-    /* Decap's plain-text fields (widget: "text") render as native
-       <textarea>s. Force a visible resize handle and a taller starting
-       size so longer prose (legal sections etc.) is easier to work in,
-       regardless of whatever Decap's own default happens to be. */
+    /* Decap's plain-text fields (widget: "text" — most short fields: names,
+       headings, card blurbs) render as native <textarea>s. Force a visible
+       resize handle and a taller starting size so they're easier to work
+       in, regardless of whatever Decap's own default happens to be.
+       The long-form prose fields (legal sections, generic-page rich text
+       blocks) use widget: "richtext" instead — a rich editor that grows
+       with its content, so this rule doesn't apply there and isn't needed. */
     textarea {
       resize: vertical !important;
       min-height: 9em !important;

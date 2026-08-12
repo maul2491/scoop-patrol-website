@@ -3,6 +3,15 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { marked } from './vendor/marked.mjs';
+
+// Vendored rather than an npm dependency (see build/vendor/marked.mjs header
+// for why, and HANDOFF.md) — a single self-contained file, no `npm install`
+// needed either on this machine or in Cloudflare's build step.
+// breaks:true matches the plain-text convention CMS fields were already
+// authored with: a single newline inside a paragraph becomes <br>, not just
+// a soft wrap, so existing content renders unchanged.
+marked.setOptions({ breaks: true, gfm: true });
 
 const CONTENT_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', 'content');
 
@@ -32,27 +41,11 @@ export function loadPagesDir() {
   return files.map(f => JSON.parse(readFileSync(join(dir, f), 'utf8')));
 }
 
-// Converts editor-friendly plain text into HTML for CMS-authored body copy.
-// No markdown dependency by design (see HANDOFF.md — no npm deps in build/):
-//   - a blank line starts a new paragraph
-//   - a line starting "- " starts a bullet list (each following "- " line is
-//     another item)
-//   - a block that already starts with a block-level tag (<table>, <ul>,
-//     <h2>, etc) passes through untouched, for hand-written HTML like the
-//     legal pages' data tables
-//   - inline HTML (<a>, <strong>, <mark>...) always passes through as typed
+// Renders CMS-authored body copy (real markdown: **bold**, [links](url),
+// blank line = new paragraph, "- " = bullet list, # for headings) to HTML.
+// Raw HTML blocks (the legal pages' <table> data tables, stray <h3>s) pass
+// through untouched, per CommonMark's normal handling of embedded HTML.
 export function richText(str) {
   if (!str) return '';
-  const blocks = String(str).trim().split(/\n\s*\n/);
-  return blocks.map(block => {
-    const trimmed = block.trim();
-    if (!trimmed) return '';
-    if (/^<table/i.test(trimmed)) return `<div class="table-scroll">\n${trimmed}\n</div>`;
-    if (/^<(ul|ol|div|h[1-6]|section|blockquote|nav)/i.test(trimmed)) return trimmed;
-    if (/^-\s+/.test(trimmed)) {
-      const items = trimmed.split('\n').map(l => l.replace(/^-\s+/, '').trim()).filter(Boolean);
-      return `<ul>\n${items.map(i => `  <li>${i}</li>`).join('\n')}\n</ul>`;
-    }
-    return `<p>${trimmed.replace(/\n/g, '<br>')}</p>`;
-  }).filter(Boolean).join('\n');
+  return marked.parse(String(str)).trim();
 }

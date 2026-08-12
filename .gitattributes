@@ -1,0 +1,3 @@
+# Keep vendored third-party code byte-identical to upstream — don't let
+# Windows checkouts silently rewrite its line endings.
+build/vendor/*.mjs -text

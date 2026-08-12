@@ -461,7 +461,7 @@ collections:
                 summary: "{{fields.heading}}"
                 fields:
                   - { label: "Heading", name: "heading", widget: "string" }
-                  - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph. Start a line with \"- \" for a bullet list. HTML like <strong>, <a href=\"...\">, <h3> and <table> works and passes through as typed." }
+                  - { label: "Body", name: "body", widget: "richtext", modes: ["rich_text", "raw"], hint: "Rich text editor: bold/italic/links/lists have toolbar buttons. Raw HTML (like the data tables on this page) still works if you need it." }
           - label: "Cookie Policy"
             name: "cookiePolicy"
             widget: "object"
@@ -476,7 +476,7 @@ collections:
                 summary: "{{fields.heading}}"
                 fields:
                   - { label: "Heading", name: "heading", widget: "string" }
-                  - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph. Start a line with \"- \" for a bullet list. HTML like <strong>, <a href=\"...\"> works and passes through as typed." }
+                  - { label: "Body", name: "body", widget: "richtext", modes: ["rich_text", "raw"], hint: "Rich text editor: bold/italic/links/lists have toolbar buttons." }
           - label: "Terms & Conditions"
             name: "terms"
             widget: "object"
@@ -491,7 +491,7 @@ collections:
                 summary: "{{fields.heading}}"
                 fields:
                   - { label: "Heading", name: "heading", widget: "string" }
-                  - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph. Start a line with \"- \" for a bullet list. HTML like <strong>, <a href=\"...\"> works and passes through as typed." }
+                  - { label: "Body", name: "body", widget: "richtext", modes: ["rich_text", "raw"], hint: "Rich text editor: bold/italic/links/lists have toolbar buttons." }
 
   - name: "pages"
     label: "Extra Pages"
@@ -521,14 +521,14 @@ collections:
             fields:
               - { label: "Block type", name: "type", widget: "hidden", default: "richText" }
               - { label: "Heading (optional)", name: "heading", widget: "string", required: false }
-              - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph. Start a line with \"- \" for a bullet list. HTML like <strong>, <a href=\"...\"> works." }
+              - { label: "Body", name: "body", widget: "richtext", modes: ["rich_text", "raw"], hint: "Rich text editor: bold/italic/links/lists have toolbar buttons." }
           - label: "Image + text"
             name: "imageText"
             widget: "object"
             fields:
               - { label: "Block type", name: "type", widget: "hidden", default: "imageText" }
               - { label: "Heading (optional)", name: "heading", widget: "string", required: false }
-              - { label: "Body", name: "body", widget: "text" }
+              - { label: "Body", name: "body", widget: "richtext", modes: ["rich_text", "raw"] }
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Image alt text", name: "imageAlt", widget: "string", required: false }
               - { label: "Image side", name: "imagePosition", widget: "select", options: ["right", "left"], default: "right" }
