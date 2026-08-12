@@ -82,6 +82,19 @@ const FORTNIGHTLY = [
   ['🌳', 'Larger gardens, multiple pets or trickier areas', 'From £25'],
 ];
 
+// Derived from the two grids above rather than hardcoded a third time, so
+// the garden-clean Service schema (home.mjs, services.mjs) can't drift out
+// of sync with what the pricing tables actually show.
+export const GARDEN_CLEAN_PRICE_RANGE = (() => {
+  const nums = [...WEEKLY, ...FORTNIGHTLY]
+    .flatMap(([, , tag]) => [...tag.matchAll(/£(\d+)/g)].map(m => Number(m[1])));
+  return {
+    low: String(Math.min(...nums)),
+    high: String(Math.max(...nums)),
+    offerCount: String(WEEKLY.length + FORTNIGHTLY.length),
+  };
+})();
+
 function priceCards(rows) {
   const cards = rows.map(([ic, label, tag]) =>
     `<div class="price-card"><span class="label"><span class="tier-ic" aria-hidden="true">${ic}</span>${label}</span><span class="tag">${tag}</span></div>`
@@ -184,10 +197,13 @@ function reviewCard(r) {
         </li>`;
 }
 
-export function reviewsSection() {
+export function reviewsSection({
+  kicker = 'What customers say',
+  h2 = 'Trusted by dog owners across The Valleys',
+} = {}) {
   return `<section class="pad" style="background:var(--paper);">
   <div class="wrap">
-    ${sectionHead({ kicker: 'What customers say', h2: 'Trusted by dog owners across The Valleys' })}
+    ${sectionHead({ kicker, h2 })}
     <div class="carousel reveal" data-carousel>
       <ul class="carousel-track" data-carousel-track>
         ${REVIEWS.map(reviewCard).join('\n        ')}
@@ -213,17 +229,17 @@ const SECTORS = [
   ['🐾', 'Dog breeders'],
 ];
 
-export function whoWeWorkWith() {
+export function whoWeWorkWith({
+  kicker = 'Who we work with',
+  h2 = 'From family gardens to commercial sites',
+  lead = 'Whether it\'s a family garden or a commercial site, we clean and collect all year round.',
+} = {}) {
   const cards = SECTORS.map(([ic, label]) =>
     `<li class="who-card"><span class="who-ic" aria-hidden="true">${ic}</span><span>${label}</span></li>`
   ).join('\n      ');
   return `<section class="pad tight">
   <div class="wrap">
-    ${sectionHead({
-      kicker: 'Who we work with',
-      h2: 'From family gardens to commercial sites',
-      lead: 'Whether it\'s a family garden or a commercial site, we clean and collect all year round.',
-    })}
+    ${sectionHead({ kicker, h2, lead })}
     <ul class="who-grid reveal-group">
       ${cards}
     </ul>
@@ -241,17 +257,18 @@ const STEPS = [
   ['04', 'Fresh Finish', 'All waste is removed, the area is fresh and clean and you can enjoy your garden worry-free.'],
 ];
 
-export function whatToExpect({ heading = true } = {}) {
+export function whatToExpect({
+  heading = true,
+  kicker = 'What to expect',
+  h2 = 'Simple and easy for you, whether cleaning or collecting',
+  lead = 'Just contact us, get a price, make an appointment and we\'re on patrol!',
+} = {}) {
   const steps = STEPS.map(([n, h, p]) =>
     `<div class="step"><div class="step-num">${n}</div><h3>${h}</h3><p>${p}</p></div>`
   ).join('\n      ');
   return `<section class="pad" id="what-to-expect">
   <div class="wrap">
-    ${heading ? sectionHead({
-      kicker: 'What to expect',
-      h2: 'Simple and easy for you, whether cleaning or collecting',
-      lead: 'Just contact us, get a price, make an appointment and we\'re on patrol!',
-    }) : ''}
+    ${heading ? sectionHead({ kicker, h2, lead }) : ''}
     <div class="steps steps-4 reveal-group">
       ${steps}
     </div>

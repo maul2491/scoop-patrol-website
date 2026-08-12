@@ -1,5 +1,9 @@
 {
   "index": {
+    "seo": {
+      "title": "Our Services, Pet Waste Clean-ups & Collections | Scoop Patrol",
+      "description": "Pet waste garden clean-ups, collections, cat litter add-on and commercial services across Aberdare and Rhondda Cynon Taf. NRW registered waste carrier."
+    },
     "hero": {
       "kicker": "Our services",
       "h1": "Everything we do, in one place",
@@ -16,6 +20,10 @@
   },
 
   "pricing": {
+    "seo": {
+      "title": "Pet Waste Removal Prices Rhondda Cynon Taf | From £10, Scoop Patrol Aberdare",
+      "description": "Weekly, fortnightly and one-off pet waste garden clean-up prices across Aberdare and RCT. From £10 per clean, waste always taken away. Same-day quotes."
+    },
     "hero": {
       "kicker": "Pricing",
       "h1": "Tailored pricing for your garden's unique needs",
@@ -36,6 +44,10 @@
   },
 
   "gardenCleans": {
+    "seo": {
+      "title": "Pet Waste Garden Clean-Ups in Aberdare & RCT, Scoop Patrol Aberdare",
+      "description": "Weekly, fortnightly and one-off pet waste garden clean-ups across Rhondda Cynon Taf. Pet-safe sanitising, waste always taken away. NRW registered."
+    },
     "hero": {
       "kicker": "Garden cleans",
       "h1": "Pet waste garden clean-ups",
@@ -69,6 +81,10 @@
   },
 
   "petWasteCollection": {
+    "seo": {
+      "title": "Pet Waste & Cat Litter Collection, Aberdare & RCT | Scoop Patrol",
+      "description": "Already bag your own pet waste or cat litter? We collect and dispose of it legally. Collections from £10 across Rhondda Cynon Taf. NRW registered waste carrier."
+    },
     "hero": {
       "kicker": "Collections",
       "h1": "Pet waste collection, you bag it, we take it away",

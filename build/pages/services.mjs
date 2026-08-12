@@ -4,6 +4,7 @@ import {
 } from '../site.mjs';
 import {
   sectionHead, pricingTabs, priceNote, whatToExpect, squiggle,
+  GARDEN_CLEAN_PRICE_RANGE,
 } from '../components.mjs';
 import { services as C } from '../content.mjs';
 
@@ -17,8 +18,8 @@ const SERVICES = { name: 'Services', href: '/services' };
 export const servicesIndex = page({
   slug: 'services',
   nav: 'services',
-  title: 'Our Services, Pet Waste Clean-ups & Collections | Scoop Patrol',
-  description: 'Pet waste garden clean-ups, collections, cat litter add-on and commercial services across Aberdare and Rhondda Cynon Taf. NRW registered waste carrier.',
+  title: C.index.seo.title,
+  description: C.index.seo.description,
   trail: [HOME, SERVICES],
   body: [
     pageHero({ trail: [HOME, SERVICES], ...C.index.hero }),
@@ -44,17 +45,17 @@ export const servicesIndex = page({
 export const pricing = page({
   slug: 'services/pricing',
   nav: 'services',
-  title: 'Pet Waste Removal Prices Rhondda Cynon Taf | From £10, Scoop Patrol Aberdare',
-  description: 'Weekly, fortnightly and one-off pet waste garden clean-up prices across Aberdare and RCT. From £10 per clean, waste always taken away. Same-day quotes.',
+  title: C.pricing.seo.title,
+  description: C.pricing.seo.description,
   trail: [HOME, SERVICES, { name: 'Pricing', href: '/services/pricing' }],
   schema: [serviceSchema({
     serviceType: 'Pet waste garden clean-up',
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'GBP',
-      lowPrice: '10',
-      highPrice: '25',
-      offerCount: '10',
+      lowPrice: GARDEN_CLEAN_PRICE_RANGE.low,
+      highPrice: GARDEN_CLEAN_PRICE_RANGE.high,
+      offerCount: GARDEN_CLEAN_PRICE_RANGE.offerCount,
     },
   })],
   body: [
@@ -116,17 +117,17 @@ export const pricing = page({
 export const gardenCleans = page({
   slug: 'services/garden-cleans',
   nav: 'services',
-  title: 'Pet Waste Garden Clean-Ups in Aberdare & RCT, Scoop Patrol Aberdare',
-  description: 'Weekly, fortnightly and one-off pet waste garden clean-ups across Rhondda Cynon Taf. Pet-safe sanitising, waste always taken away. NRW registered.',
+  title: C.gardenCleans.seo.title,
+  description: C.gardenCleans.seo.description,
   trail: [HOME, SERVICES, { name: 'Pet Waste Garden Cleans', href: '/services/garden-cleans' }],
   schema: [serviceSchema({
     serviceType: 'Pet waste garden clean-up',
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'GBP',
-      lowPrice: '10',
-      highPrice: '25',
-      offerCount: '10',
+      lowPrice: GARDEN_CLEAN_PRICE_RANGE.low,
+      highPrice: GARDEN_CLEAN_PRICE_RANGE.high,
+      offerCount: GARDEN_CLEAN_PRICE_RANGE.offerCount,
     },
   })],
   body: [
@@ -188,8 +189,8 @@ export const gardenCleans = page({
 export const petWasteCollection = page({
   slug: 'services/pet-waste-collection',
   nav: 'services',
-  title: 'Pet Waste & Cat Litter Collection, Aberdare & RCT | Scoop Patrol',
-  description: 'Already bag your own pet waste or cat litter? We collect and dispose of it legally. Collections from £10 across Rhondda Cynon Taf. NRW registered waste carrier.',
+  title: C.petWasteCollection.seo.title,
+  description: C.petWasteCollection.seo.description,
   trail: [HOME, SERVICES, { name: 'Pet Waste Collection', href: '/services/pet-waste-collection' }],
   schema: [
     serviceSchema({
@@ -197,8 +198,9 @@ export const petWasteCollection = page({
       offers: {
         '@type': 'AggregateOffer',
         priceCurrency: 'GBP',
-        lowPrice: '10',
-        offerCount: '3',
+        // Derived from the pricing table below, not hardcoded, so it can't drift.
+        lowPrice: String(Math.min(...C.petWasteCollection.pricingRows.flatMap(r => [...r.price.matchAll(/£(\d+)/g)].map(m => Number(m[1]))))),
+        offerCount: String(C.petWasteCollection.pricingRows.length),
       },
     }),
     serviceSchema({

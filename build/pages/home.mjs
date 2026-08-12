@@ -2,10 +2,16 @@ import { page, ctaBand, icons, AREAS, WA_LINK, serviceSchema } from '../site.mjs
 import {
   sectionHead, trustStrip, trustBar, pricingTabs, priceNote, compareSlider,
   reviewsSection, whoWeWorkWith, whatToExpect, quoteForm, squiggle,
+  GARDEN_CLEAN_PRICE_RANGE,
 } from '../components.mjs';
 import { homepage as HOME_CONTENT } from '../content.mjs';
 
-const { hero: HERO, why: WHY, areas: AREAS_CONTENT } = HOME_CONTENT;
+const {
+  hero: HERO, why: WHY, areas: AREAS_CONTENT, pricing: PRICING_CONTENT,
+  spotTheDifference: SPOT_CONTENT, reviews: REVIEWS_CONTENT,
+  whoWeWorkWith: WHO_CONTENT, whatToExpect: EXPECT_CONTENT,
+  howToBook: BOOK_CONTENT, quoteSection: QUOTE_CONTENT, finalCta: CTA_CONTENT,
+} = HOME_CONTENT;
 
 function hero() {
   return `<section class="hero" id="top">
@@ -39,11 +45,7 @@ function hero() {
 function pricing() {
   return `<section class="pad" id="pricing" style="background:var(--paper);">
   <div class="wrap">
-    ${sectionHead({
-      kicker: 'Our pricing',
-      h2: 'Tailored pricing for your garden\'s unique needs',
-      lead: 'We consider pets, garden size, clean-up frequency and even big build-ups. Ensuring a fair quote every time.',
-    })}
+    ${sectionHead({ kicker: PRICING_CONTENT.kicker, h2: PRICING_CONTENT.heading, lead: PRICING_CONTENT.lead })}
     ${pricingTabs()}
     ${priceNote()}
     <p class="section-foot"><a class="text-link" href="/services/pricing">See the full pricing breakdown →</a></p>
@@ -54,7 +56,7 @@ function pricing() {
 function spotTheDifference() {
   return `<section class="pad" style="padding-bottom:0;">
   <div class="wrap">
-    ${sectionHead({ kicker: 'Before &amp; after', h2: 'From Mess to Fresh: Results You Can Trust' })}
+    ${sectionHead({ kicker: SPOT_CONTENT.kicker, h2: SPOT_CONTENT.heading })}
     ${compareSlider()}
   </div>
 </section>`;
@@ -67,7 +69,7 @@ function whyScoopPatrol() {
   <div class="wrap">
     <div class="why-split">
       <div class="why-copy reveal">
-        <span class="kicker">Why Scoop Patrol</span>
+        <span class="kicker">${WHY.kicker}</span>
         <h2>${WHY.heading}</h2>
         ${squiggle()}
         <p class="lead-sm">${WHY.lead}</p>
@@ -105,8 +107,8 @@ function whereWePatrol() {
     <div class="areas-split">
       <div class="areas-copy">
         ${sectionHead({
-          kicker: 'Where we patrol',
-          h2: 'Aberdare and the surrounding areas',
+          kicker: AREAS_CONTENT.kicker,
+          h2: AREAS_CONTENT.heading,
           lead: AREAS_CONTENT.lead,
         })}
         <p class="section-foot muted">Just outside the area? <a class="text-link" href="${WA_LINK}">Message us anyway</a>, we're expanding the round regularly.</p>
@@ -125,32 +127,17 @@ function whereWePatrol() {
 }
 
 function howToBook() {
+  const cards = BOOK_CONTENT.cards.map(c => `<div class="book-card">
+        <h3>${c.heading}</h3>
+        <ol>
+          ${c.steps.map(s => `<li>${s}</li>`).join('\n          ')}
+        </ol>
+      </div>`).join('\n      ');
   return `<section class="pad tight" id="how-to-book">
   <div class="wrap">
-    ${sectionHead({
-      kicker: 'How to book',
-      h2: 'Getting started takes one message',
-      lead: 'Two ways in, depending on what you need.',
-    })}
+    ${sectionHead({ kicker: BOOK_CONTENT.kicker, h2: BOOK_CONTENT.heading, lead: BOOK_CONTENT.lead })}
     <div class="book-split reveal-group">
-      <div class="book-card">
-        <h3>Booking a garden clean</h3>
-        <ol>
-          <li>Message us or fill in the quote form with your postcode, garden size and number of pets</li>
-          <li>Send a photo if you can, it helps us quote fairly, especially for first cleans</li>
-          <li>We confirm your price and a first visit date, usually the same day</li>
-          <li>Choose weekly, fortnightly or a one-off</li>
-        </ol>
-      </div>
-      <div class="book-card">
-        <h3>Booking a collection</h3>
-        <ol>
-          <li>Tell us roughly how much you need collected and how often</li>
-          <li>We confirm a price and a collection day</li>
-          <li>Leave your bagged waste out on the day, you don't need to be home</li>
-          <li>We collect, dispose of it legally, and you're done</li>
-        </ol>
-      </div>
+      ${cards}
     </div>
   </div>
 </section>`;
@@ -159,11 +146,7 @@ function howToBook() {
 function quoteSection() {
   return `<section class="pad" id="quote" style="background:var(--paper);">
   <div class="wrap wrap-form">
-    ${sectionHead({
-      kicker: 'Get a free quote',
-      h2: 'Tell us about your garden',
-      lead: 'Fill this in and it opens WhatsApp with your details ready to send. We\'ll come back with a fair price the same day.',
-    })}
+    ${sectionHead({ kicker: QUOTE_CONTENT.kicker, h2: QUOTE_CONTENT.heading, lead: QUOTE_CONTENT.lead })}
     ${quoteForm({ id: 'quoteFormHome' })}
   </div>
 </section>`;
@@ -172,16 +155,16 @@ function quoteSection() {
 export default page({
   slug: '',
   nav: 'home',
-  title: 'Pet Waste Clean-ups & Collections in Aberdare | Scoop Patrol',
-  description: 'Weekly, fortnightly and one-off pet waste garden clean-ups and collections across Aberdare and Rhondda Cynon Taf. From £10 per clean. NRW registered.',
+  title: HOME_CONTENT.seo.title,
+  description: HOME_CONTENT.seo.description,
   schema: [serviceSchema({
     serviceType: 'Pet waste garden clean-up',
     offers: {
       '@type': 'AggregateOffer',
       priceCurrency: 'GBP',
-      lowPrice: '10',
-      highPrice: '25',
-      offerCount: '10',
+      lowPrice: GARDEN_CLEAN_PRICE_RANGE.low,
+      highPrice: GARDEN_CLEAN_PRICE_RANGE.high,
+      offerCount: GARDEN_CLEAN_PRICE_RANGE.offerCount,
     },
   })],
   body: [
@@ -189,14 +172,14 @@ export default page({
     trustStrip(),
     pricing(),
     spotTheDifference(),
-    reviewsSection(),
+    reviewsSection({ kicker: REVIEWS_CONTENT.kicker, h2: REVIEWS_CONTENT.heading }),
     trustBar(),
     whyScoopPatrol(),
-    whoWeWorkWith(),
-    whatToExpect(),
+    whoWeWorkWith({ kicker: WHO_CONTENT.kicker, h2: WHO_CONTENT.heading, lead: WHO_CONTENT.lead }),
+    whatToExpect({ kicker: EXPECT_CONTENT.kicker, h2: EXPECT_CONTENT.heading, lead: EXPECT_CONTENT.lead }),
     whereWePatrol(),
     howToBook(),
     quoteSection(),
-    ctaBand(),
+    ctaBand(CTA_CONTENT),
   ].join('\n\n'),
 });

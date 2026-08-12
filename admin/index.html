@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="icon" href="/assets/logo.jpg" type="image/jpeg" />
+  <style>
+    /* Decap's plain-text fields (widget: "text") render as native
+       <textarea>s. Force a visible resize handle and a taller starting
+       size so longer prose (legal sections etc.) is easier to work in,
+       regardless of whatever Decap's own default happens to be. */
+    textarea {
+      resize: vertical !important;
+      min-height: 9em !important;
+    }
+  </style>
 </head>
 <body>
   <!-- Decap CMS reads ./config.yml automatically. Loaded from the CDN, no

@@ -1,5 +1,9 @@
 {
   "privacyPolicy": {
+    "seo": {
+      "title": "Privacy Policy, Scoop Patrol Aberdare",
+      "description": "How Scoop Patrol Aberdare collects, uses and protects your personal information."
+    },
     "sections": [
       {
         "heading": "Who we are",
@@ -53,6 +57,10 @@
   },
 
   "cookiePolicy": {
+    "seo": {
+      "title": "Cookie Policy, Scoop Patrol Aberdare",
+      "description": "Scoop Patrol Aberdare uses no tracking or advertising cookies. Here's what we do use, and why there's no cookie banner."
+    },
     "sections": [
       {
         "heading": "The short version",
@@ -86,6 +94,10 @@
   },
 
   "terms": {
+    "seo": {
+      "title": "Terms & Conditions, Scoop Patrol Aberdare",
+      "description": "The terms that apply when you book pet waste garden clean-ups or collections with Scoop Patrol Aberdare."
+    },
     "sections": [
       { "heading": "Who we are", "body": "Scoop Patrol Aberdare is <mark class=\"todo-token\" title=\"Placeholder, replace before publishing\">[LEGAL STRUCTURE]</mark>, trading from <mark class=\"todo-token\" title=\"Placeholder, replace before publishing\">[BUSINESS ADDRESS]</mark>. We're a registered upper tier waste carrier with Natural Resources Wales, registration number CBDU034485, and we're fully insured.\n\nContact: <mark class=\"todo-token\" title=\"Placeholder, replace before publishing\">[EMAIL ADDRESS]</mark> · <a href=\"tel:+447760541636\">07760 541636</a>" },
       { "heading": "What these terms cover", "body": "These terms apply when you book any of our services, garden clean-ups, pet waste collection, or the cat litter add-on. By booking, you're agreeing to them. Please read them before you book.\n\nNothing in these terms affects your legal rights as a consumer." },

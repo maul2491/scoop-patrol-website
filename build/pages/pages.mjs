@@ -14,8 +14,8 @@ const HOME = { name: 'Home', href: '/' };
 export const commercial = page({
   slug: 'commercial',
   nav: 'commercial',
-  title: 'Commercial Pet Waste Removal, Landlords, Daycares & Kennels | RCT',
-  description: 'Commercial pet waste removal and collection across Rhondda Cynon Taf. NRW registered upper tier waste carrier, fully insured, DBS checked. Quotes tailored to your site.',
+  title: CC.seo.title,
+  description: CC.seo.description,
   trail: [HOME, { name: 'Commercial Services', href: '/commercial' }],
   schema: [serviceSchema({ serviceType: 'Commercial pet waste removal' })],
   body: [
@@ -121,8 +121,8 @@ const faqSchema = {
 export const faq = page({
   slug: 'faq',
   nav: 'faq',
-  title: 'FAQs, Pet Waste Removal & Collection in Aberdare & RCT',
-  description: 'Answers on pricing, frequency, what happens to the waste, areas covered, and how booking works for pet waste garden clean-ups across Rhondda Cynon Taf.',
+  title: CF.seo.title,
+  description: CF.seo.description,
   trail: [HOME, { name: 'FAQ', href: '/faq' }],
   schema: [faqSchema],
   body: [
@@ -159,8 +159,8 @@ function slugify(s) {
 export const contact = page({
   slug: 'contact',
   nav: 'contact',
-  title: 'Contact Scoop Patrol Aberdare, Get a Free Quote',
-  description: 'Get a free same-day quote for pet waste garden clean-ups and collections across Rhondda Cynon Taf. Message us on WhatsApp or use the quote form.',
+  title: CCT.seo.title,
+  description: CCT.seo.description,
   trail: [HOME, { name: 'Contact', href: '/contact' }],
   body: [
     pageHero({ trail: [HOME, { name: 'Contact', href: '/contact' }], ...CCT.hero }),

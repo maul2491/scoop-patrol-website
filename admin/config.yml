@@ -110,6 +110,12 @@ collections:
         label: "Homepage content"
         file: "content/homepage.json"
         fields:
+          - label: "Search & browser tab (SEO)"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Title tag", name: "title", widget: "string" }
+              - { label: "Meta description", name: "description", widget: "text" }
           - label: "Hero (top of page)"
             name: "hero"
             widget: "object"
@@ -121,10 +127,30 @@ collections:
               - { label: "Photo — WebP (optional)", name: "imageWebp", widget: "image", required: false }
               - { label: "Photo alt text", name: "imageAlt", widget: "string" }
               - { label: "Badge text (small chip over the photo)", name: "badgeText", widget: "string" }
+          - label: "Pricing section heading (above the price table)"
+            name: "pricing"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Lead paragraph", name: "lead", widget: "text" }
+          - label: "Before & after section heading"
+            name: "spotTheDifference"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+          - label: "Reviews section heading"
+            name: "reviews"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
           - label: "\"Why Scoop Patrol\" section"
             name: "why"
             widget: "object"
             fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
               - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Lead paragraph", name: "lead", widget: "text" }
               - { label: "Bullet points", name: "points", widget: "list" }
@@ -133,11 +159,55 @@ collections:
               - { label: "Photo (autumn, cross-fades with summer)", name: "imageAutumn", widget: "image" }
               - { label: "Photo (autumn) — WebP (optional)", name: "imageAutumnWebp", widget: "image", required: false }
               - { label: "Photo alt text", name: "imageAlt", widget: "string" }
+          - label: "\"Who we work with\" section heading"
+            name: "whoWeWorkWith"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Lead paragraph", name: "lead", widget: "text" }
+          - label: "\"What to expect\" section heading"
+            name: "whatToExpect"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Lead paragraph", name: "lead", widget: "text" }
           - label: "\"Where we patrol\" section"
             name: "areas"
             widget: "object"
             fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
               - { label: "Lead paragraph", name: "lead", widget: "text" }
+          - label: "\"How to book\" section"
+            name: "howToBook"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Lead paragraph", name: "lead", widget: "text" }
+              - label: "The two \"how to book\" cards"
+                name: "cards"
+                widget: "list"
+                summary: "{{heading}}"
+                fields:
+                  - { label: "Heading", name: "heading", widget: "string" }
+                  - { label: "Numbered steps", name: "steps", widget: "list" }
+          - label: "Quote form section heading (above the homepage contact form)"
+            name: "quoteSection"
+            widget: "object"
+            fields:
+              - { label: "Kicker", name: "kicker", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Lead paragraph", name: "lead", widget: "text" }
+          - label: "Final call-to-action band (bottom of page)"
+            name: "finalCta"
+            widget: "object"
+            fields:
+              - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Body", name: "body", widget: "text" }
 
   - name: "services_pages"
     label: "Services Pages"
@@ -150,6 +220,10 @@ collections:
             name: "index"
             widget: "object"
             fields:
+              - { label: "Search & browser tab (SEO)", name: "seo", widget: "object", fields: [
+                    { label: "Title tag", name: "title", widget: "string" },
+                    { label: "Meta description", name: "description", widget: "text" },
+                  ] }
               - { label: "Hero", name: "hero", widget: "object", fields: [
                     { label: "Kicker", name: "kicker", widget: "string" },
                     { label: "Heading", name: "h1", widget: "string" },
@@ -167,6 +241,10 @@ collections:
             name: "pricing"
             widget: "object"
             fields:
+              - { label: "Search & browser tab (SEO)", name: "seo", widget: "object", fields: [
+                    { label: "Title tag", name: "title", widget: "string" },
+                    { label: "Meta description", name: "description", widget: "text" },
+                  ] }
               - { label: "Hero", name: "hero", widget: "object", fields: [
                     { label: "Kicker", name: "kicker", widget: "string" },
                     { label: "Heading", name: "h1", widget: "string" },
@@ -191,6 +269,10 @@ collections:
             name: "gardenCleans"
             widget: "object"
             fields:
+              - { label: "Search & browser tab (SEO)", name: "seo", widget: "object", fields: [
+                    { label: "Title tag", name: "title", widget: "string" },
+                    { label: "Meta description", name: "description", widget: "text" },
+                  ] }
               - { label: "Hero", name: "hero", widget: "object", fields: [
                     { label: "Kicker", name: "kicker", widget: "string" },
                     { label: "Heading", name: "h1", widget: "string" },
@@ -224,6 +306,10 @@ collections:
             name: "petWasteCollection"
             widget: "object"
             fields:
+              - { label: "Search & browser tab (SEO)", name: "seo", widget: "object", fields: [
+                    { label: "Title tag", name: "title", widget: "string" },
+                    { label: "Meta description", name: "description", widget: "text" },
+                  ] }
               - { label: "Hero", name: "hero", widget: "object", fields: [
                     { label: "Kicker", name: "kicker", widget: "string" },
                     { label: "Heading", name: "h1", widget: "string" },
@@ -268,6 +354,10 @@ collections:
         label: "Commercial Page"
         file: "content/commercial.json"
         fields:
+          - { label: "Search & browser tab (SEO)", name: "seo", widget: "object", fields: [
+                { label: "Title tag", name: "title", widget: "string" },
+                { label: "Meta description", name: "description", widget: "text" },
+              ] }
           - { label: "Hero", name: "hero", widget: "object", fields: [
                 { label: "Kicker", name: "kicker", widget: "string" },
                 { label: "Heading", name: "h1", widget: "string" },
@@ -300,6 +390,10 @@ collections:
         label: "FAQ Page"
         file: "content/faq.json"
         fields:
+          - { label: "Search & browser tab (SEO)", name: "seo", widget: "object", fields: [
+                { label: "Title tag", name: "title", widget: "string" },
+                { label: "Meta description", name: "description", widget: "text" },
+              ] }
           - { label: "Hero", name: "hero", widget: "object", fields: [
                 { label: "Kicker", name: "kicker", widget: "string" },
                 { label: "Heading", name: "h1", widget: "string" },
@@ -328,6 +422,10 @@ collections:
         label: "Contact Page"
         file: "content/contact.json"
         fields:
+          - { label: "Search & browser tab (SEO)", name: "seo", widget: "object", fields: [
+                { label: "Title tag", name: "title", widget: "string" },
+                { label: "Meta description", name: "description", widget: "text" },
+              ] }
           - { label: "Hero", name: "hero", widget: "object", fields: [
                 { label: "Kicker", name: "kicker", widget: "string" },
                 { label: "Heading", name: "h1", widget: "string" },
@@ -353,6 +451,10 @@ collections:
             name: "privacyPolicy"
             widget: "object"
             fields:
+              - { label: "Search & browser tab (SEO)", name: "seo", widget: "object", fields: [
+                    { label: "Title tag", name: "title", widget: "string" },
+                    { label: "Meta description", name: "description", widget: "text" },
+                  ] }
               - label: "Sections"
                 name: "sections"
                 widget: "list"
@@ -364,6 +466,10 @@ collections:
             name: "cookiePolicy"
             widget: "object"
             fields:
+              - { label: "Search & browser tab (SEO)", name: "seo", widget: "object", fields: [
+                    { label: "Title tag", name: "title", widget: "string" },
+                    { label: "Meta description", name: "description", widget: "text" },
+                  ] }
               - label: "Sections"
                 name: "sections"
                 widget: "list"
@@ -375,6 +481,10 @@ collections:
             name: "terms"
             widget: "object"
             fields:
+              - { label: "Search & browser tab (SEO)", name: "seo", widget: "object", fields: [
+                    { label: "Title tag", name: "title", widget: "string" },
+                    { label: "Meta description", name: "description", widget: "text" },
+                  ] }
               - label: "Sections (numbered and listed in the on-page contents automatically)"
                 name: "sections"
                 widget: "list"

@@ -50,8 +50,8 @@ ${body}
 export const privacyPolicy = legalPage({
   slug: 'privacy-policy',
   navTitle: 'Privacy Policy',
-  title: 'Privacy Policy, Scoop Patrol Aberdare',
-  description: 'How Scoop Patrol Aberdare collects, uses and protects your personal information.',
+  title: C.privacyPolicy.seo.title,
+  description: C.privacyPolicy.seo.description,
   kicker: 'Legal',
   h1: 'Privacy Policy',
   sections: C.privacyPolicy.sections,
@@ -64,8 +64,8 @@ export const privacyPolicy = legalPage({
 export const cookiePolicy = legalPage({
   slug: 'cookie-policy',
   navTitle: 'Cookie Policy',
-  title: 'Cookie Policy, Scoop Patrol Aberdare',
-  description: 'Scoop Patrol Aberdare uses no tracking or advertising cookies. Here\'s what we do use, and why there\'s no cookie banner.',
+  title: C.cookiePolicy.seo.title,
+  description: C.cookiePolicy.seo.description,
   kicker: 'Legal',
   h1: 'Cookie Policy',
   sections: C.cookiePolicy.sections,
@@ -85,8 +85,8 @@ const termsToc = `<nav class="legal-toc" aria-label="On this page">
 export const terms = legalPage({
   slug: 'terms',
   navTitle: 'Terms & Conditions',
-  title: 'Terms & Conditions, Scoop Patrol Aberdare',
-  description: 'The terms that apply when you book pet waste garden clean-ups or collections with Scoop Patrol Aberdare.',
+  title: C.terms.seo.title,
+  description: C.terms.seo.description,
   kicker: 'Legal',
   h1: 'Terms & Conditions',
   toc: termsToc,

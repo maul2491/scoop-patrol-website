@@ -1,4 +1,8 @@
 {
+  "seo": {
+    "title": "Pet Waste Clean-ups & Collections in Aberdare | Scoop Patrol",
+    "description": "Weekly, fortnightly and one-off pet waste garden clean-ups and collections across Aberdare and Rhondda Cynon Taf. From £10 per clean. NRW registered."
+  },
   "hero": {
     "headingPrefix": "Pet Waste Garden Clean-ups and Collections in",
     "headingHighlight": "Rhondda Cynon Taf",
@@ -8,7 +12,21 @@
     "imageAlt": "A dog and a cat sitting together on a clean, freshly cleared garden lawn in Aberdare",
     "badgeText": "Your garden, fresh, safe, paws and feet ready."
   },
+  "pricing": {
+    "kicker": "Our pricing",
+    "heading": "Tailored pricing for your garden's unique needs",
+    "lead": "We consider pets, garden size, clean-up frequency and even big build-ups. Ensuring a fair quote every time."
+  },
+  "spotTheDifference": {
+    "kicker": "Before &amp; after",
+    "heading": "From Mess to Fresh: Results You Can Trust"
+  },
+  "reviews": {
+    "kicker": "What customers say",
+    "heading": "Trusted by dog owners across The Valleys"
+  },
   "why": {
+    "kicker": "Why Scoop Patrol",
     "heading": "For Families, Busy Schedules and those who need Support",
     "lead": "We started Scoop Patrol because we saw the community needed a helping hand. Especially for those struggling on their own. That's why we do what we do, to keep every space clean and every neighbour supported.",
     "points": [
@@ -25,7 +43,54 @@
     "imageAutumnWebp": "/assets/scoop-patrol-family-autumn.webp",
     "imageAlt": "A family and their dog enjoying a clean, tidy back garden on a summer afternoon"
   },
+  "whoWeWorkWith": {
+    "kicker": "Who we work with",
+    "heading": "From family gardens to commercial sites",
+    "lead": "Whether it's a family garden or a commercial site, we clean and collect all year round."
+  },
+  "whatToExpect": {
+    "kicker": "What to expect",
+    "heading": "Simple and easy for you, whether cleaning or collecting",
+    "lead": "Just contact us, get a price, make an appointment and we're on patrol!"
+  },
   "areas": {
+    "kicker": "Where we patrol",
+    "heading": "Aberdare and the surrounding areas",
     "lead": "If you're local to any of these areas, we can likely fit your garden onto a regular route."
+  },
+  "howToBook": {
+    "kicker": "How to book",
+    "heading": "Getting started takes one message",
+    "lead": "Two ways in, depending on what you need.",
+    "cards": [
+      {
+        "heading": "Booking a garden clean",
+        "steps": [
+          "Message us or fill in the quote form with your postcode, garden size and number of pets",
+          "Send a photo if you can, it helps us quote fairly, especially for first cleans",
+          "We confirm your price and a first visit date, usually the same day",
+          "Choose weekly, fortnightly or a one-off"
+        ]
+      },
+      {
+        "heading": "Booking a collection",
+        "steps": [
+          "Tell us roughly how much you need collected and how often",
+          "We confirm a price and a collection day",
+          "Leave your bagged waste out on the day, you don't need to be home",
+          "We collect, dispose of it legally, and you're done"
+        ]
+      }
+    ]
+  },
+  "quoteSection": {
+    "kicker": "Get a free quote",
+    "heading": "Tell us about your garden",
+    "lead": "Fill this in and it opens WhatsApp with your details ready to send. We'll come back with a fair price the same day."
+  },
+  "finalCta": {
+    "eyebrow": "Free quote",
+    "heading": "Ready for a fresh garden?",
+    "body": "Message us your postcode, garden size and number of pets, we'll come back with a fair price the same day."
   }
 }
