@@ -1,5 +1,5 @@
 // Reusable page sections shared across more than one page.
-import { icons, AREAS, WA_LINK, TEL_LINK, SITE, NRW_SHORT } from './site.mjs';
+import { icons, AREAS, TEL_LINK, SITE, NRW_SHORT } from './site.mjs';
 import { reviews as REVIEWS, beforeAfter as BEFORE_AFTER } from './content.mjs';
 
 export function squiggle() {

@@ -33,7 +33,7 @@ collections:
           - label: "Reviews"
             name: "reviews"
             widget: "list"
-            summary: "{{name}} ({{platform}})"
+            summary: "{{fields.name}} ({{fields.platform}})"
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Platform", name: "platform", widget: "select", options: ["Google", "Facebook"] }
@@ -68,14 +68,14 @@ collections:
           - label: "Main menu (Home and Services are fixed, everything else lists here)"
             name: "main"
             widget: "list"
-            summary: "{{label}}"
+            summary: "{{fields.label}}"
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Link", name: "href", widget: "string", hint: "e.g. /about or /contact" }
           - label: "Services dropdown"
             name: "services"
             widget: "list"
-            summary: "{{label}}"
+            summary: "{{fields.label}}"
             fields:
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Link", name: "href", widget: "string" }
@@ -91,13 +91,13 @@ collections:
           - label: "Link columns"
             name: "columns"
             widget: "list"
-            summary: "{{heading}}"
+            summary: "{{fields.heading}}"
             fields:
               - { label: "Column heading", name: "heading", widget: "string" }
               - label: "Links"
                 name: "links"
                 widget: "list"
-                summary: "{{label}}"
+                summary: "{{fields.label}}"
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
                   - { label: "Link", name: "href", widget: "string" }
@@ -190,7 +190,7 @@ collections:
               - label: "The two \"how to book\" cards"
                 name: "cards"
                 widget: "list"
-                summary: "{{heading}}"
+                summary: "{{fields.heading}}"
                 fields:
                   - { label: "Heading", name: "heading", widget: "string" }
                   - { label: "Numbered steps", name: "steps", widget: "list" }
@@ -232,7 +232,7 @@ collections:
               - label: "Hub cards"
                 name: "hubCards"
                 widget: "list"
-                summary: "{{title}}"
+                summary: "{{fields.title}}"
                 fields:
                   - { label: "Links to", name: "href", widget: "string" }
                   - { label: "Title", name: "title", widget: "string" }
@@ -253,7 +253,7 @@ collections:
               - label: "What affects your price — cards"
                 name: "priceFactors"
                 widget: "list"
-                summary: "{{heading}}"
+                summary: "{{fields.heading}}"
                 fields:
                   - { label: "Icon (single emoji)", name: "icon", widget: "string" }
                   - { label: "Heading", name: "heading", widget: "string" }
@@ -261,7 +261,7 @@ collections:
               - label: "Pricing FAQs"
                 name: "faq"
                 widget: "list"
-                summary: "{{q}}"
+                summary: "{{fields.q}}"
                 fields:
                   - { label: "Question", name: "q", widget: "string" }
                   - { label: "Answer", name: "a", widget: "text" }
@@ -287,7 +287,7 @@ collections:
               - label: "Frequency cards"
                 name: "frequencyCards"
                 widget: "list"
-                summary: "{{heading}}"
+                summary: "{{fields.heading}}"
                 fields:
                   - { label: "Heading", name: "heading", widget: "string" }
                   - { label: "Body", name: "body", widget: "text" }
@@ -318,7 +318,7 @@ collections:
               - label: "Pricing table rows"
                 name: "pricingRows"
                 widget: "list"
-                summary: "{{service}}"
+                summary: "{{fields.service}}"
                 fields:
                   - { label: "Service", name: "service", widget: "string" }
                   - { label: "Price", name: "price", widget: "string" }
@@ -367,7 +367,7 @@ collections:
           - label: "Sectors we work with"
             name: "sectors"
             widget: "list"
-            summary: "{{heading}}"
+            summary: "{{fields.heading}}"
             fields:
               - { label: "Icon (single emoji)", name: "icon", widget: "string" }
               - { label: "Heading", name: "heading", widget: "string" }
@@ -402,14 +402,14 @@ collections:
           - label: "Question groups"
             name: "groups"
             widget: "list"
-            summary: "{{group}}"
+            summary: "{{fields.group}}"
             hint: "Two answers (areas covered, waste disposal) are generated automatically from business details elsewhere and don't appear here."
             fields:
               - { label: "Group name", name: "group", widget: "string" }
               - label: "Questions"
                 name: "items"
                 widget: "list"
-                summary: "{{q}}"
+                summary: "{{fields.q}}"
                 fields:
                   - { label: "Question", name: "q", widget: "string" }
                   - { label: "Answer (plain text, used for search-engine markup)", name: "text", widget: "text" }
@@ -458,7 +458,7 @@ collections:
               - label: "Sections"
                 name: "sections"
                 widget: "list"
-                summary: "{{heading}}"
+                summary: "{{fields.heading}}"
                 fields:
                   - { label: "Heading", name: "heading", widget: "string" }
                   - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph. Start a line with \"- \" for a bullet list. HTML like <strong>, <a href=\"...\">, <h3> and <table> works and passes through as typed." }
@@ -473,7 +473,7 @@ collections:
               - label: "Sections"
                 name: "sections"
                 widget: "list"
-                summary: "{{heading}}"
+                summary: "{{fields.heading}}"
                 fields:
                   - { label: "Heading", name: "heading", widget: "string" }
                   - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph. Start a line with \"- \" for a bullet list. HTML like <strong>, <a href=\"...\"> works and passes through as typed." }
@@ -488,7 +488,7 @@ collections:
               - label: "Sections (numbered and listed in the on-page contents automatically)"
                 name: "sections"
                 widget: "list"
-                summary: "{{heading}}"
+                summary: "{{fields.heading}}"
                 fields:
                   - { label: "Heading", name: "heading", widget: "string" }
                   - { label: "Body", name: "body", widget: "text", hint: "Blank line = new paragraph. Start a line with \"- \" for a bullet list. HTML like <strong>, <a href=\"...\"> works and passes through as typed." }
@@ -498,7 +498,7 @@ collections:
     description: "Create a new page, or open an existing one and use \"Duplicate\" to start a similar one. New pages aren't linked from the menu automatically — add a link in Navigation once you're happy with it."
     folder: "content/pages"
     create: true
-    slug: "{{slug}}"
+    slug: "{{fields.slug}}"
     fields:
       - { label: "Page title", name: "title", widget: "string" }
       - { label: "URL slug (letters, numbers, hyphens only, e.g. \"summer-offer\")", name: "slug", widget: "string" }
@@ -541,7 +541,7 @@ collections:
               - label: "Questions"
                 name: "items"
                 widget: "list"
-                summary: "{{q}}"
+                summary: "{{fields.q}}"
                 fields:
                   - { label: "Question", name: "q", widget: "string" }
                   - { label: "Answer", name: "a", widget: "text" }

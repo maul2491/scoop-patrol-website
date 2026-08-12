@@ -44,10 +44,27 @@ const PAGES = [
 // rendered through build/pages/generic.mjs's block palette. Slugs are
 // checked against the hardcoded pages above so a new page can't silently
 // clobber a real one.
+//
+// The CMS field hints editors to use "letters, numbers, hyphens only", but
+// nothing stops someone typing "Summer Offer!" by hand — normalise here so a
+// stray space/capital/leading-slash can't produce a broken or duplicate URL.
+function normalizeSlug(raw) {
+  return String(raw).trim().toLowerCase()
+    .replace(/^\/+|\/+$/g, '')
+    .replace(/[^a-z0-9/]+/g, '-')
+    .replace(/-{2,}/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 const RESERVED_SLUGS = new Set(PAGES.map(([slug]) => slug));
 for (const data of loadPagesDir()) {
   if (!data.slug) {
     console.warn(`  ⚠  content/pages/*.json entry with no slug, skipping: ${data.title || '(untitled)'}`);
+    continue;
+  }
+  data.slug = normalizeSlug(data.slug);
+  if (!data.slug) {
+    console.warn(`  ⚠  content/pages/*.json entry has a slug that normalises to empty, skipping: ${data.title || '(untitled)'}`);
     continue;
   }
   if (RESERVED_SLUGS.has(data.slug)) {

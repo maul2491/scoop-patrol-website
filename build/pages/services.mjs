@@ -186,6 +186,13 @@ export const gardenCleans = page({
 // /services/pet-waste-collection  (+ #cat-litter)
 // ---------------------------------------------------------------------------
 
+// Derived from the pricing table content, not hardcoded, so it can't drift —
+// falls back to '10' if an editor ever removes every £ amount from the table,
+// rather than emitting a broken "Infinity" price into the schema.
+const COLLECTION_PRICE_NUMS = C.petWasteCollection.pricingRows
+  .flatMap(r => [...r.price.matchAll(/£(\d+)/g)].map(m => Number(m[1])));
+const COLLECTION_LOW_PRICE = String(COLLECTION_PRICE_NUMS.length ? Math.min(...COLLECTION_PRICE_NUMS) : 10);
+
 export const petWasteCollection = page({
   slug: 'services/pet-waste-collection',
   nav: 'services',
@@ -198,8 +205,7 @@ export const petWasteCollection = page({
       offers: {
         '@type': 'AggregateOffer',
         priceCurrency: 'GBP',
-        // Derived from the pricing table below, not hardcoded, so it can't drift.
-        lowPrice: String(Math.min(...C.petWasteCollection.pricingRows.flatMap(r => [...r.price.matchAll(/£(\d+)/g)].map(m => Number(m[1]))))),
+        lowPrice: COLLECTION_LOW_PRICE,
         offerCount: String(C.petWasteCollection.pricingRows.length),
       },
     }),

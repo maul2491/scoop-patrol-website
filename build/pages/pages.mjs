@@ -2,7 +2,7 @@ import {
   page, pageHero, ctaBand, serviceSchema, icons, SITE, AREAS,
   NRW_FULL, NRW_MEANS, WA_LINK, TEL_LINK, POSTCODE_DISTRICTS,
 } from '../site.mjs';
-import { sectionHead, quoteForm, whoWeWorkWith, squiggle } from '../components.mjs';
+import { sectionHead, quoteForm, squiggle } from '../components.mjs';
 import { commercial as CC, faq as CF, contact as CCT } from '../content.mjs';
 
 const HOME = { name: 'Home', href: '/' };
