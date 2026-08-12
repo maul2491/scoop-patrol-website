@@ -85,6 +85,7 @@ write('_redirects', `# Old structure -> new. See build.mjs.
 
 # /about is temporarily hidden pending a redesign, not a permanent removal.
 /about                     /                                      302
+/about/                    /                                      302
 `);
 console.log('  _redirects');
 
