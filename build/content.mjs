@@ -30,6 +30,8 @@ export const faq = load('faq');
 export const contact = load('contact');
 export const legal = load('legal');
 
+// Returns {data, file} pairs — `file` is the repo-relative path, needed so
+// build.mjs can look up each page's own git history for its sitemap lastmod.
 export function loadPagesDir() {
   const dir = join(CONTENT_DIR, 'pages');
   let files;
@@ -38,7 +40,10 @@ export function loadPagesDir() {
   } catch {
     return [];
   }
-  return files.map(f => JSON.parse(readFileSync(join(dir, f), 'utf8')));
+  return files.map(f => ({
+    data: JSON.parse(readFileSync(join(dir, f), 'utf8')),
+    file: `content/pages/${f}`,
+  }));
 }
 
 // Renders CMS-authored body copy (real markdown: **bold**, [links](url),

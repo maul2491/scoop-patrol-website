@@ -9,6 +9,7 @@
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
 
 import { SITE } from './build/site.mjs';
 import home from './build/pages/home.mjs';
@@ -25,19 +26,32 @@ import { loadPagesDir } from './build/content.mjs';
 
 const ROOT = dirname(fileURLToPath(import.meta.url));
 
-// slug -> html, plus sitemap priority/changefreq
+// Rendered on every page via header()/footer(), so a change to either counts
+// as touching every page's actual output, same as a change to that page's
+// own content file would.
+const GLOBAL_CONTENT_FILES = ['content/nav.json', 'content/footer.json'];
+
+// slug -> html, sitemap priority, content files that feed this page (used to
+// derive a real per-page sitemap lastmod from git history — see lastModFor
+// below). Where several pages share one content file (services.json holds
+// all four services pages, legal.json holds all three legal pages) they
+// necessarily share a lastmod too — editing content/services.json's pricing
+// section touches file-level history the same as editing its hero would,
+// git doesn't track sub-JSON granularity. Splitting those into one file per
+// page would fix that, at the cost of the CMS's current grouping; not done
+// here since nobody's asked for that finer granularity yet.
 const PAGES = [
-  ['', home, 1.0],
-  ['services', servicesIndex, 0.7],
-  ['services/pricing', pricing, 0.9],
-  ['services/garden-cleans', gardenCleans, 0.9],
-  ['services/pet-waste-collection', petWasteCollection, 0.9],
-  ['commercial', commercial, 0.8],
-  ['faq', faq, 0.7],
-  ['contact', contact, 0.8],
-  ['privacy-policy', privacyPolicy, 0.2],
-  ['terms', terms, 0.2],
-  ['cookie-policy', cookiePolicy, 0.2],
+  ['', home, 1.0, ['content/homepage.json', 'content/reviews.json', 'content/before-after.json']],
+  ['services', servicesIndex, 0.7, ['content/services.json']],
+  ['services/pricing', pricing, 0.9, ['content/services.json']],
+  ['services/garden-cleans', gardenCleans, 0.9, ['content/services.json']],
+  ['services/pet-waste-collection', petWasteCollection, 0.9, ['content/services.json']],
+  ['commercial', commercial, 0.8, ['content/commercial.json']],
+  ['faq', faq, 0.7, ['content/faq.json']],
+  ['contact', contact, 0.8, ['content/contact.json']],
+  ['privacy-policy', privacyPolicy, 0.2, ['content/legal.json']],
+  ['terms', terms, 0.2, ['content/legal.json']],
+  ['cookie-policy', cookiePolicy, 0.2, ['content/legal.json']],
 ];
 
 // Generic pages created/duplicated from /admin (content/pages/*.json), each
@@ -57,7 +71,7 @@ function normalizeSlug(raw) {
 }
 
 const RESERVED_SLUGS = new Set(PAGES.map(([slug]) => slug));
-for (const data of loadPagesDir()) {
+for (const { data, file } of loadPagesDir()) {
   if (!data.slug) {
     console.warn(`  ⚠  content/pages/*.json entry with no slug, skipping: ${data.title || '(untitled)'}`);
     continue;
@@ -71,7 +85,7 @@ for (const data of loadPagesDir()) {
     console.warn(`  ⚠  content/pages entry "${data.slug}" collides with a built-in page, skipping.`);
     continue;
   }
-  PAGES.push([data.slug, genericPage(data), data.priority || 0.5]);
+  PAGES.push([data.slug, genericPage(data), data.priority || 0.5, [file]]);
   RESERVED_SLUGS.add(data.slug);
 }
 
@@ -92,11 +106,37 @@ for (const [slug, html] of PAGES) {
 
 // --- sitemap.xml -----------------------------------------------------------
 const today = new Date().toISOString().slice(0, 10);
+
+// Real per-page lastmod: the most recent commit date across whichever
+// content file(s) actually feed that page, not just "today" for everything.
+// Falls back to today's date if git isn't available or a file has no commit
+// history yet (e.g. this build is running outside a git checkout, or on a
+// shallow clone that doesn't reach the commit that last touched the file) —
+// same result as before this feature existed, never worse.
+const lastModCache = new Map();
+function fileLastMod(relPath) {
+  if (lastModCache.has(relPath)) return lastModCache.get(relPath);
+  let date = null;
+  try {
+    const out = execFileSync('git', ['log', '-1', '--format=%cI', '--', relPath], { cwd: ROOT, stdio: ['ignore', 'pipe', 'ignore'] })
+      .toString().trim();
+    if (out) date = out.slice(0, 10);
+  } catch {
+    date = null;
+  }
+  lastModCache.set(relPath, date);
+  return date;
+}
+function lastModFor(files) {
+  const dates = [...files, ...GLOBAL_CONTENT_FILES].map(fileLastMod).filter(Boolean);
+  return dates.length ? dates.sort().at(-1) : today;
+}
+
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${PAGES.map(([slug, , priority]) => `  <url>
+${PAGES.map(([slug, , priority, contentFiles = []]) => `  <url>
     <loc>${SITE.origin}/${slug}${slug ? '/' : ''}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastModFor(contentFiles)}</lastmod>
     <priority>${priority.toFixed(1)}</priority>
   </url>`).join('\n')}
 </urlset>
